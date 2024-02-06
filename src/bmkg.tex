@@ -1,0 +1,3661 @@
+\documentclass{article}
+
+
+% Bibliography with BibLaTeX, which requires to use the Biber instead of the BibTeX backend
+% https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex
+\usepackage[
+	backend=biber,
+	hyperref=true,
+]{biblatex}
+\addbibresource{bmkg.bib}
+
+
+% Hyperlinks
+% https://de.overleaf.com/learn/latex/Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=blue,
+	linkcolor=blue,
+	filecolor=blue,      
+	urlcolor=blue,
+}
+
+
+% Page layout
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+
+% Additional math symbols
+\usepackage{amssymb}
+
+
+% Tables over multiple pages
+\usepackage{xltabular}
+
+
+% Landscape orientation for selected content
+\usepackage{pdflscape}
+
+
+% Quotes
+% https://www.overleaf.com/learn/latex/Typesetting_quotations
+\usepackage{csquotes}
+
+
+
+
+
+% Parameterization
+
+% Table
+% https://www.overleaf.com/learn/latex/Tables
+\renewcommand{\arraystretch}{1.5}
+
+% Title
+\title{\vspace{-2em}A survey of biomedical knowledge graphs and of resources for their construction}
+\author{Author: Robert Haas}
+\date{Date: \today\\[1em]Version: 1.0.0}
+
+% Table of contents
+\setcounter{tocdepth}{2}
+
+
+
+
+
+\begin{document}
+	
+\maketitle
+
+\tableofcontents
+
+
+
+
+
+\section{Introduction}
+
+Biomedical research generates vast amounts of heterogeneous data, which is stored in many different formats at various locations. Knowledge graphs have emerged as a promising tool for integrating, analyzing and querying this diverse information at scale, thereby paving the way for deriving new insights from a more holistic perspective of biomedical entities and relations.
+In recent years, there has been a significant increase in the amount of work in this area, making it difficult to keep track of all developments.
+To help address this issue, this survey presents a comprehensive overview of biomedical knowledge graphs (section~\ref{sec:kg}) and of resources for their construction (section~\ref{sec:resources}). These resources include a) definitions of knowledge graphs and their underlying graph data models (section~\ref{sec:definitions}), b) file formats to represent and store them (section~\ref{sec:file_formats}), c) databases to retrieve knowledge from (section~\ref{sec:databases}), d) ontologies and controlled vocabularies to provide additional domain structure (section~\ref{sec:ontologies}), and e) tools to extract and integrate various kinds of information to generate a knowledge graph (section~\ref{sec:tools}).
+
+\vspace{1em}
+As supplement to this survey, a website was created that provides all tables of this survey in a more accessible and interactive form: \url{https://robert-haas.github.io/awesome-biomedical-knowledge-graphs}
+
+\vspace{1em}
+Errors and unintended omissions are solely the author's fault. Critical feedback is welcome and encouraged to be sent to \href{mailto:robert.haas@protonmail.com}{robert.haas@protonmail.com}.
+
+
+
+
+
+\newpage
+\section{Methodology}
+
+To ensure broad coverage, entries were collected from a diverse set of sources, including review articles
+\cite{abusalih2021}
+\cite{babalou2023}
+\cite{bonner2022}
+\cite{callahan2020}
+\cite{chatterjee2021}
+\cite{galluzzo2022}
+\cite{hansel2023}
+\cite{maclean2021}
+\cite{qian2019}
+\cite{rajabi2022}
+\cite{thessen2020},
+catalogs
+\cite{astrazeneca2023}
+\cite{callahan2023}
+\cite{linkedopendata2023},
+results obtained from queries to general-purpose and scholarly search engines,
+and repositories listed by source code hosting sites.
+
+In current version 1.0.0 of this survey, following exclusion criteria were applied to discovered candidate projects: A content cutoff date has been set as December 31, 2023. This means that projects published afterwards and updates provided later than this date are not covered by this survey. Additionally, projects were excluded if they only had a publication but no accompanying resources such as a website, code repository, or data access in form of downloadable files or queryable APIs. Finally, projects were not included even if their results might qualify by common definitions as a knowledge graph (section~\ref{sec:definitions}) but they did not refer to them as such, and if they also did not provide them in any file format commonly used for biomedical knowledge graphs (section~\ref{sec:file_formats}).
+
+
+
+
+
+\newpage
+\begin{landscape}
+
+\section{Projects that provide biomedical knowledge graphs}
+\label{sec:kg}
+
+\begin{xltabular}{\textwidth}{p{3cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|p{1cm}|p{6cm}}
+Name
+&
+Websites
+&
+Publications
+&
+Code
+&
+Data
+&
+Last Update
+&
+Organization
+\\
+
+
+\hline
+\hline
+
+
+ADHD-KG
+&
+\cite{adhdkg_website}
+&
+\cite{adhdkg_publication}
+&
+GitHub
+\cite{adhdkg_github}
+&
+.n3 / .nt
+\cite{adhdkg_github}
+\cite{adhdkg_data}
+&
+2022
+&
+School of Computing and Engineering, University of Huddersfield
+\cite{adhdkg_group}
+\\
+
+
+\hline
+
+
+BIKG
+&
+-
+&
+\cite{bikg_publication}
+&
+-
+&
+-
+&
+2022
+&
+Company: AstraZeneca
+\cite{bikg_group1}
+\cite{bikg_group2}
+\\
+
+
+\hline
+
+
+BIOS
+&
+\cite{bios_website}
+&
+\cite{bios_publication}
+&
+GitHub
+\cite{bios_github1}
+\cite{bios_github2}
+&
+.txt
+\cite{bios_data}
+&
+2022
+&
+International Digital Economy Academy
+\cite{bios_group1},
+Center for Statistical Science, Tsinghua University
+\cite{bios_group2},
+Individuals from other research institutes
+\\
+
+
+\hline
+
+
+BY-COVID-KG
+&
+-
+&
+-
+&
+GitHub
+\cite{bycovidkg_github}
+&
+.pkl / .csv / .graphml / .sif
+\cite{bycovidkg_data}
+&
+2022
+&
+BeYond-COVID (BY-COVID) project, various European research institutes
+\cite{bycovidkg_group}
+\\
+
+
+\hline
+
+
+Bio2RDF
+&
+\cite{bio2rdf_website1}
+\cite{bio2rdf_website2}
+&
+\cite{bio2rdf_publication1}
+\cite{bio2rdf_publication2}
+&
+GitHub
+\cite{bio2rdf_github}
+&
+.nq / .owl
+\cite{bio2rdf_data1}
+\cite{bio2rdf_data2},
+SPARQL endpoint
+\cite{bio2rdf_data3}
+&
+2014
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+Bio4j
+&
+\cite{bio4j_website}
+&
+\cite{bio4j_publication}
+&
+GitHub
+\cite{bio4j_github1}
+\cite{bio4j_github2}
+&
+.dmp (TitanDB)
+\cite{bio4j_data1}
+\cite{bio4j_data2}
+&
+2014
+&
+Company: Era7 Bioinformatics
+\cite{bio4j_group}
+\\
+
+
+\hline
+
+
+BioGrakn
+&
+\cite{biograkn_website}
+&
+\cite{biograkn_publication}
+&
+GitHub
+\cite{biograkn_github}
+&
+.zip (Grakn)
+\cite{biograkn_data}
+&
+2018
+&
+Company: Vaticle Ltd
+\cite{biograkn_group}
+\\
+
+
+\hline
+
+
+BioGraph
+&
+\cite{biograph_website}
+&
+\cite{biograph_publication}
+&
+GitHub
+\cite{biograph_github}
+&
+.zip (Neo4J)
+\cite{biograph_data}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+BioKG
+&
+-
+&
+\cite{biokg_publication}
+&
+GitHub
+\cite{biokg_github1}
+\cite{biokg_github2},
+PyPI
+\cite{biokg_pypi}
+&
+.tsv
+\cite{biokg_data}
+&
+2020
+&
+Biomedical Discovery Informatics Unit, NUI Galway
+\cite{biokg_group1}
+\cite{biokg_group2}
+\\
+
+
+\hline
+
+
+Biomedical Data Translator
+&
+\cite{bdt_website1}
+\cite{bdt_website2}
+&
+\cite{bdt_publication1}
+\cite{bdt_publication2}
+&
+GitHub
+\cite{bdt_github1}
+\cite{bdt_github2}
+\cite{bdt_github3}
+&
+REST API
+\cite{bdt_data1},
+Web UI
+\cite{bdt_data2}
+&
+2023
+&
+National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH)
+\cite{bdt_group}
+\\
+
+
+\hline
+
+
+Bioteque
+&
+\cite{bioteque_website}
+&
+\cite{bioteque_publication1}
+\cite{bioteque_publication2}
+&
+GitLab
+\cite{bioteque_gitlab}
+&
+.tsv
+\cite{bioteque_data}
+&
+2022
+&
+Structural Bioinformatics and Network Biology Group, IRB Barcelona
+\cite{bioteque_group}
+\\
+
+
+\hline
+
+
+Biozon
+&
+\cite{biozon_website}
+&
+\cite{biozon_publication1}
+\cite{biozon_publication2}
+&
+Website
+\cite{biozon_software_and_data}
+&
+.sql (PostgreSQL)
+\cite{biozon_software_and_data}
+&
+2005
+&
+Department of Developmental Biology, Stanford University
+\cite{biozon_group}
+\\
+
+
+\hline
+
+
+COVID-19 Knowledge Graph
+&
+\cite{covid19kg_website}
+&
+\cite{covid19kg_publication}
+&
+GitHub
+\cite{covid19kg_github}
+&
+.ttl
+\cite{covid19kg_data1},
+REST API
+\cite{covid19kg_data2},
+SPARQL GUI
+\cite{covid19kg_data3}
+&
+2022
+&
+Department of Computer and Information Sciences, University of Delaware
+\cite{covid19kg_group}
+\\
+
+
+\hline
+
+
+COVID-19-Net
+&
+\cite{covid19net_website}
+&
+-
+&
+GitHub
+\cite{covid19net_github}
+&
+Neo4j Browser
+\cite{covid19net_data}
+&
+2022
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+COVID-KG
+&
+\cite{covidkg_website}
+&
+\cite{covidkg_publication}
+&
+-
+&
+.csv
+\cite{covidkg_data}
+&
+2020
+&
+BLENDER Lab, University of Illinois
+\cite{covidkg_group}
+\\
+
+
+\hline
+
+
+CROssBAR
+&
+\cite{crossbar_website1}
+\cite{crossbar_website2}
+&
+\cite{crossbar_publication}
+&
+GitHub
+\cite{crossbar_github}
+&
+.csv / .tsv
+\cite{crossbar_data}
+&
+2023
+&
+Cancer Systems Biology Laboratory (CanSyL), METU
+\cite{crossbar_group1},
+Protein Function Development Team, EMBL-EBI
+\cite{crossbar_group2}
+\\
+
+
+\hline
+
+
+Chem2Bio2RDF
+&
+\cite{chem2bio2rdf_website}
+&
+\cite{chem2bio2rdf_publication}
+&
+-
+&
+RDF
+\cite{chem2bio2rdf_data}
+&
+2010
+&
+School of Informatics and Computing, Indiana University
+\cite{chem2bio2rdf_group}
+\\
+
+
+\hline
+
+
+Clinical Knowledge Graph (CKG)
+&
+\cite{ckg_website}
+&
+\cite{ckg_publication1}
+\cite{ckg_publication2}
+&
+GitHub
+\cite{ckg_github}
+&
+.dump (Neo4j)
+\cite{ckg_data}
+&
+2021
+&
+NNF Center for Protein Research, University of Copenhagen
+\cite{ckg_group}
+\\
+
+
+\hline
+
+
+CovidGraph
+&
+\cite{covidgraph_website1}
+\cite{covidgraph_website2}
+\cite{covidgraph_website3}
+&
+\cite{covidgraph_publication}
+&
+GitHub
+\cite{covidgraph_github}
+&
+Web UI
+\cite{covidgraph_data1},
+Neo4j Browser
+\cite{covidgraph_data2}
+&
+2022
+&
+Covidgraph.org Team, Individuals from various research institutes
+\cite{covidgraph_group}
+\\
+
+
+\hline
+
+
+CovidPubKG
+&
+-
+&
+\cite{covidpubkg_publication}
+&
+GitHub
+\cite{covidpubkg_github}
+&
+.nt / .ttl
+\cite{covidpubkg_data1}
+\cite{covidpubkg_data2},
+SPARQL endpoint
+\cite{covidpubkg_data3}
+&
+2021
+&
+DICE group, Paderborn University 
+\cite{covidpubkg_group}
+\\
+
+
+\hline
+
+
+DDI-BLKG
+&
+-
+&
+\cite{ddiblkg_publication}
+&
+GitHub
+\cite{ddiblkg_github}
+&
+.txt
+\cite{ddiblkg_data}
+&
+2020
+&
+Institute of Informatics and Telecommunications, NCSR Demokritos
+\cite{ddiblkg_group}
+\\
+
+
+\hline
+
+
+DRKG
+&
+-
+&
+\cite{drkg_publication}
+&
+GitHub
+\cite{drkg_github}
+&
+.tsv / .npy
+\cite{drkg_data}
+&
+2022
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+DeepKG
+&
+\cite{deepkg_website}
+&
+\cite{deepkg_publication}
+&
+-
+&
+Triplets
+\cite{deepkg_website}
+&
+2021
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+DisGeNET-RDF
+&
+\cite{disgenet_website1}
+\cite{disgenet_website2}
+&
+\cite{disgenet_publication1}
+\cite{disgenet_publication2}
+\cite{disgenet_publication3}
+&
+Bitbucket
+\cite{disgenet_bitbucket1}
+\cite{disgenet_bitbucket2}
+&
+.ttl
+\cite{disgenet_data1},
+
+SPARQL endpoint
+\cite{disgenet_data2}
+\cite{disgenet_data3},
+
+.tsv / .sql (SQLite)
+\cite{disgenet_data4},
+
+REST API
+\cite{disgenet_data5}
+&
+2020
+&
+Integrative Biomedical Informatics (IBI) group, Research Programme on Biomedical Informatics (GRIB)
+\cite{disgenet_group}
+\\
+
+
+\hline
+
+
+Drug-CoV
+&
+-
+&
+\cite{drugcov_publication}
+&
+GitHub
+\cite{drugcov_github}
+&
+.csv
+\cite{drugcov_data}
+&
+2023
+&
+School of Information Technology, Murdoch University
+\cite{drugcov_group}
+\\
+
+
+\hline
+
+
+DrugMechDB
+&
+\cite{drugmechdb_website}
+&
+\cite{drugmechdb_publication1}
+\cite{drugmechdb_publication2}
+&
+GitHub
+\cite{drugmechdb_github}
+&
+-
+&
+2023
+&
+Su Lab, Scripps Research Institute
+\cite{drugmechdb_group}
+\\
+
+
+\hline
+
+
+DrugRep-HeSiaGraph
+&
+-
+&
+\cite{drugrephesiagraph_publication}
+&
+GitHub
+\cite{drugrephesiagraph_github}
+&
+.csv
+\cite{drugrephesiagraph_github}
+&
+2023
+&
+CBRC Lab, Amirkabir University Of Technology
+\cite{drugrepkg_group}
+\\
+
+
+\hline
+
+
+DrugRep-KG
+&
+-
+&
+\cite{drugrepkg_publication}
+&
+GitHub
+\cite{drugrepkg_github}
+&
+.csv / .txt
+\cite{drugrepkg_data}
+&
+2023
+&
+CBRC Lab, Amirkabir University Of Technology
+\cite{drugrepkg_group}
+\\
+
+
+\hline
+
+
+EmBiology
+&
+\cite{embiology_website}
+&
+\cite{embiology_publication}
+&
+-
+&
+Commercial access
+&
+2023
+&
+Company: Elsevier
+\cite{embiology_group}
+\\
+
+
+\hline
+
+
+EpiGraphDB
+&
+\cite{epigraphdb_website}
+&
+\cite{epigraphdb_publication}
+&
+GitHub
+\cite{epigraphdb_github1}
+\cite{epigraphdb_github2}
+&
+Neo4j build pipeline
+\cite{epigraphdb_data1},
+REST API
+\cite{epigraphdb_data2}
+&
+2021
+&
+MRC Integrative Epidemiology Unit, University of Bristol
+\cite{epigraphdb_group}
+\\
+
+
+\hline
+
+
+GP-KG
+&
+-
+&
+\cite{gpkg_publication}
+&
+File server
+\cite{gpkg_software}
+&
+.txt
+\cite{gpkg_data}
+&
+2022
+&
+Center for Artificial Intelligence in Drug Discovery, Case Western Reserve University
+\cite{gpkg_group}
+\\
+
+
+\hline
+
+
+GenomicKB
+&
+\cite{genomickb_website}
+&
+\cite{genomickb_publication}
+&
+-
+&
+.dump (Neo4j)
+\cite{genomickb_data}
+&
+2023
+&
+Liu Lab, University of Michigan
+\cite{genomickb_group}
+\\
+
+
+\hline
+
+
+Google Health Knowledge Graph
+&
+\cite{ghkg_website1}
+\cite{ghkg_website2}
+&
+-
+&
+-
+&
+REST API with JSON-LD responses
+\cite{ghkg_data1}
+\cite{ghkg_data2}
+&
+2020
+&
+Company: Google
+\cite{ghkg_group}
+\\
+
+
+\hline
+
+
+GrEDeL
+&
+-
+&
+\cite{gredel_publication}
+&
+\cite{gredel_github}
+&
+-
+&
+2019
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+HALD
+&
+\cite{hald_website}
+&
+\cite{hald_publication}
+&
+GitHub
+\cite{hald_github}
+&
+.json / .csv
+\cite{hald_data}
+&
+2023
+&
+Ming Chen's Group of Bioinformatics,
+Zhejiang University
+\cite{hald_group}
+\\
+
+
+\hline
+
+
+HemeKG
+&
+\cite{hemekg_website}
+&
+\cite{hemekg_publication}
+&
+GitHub
+\cite{hemekg_github},
+PyPI
+\cite{hemekg_pypi}
+&
+.json (BEL JSON)
+\cite{hemekg_data}
+&
+2021
+&
+Pharmaceutical Biochemistry and Bioanalytics, University of Bonn
+\cite{hemekg_group1},
+Department of Bioinformatics, Fraunhofer SCAI
+\cite{hemekg_group2}
+\\
+
+
+\hline
+
+
+Hetionet
+&
+\cite{hetionet_website}
+&
+\cite{hetionet_publication1}
+\cite{hetionet_publication2}
+&
+Website
+\cite{hetionet_software},
+GitHub
+\cite{hetionet_github1}
+\cite{hetionet_github2},
+PyPI
+\cite{hetionet_pypi1}
+\cite{hetionet_pypi2}
+&
+.json / .tsv / .dump (Neo4j) / .npy (NumPy)
+\cite{hetionet_data1}
+Neo4j Browser
+\cite{hetionet_data2}
+&
+2018
+&
+Baranzini Lab, UCSF \cite{hetionet_group2},
+Greene Lab, University of Pennsylvania \cite{hetionet_group1}
+\\
+
+
+\hline
+
+HuadingKG
+&
+-
+&
+\cite{huadingkg_publication}
+&
+GitHub
+\cite{huadingkg_github}
+&
+RDF (Apache Jena)
+\cite{huadingkg_github}
+&
+2019
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+IASiS Open Data Graph
+&
+\cite{iasisodg_website}
+&
+\cite{iasisodg_publication}
+&
+GitHub
+\cite{iasisodg_github}
+&
+MongoDB / Neo4j build pipeline
+\cite{iasisodg_github}
+&
+2020
+&
+Institute of Informatics and Telecommunications, NCSR Demokritos
+\cite{iasisodg_group}
+\\
+
+
+\hline
+
+
+IDSM
+&
+\cite{idsm_website}
+&
+\cite{idsm_publication}
+&
+GitLab
+\cite{idsm_gitlab}
+&
+.owl / .ttl / .sql (PostgreSQL) pipeline
+\cite{idsm_data1},
+SPARQL endpoints
+\cite{idsm_data2}
+\cite{idsm_data3}
+\cite{idsm_data4}
+&
+2023
+&
+Institute of Organic Chemistry and Biochemistry, Czech Academy of Sciences 
+\cite{idsm_group}
+\\
+
+
+\hline
+
+
+INDRA
+&
+\cite{indra_website1}
+\cite{indra_website2}
+&
+\cite{indra_publication1}
+\cite{indra_publication2}
+&
+GitHub
+\cite{indra_github},
+PyPI
+\cite{indra_pypi}
+&
+.tsv
+\cite{indra_data1},
+.pkl / .json
+\cite{indra_data2},
+REST API
+\cite{indra_data3}
+&
+2023
+&
+Sorger Lab, Harvard Medical School
+\cite{indra_group}
+\\
+
+
+\hline
+
+
+Implicitome
+&
+-
+&
+\cite{implicitome_publication}
+&
+GitHub
+\cite{implicitome_github}
+&
+.csv / .nq
+\cite{implicitome_data}
+&
+2017
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+KEGG50k
+&
+-
+&
+\cite{kegg50k_publication}
+&
+-
+&
+.txt
+\cite{kegg50k_data}
+&
+2018
+&
+Data Science Institute, University of Galway
+\cite{kegg50k_group}
+\\
+
+
+\hline
+
+
+KG-COVID-19
+&
+\cite{kgcovid19_website}
+&
+\cite{kgcovid19_publication}
+&
+GitHub
+\cite{kgcovid19_github}
+&
+.nt / .tsv
+\cite{kgcovid19_data1},
+SPARQL endpoint
+\cite{kgcovid19_data2}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+KG-Hub
+&
+\cite{kghub_website}
+&
+\cite{kghub_publication}
+&
+GitHub
+\cite{kghub_github}
+&
+.nt
+\cite{kghub_data}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+KGen
+&
+-
+&
+\cite{kgen_publication}
+&
+GitHub
+\cite{kgen_github}
+&
+.txt / .ttl
+\cite{kgen_data}
+&
+2022
+&
+Institute of Computing, University of Campinas
+\cite{kgen_group}
+\\
+
+
+\hline
+
+
+KIDS
+&
+-
+&
+\cite{kids_publication}
+&
+GitHub
+\cite{kids_github}
+&
+.txt / .xml
+\cite{kids_data}
+&
+2022
+&
+Tagkopoulos Lab, University of California
+\cite{kids_group}
+\\
+
+
+\hline
+
+
+KaBOB
+&
+-
+&
+\cite{kabob_publication}
+&
+GitHub
+\cite{kabob_github}
+&
+RDF pipeline
+\cite{kabob_github}
+&
+2015
+&
+Computational Bioscience Program, University of Colorado
+\cite{kabob_group}
+\\
+
+
+\hline
+
+
+Knowledge4COVID-19 KG
+&
+-
+&
+\cite{knowledge4covid19_publication}
+&
+GitHub
+\cite{knowledge4covid19_github},
+Zenodo
+\cite{knowledge4covid19_zenodo}
+&
+SPARQL endpoint
+\cite{knowledge4covid19_data}
+&
+2022
+&
+L3S Research Center, University of Hannover
+\cite{knowledge4covid19_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+LMKG
+&
+-
+&
+\cite{lmkg_publication}
+&
+GitHub
+\cite{lmkg_github}
+&
+.json
+\cite{lmkg_data1},
+Neo4j Browser
+\cite{lmkg_data2}
+&
+2023
+&
+Department of Electronic Engineering, Tsinghua University
+\cite{lmkg_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+MDKG
+&
+-
+&
+\cite{mdkg_publication}
+&
+GitHub
+\cite{mdkg_github}
+&
+.dict / .txt
+\cite{mdkg_data}
+&
+2020
+&
+Central China Normal University
+\cite{mdkg_group}
+\\
+
+
+\hline
+
+
+Monarch KG
+&
+\cite{monarchkg_website1}
+\cite{monarchkg_website2}
+&
+\cite{monarchkg_publication1}
+\cite{monarchkg_publication2}
+\cite{monarchkg_publication3}
+&
+GitHub
+\cite{monarchkg_github1}
+\cite{monarchkg_github2},
+PyPI
+\cite{monarchkg_pypi}
+&
+.nt, .jsonl, .tsv, .db (SQLite), .dump (Neo4j)
+\cite{monarchkg_data}
+&
+2023
+&
+Department of Biomedical Informatics, University of Colorado
+\cite{monarchkg_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+Mpox Knowledge Graph
+&
+\cite{mpoxkg_website}
+&
+\cite{mpoxkg_publication}
+&
+GitHub
+\cite{mpoxkg_github}
+&
+.csv / .graphml / .pkl / .sif
+\cite{mpoxkg_data1}
+\cite{mpoxkg_data2},
+Web UI
+\cite{mpoxkg_data3}
+&
+2022
+&
+Fraunhofer Institute for Translational Medicine and Pharmacology (ITMP)
+\cite{mpoxkg_group}
+\\
+
+
+\hline
+
+
+NGLY1 Deficiency KG
+&
+-
+&
+\cite{ngly1dkg_publication}
+&
+GitHub
+\cite{ngly1dkg_github1}
+\cite{ngly1dkg_github2}
+&
+.csv
+\cite{ngly1dkg_data1},
+Neo4j Browser
+\cite{ngly1dkg_data2}
+&
+2019
+&
+Su Lab, Scripps Research Institute
+\cite{ngly1dkg_group}
+\\
+
+
+\hline
+
+
+NeDRex
+&
+\cite{nedrex_website}
+&
+\cite{nedrex_publication}
+&
+GitHub
+\cite{nedrex_github1}
+\cite{nedrex_github2}
+\cite{nedrex_github3}
+&
+REST API
+\cite{nedrex_data1},
+Neo4j API
+\cite{nedrex_data2},
+Cytoscape app
+\cite{nedrex_cytoscape}
+&
+2021
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+Neo4COVID-19
+&
+\cite{neo4covid19_website}
+&
+\cite{neo4covid19_publication}
+&
+GitHub
+\cite{neo4covid19_github}
+&
+Neo4j Browser
+\cite{neo4covid19_data}
+&
+2022
+&
+National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH)
+\cite{neo4covid19_group}
+\\
+
+
+\hline
+
+
+OREGANO
+&
+-
+&
+\cite{oregano_publication1}
+\cite{oregano_publication2}
+&
+GitLab
+\cite{oregano_gitlab}
+&
+.tsv
+\cite{oregano_data1}
+\cite{oregano_data2}
+\cite{oregano_data3},
+SPARQL endpoint
+\cite{oregano_data4}
+&
+2023
+&
+Population Health Research Center, University of Bordeaux
+\cite{oregano_group}
+\\
+
+
+\hline
+
+
+Open Graph Benchmark: ogbl-biokg
+&
+\cite{ogblbiokg_website}
+&
+\cite{ogblbiokg_publication}
+&
+GitHub
+\cite{ogblbiokg_github},
+PyPI
+\cite{ogblbiokg_pypi}
+&
+.csv
+\cite{ogblbiokg_data}
+&
+2023
+&
+Department of Computer Science, Stanford University
+\cite{ogblbiokg_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+OpenBioLink
+&
+\cite{openbiolink_website}
+&
+\cite{openbiolink_publication}
+&
+GitHub
+\cite{openbiolink_github},
+PyPI
+\cite{openbiolink_pypi}
+&
+.tsv
+\cite{openbiolink_data1},
+.tsv / .nt / .bel
+\cite{openbiolink_data2}
+&
+2020
+&
+Institute of Artificial Intelligence, Medical University of Vienna
+\cite{openbiolink_group}
+\\
+
+
+\hline
+
+
+Otter-Knowledge
+&
+\cite{otter_website}
+&
+\cite{otter_publication}
+&
+GitHub
+\cite{otter_github}
+&
+.nt
+\cite{otter_data1}
+\cite{otter_data2}
+\cite{otter_data3}
+\cite{otter_data4}
+&
+2023
+&
+Company: IBM
+\cite{otter_group}
+\\
+
+
+\hline
+
+
+PGxLOD
+&
+\cite{pgxlod_website}
+&
+\cite{pgxlod_publication1}
+\cite{pgxlod_publication2}
+&
+GitHub
+\cite{pgxlod_github1}
+\cite{pgxlod_github2}
+&
+SPARQL endpoint
+\cite{pgxlod_data1},
+FCT Browser
+\cite{pgxlod_data2}
+&
+2019
+&
+PractiKPharma project, Loria
+\cite{pgxlod_group1},
+Loria, Joint Research Unit between CNRS, University of Lorraine, INRIA
+\cite{pgxlod_group2}
+\\
+
+
+\hline
+
+
+PharMeBINet
+&
+\cite{pharmebinet_website}
+&
+\cite{pharmebinet_publication}
+&
+GitHub
+\cite{pharmebinet_github}
+&
+.db (Neo4j) / .graphml
+\cite{pharmebinet_data1}
+\cite{pharmebinet_data2}
+&
+2022
+&
+Bioinformatics / Medical Informatics Department, University Bielefeld
+\cite{pharmebinet_group}
+\\
+
+
+\hline
+
+
+PharmKG
+&
+-
+&
+\cite{pharmkg_publication}
+&
+GitHub
+\cite{pharmkg_github}
+&
+.tsv
+\cite{pharmkg_data}
+&
+2020
+&
+School of Data and Computer Science, Sun Yat-sen University
+\cite{pharmkg_group}
+\\
+
+
+\hline
+
+
+PheKnowLator
+&
+\cite{pheknowlator_website}
+&
+\cite{pheknowlator_publication1}
+\cite{pheknowlator_publication2}
+&
+GitHub
+\cite{pheknowlator_github},
+PyPI
+\cite{pheknowlator_pypi},
+Zenodo
+\cite{pheknowlator_zenodo}
+&
+.owl / .nt / .gpickle / .pkl / .tsv / .json
+\cite{pheknowlator_data1}
+\cite{pheknowlator_data2}
+\cite{pheknowlator_data3}
+&
+2021
+&
+Computational Bioscience Program, University of Colorado
+\cite{pheknowlator_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+PrimeKG
+&
+\cite{primekg_website}
+&
+\cite{primekg_publication}
+&
+GitHub
+\cite{primekg_github}
+&
+.csv / .tab
+\cite{primekg_data}
+&
+2022
+&
+Zitnik Lab, Harvard University
+\cite{primekg_group}
+\\
+
+
+\hline
+
+
+PubChemRDF
+&
+\cite{pubchemrdf_website}
+&
+\cite{pubchemrdf_publication1}
+\cite{pubchemrdf_publication2}
+&
+-
+&
+.ttl
+\cite{pubchemrdf_data1}
+\cite{pubchemrdf_data2},
+REST API
+\cite{pubchemrdf_data3}
+&
+2023
+&
+PubChem, NCBI
+\cite{pubchemrdf_group}
+\\
+
+
+\hline
+
+
+PyKEEN
+&
+\cite{pykeen_website}
+&
+\cite{pykeen_publication1}
+\cite{pykeen_publication2}
+\cite{pykeen_publication3}
+&
+GitHub
+\cite{pykeen_github},
+PyPI
+\cite{pykeen_pypi}
+&
+.csv
+\cite{pykeen_data1}
+\cite{pykeen_data2}
+&
+2023
+&
+Smart Data Analytics Group, University of Bonn
+\cite{pykeen_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+RDKG-115
+&
+-
+&
+\cite{rdkg115_publication}
+&
+GitHub
+\cite{rdkg115_github}
+&
+.csv
+\cite{rdkg115_data1}
+\cite{rdkg115_data2}
+&
+2023
+&
+Intelligent Medicine Institute, Fudan University
+\cite{rdkg115_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+RNA-KG
+&
+-
+&
+\cite{rnakg_publication1}
+\cite{rnakg_publication2}
+&
+GitHub
+\cite{rnakg_github}
+&
+.nt / .txt
+\cite{rnakg_data1},
+SPARQL endpoint
+\cite{rnakg_data2}
+&
+2023
+&
+AnacletoLAB, University of Milan
+\cite{rnakg_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+\hline
+
+
+ROBOKOP
+&
+\cite{robokop_website1}
+\cite{robokop_website2}
+&
+\cite{robokop_publication1}
+\cite{robokop_publication2}
+&
+GitHub
+\cite{robokop_github}
+&
+.dump (Neo4j) / .json / .jsonl
+\cite{robokop_data1},
+Neo4j Browser
+\cite{robokop_data2},
+REST API
+\cite{robokop_data3}
+&
+2023
+&
+Renaissance Computing Institute (RENCI), University of North Carolina
+\cite{robokop_group}
+\\
+
+
+\hline
+
+
+RPath KGs
+&
+-
+&
+\cite{rpath_publication}
+&
+GitHub
+\cite{rpath_github}
+&
+.tsv
+\cite{rpath_data1}
+\cite{rpath_data2}
+&
+2022
+&
+Company: Enveda Biosciences
+\cite{rpath_group}
+\\
+
+
+\hline
+
+
+RTX-KG2
+&
+-
+&
+\cite{rtxkg2_publication}
+&
+GitHub
+\cite{rtxkg2_github}
+&
+.json
+\cite{rtxkg2_data1}
+\cite{rtxkg2_data2}
+&
+2023
+&
+Development team for the RTX biomedical reasoning tool
+\cite{rtxkg2_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+Rare diseases integrative KG
+&
+-
+&
+\cite{rdikg_publication}
+&
+GitHub
+\cite{rdikg_github}
+&
+Neo4j Browser
+\cite{rdikg_data}
+&
+2020
+&
+Division of Pre-Clinical Innovation, NCATS, NIH
+\cite{rdikg_group}
+\\
+
+
+\hline
+
+
+Reactome Graph Database
+&
+\cite{reactome_website}
+&
+\cite{reactome_publication1}
+\cite{reactome_publication2}
+&
+GitHub
+\cite{reactome_github1}
+\cite{reactome_github2}
+&
+.graphdb (Neo4j)
+\cite{reactome_data1},
+REST API
+\cite{reactome_data2}
+&
+2023
+&
+Reactome Team
+\cite{reactome_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+Rosalind knowledge graph
+&
+\cite{rosalind_website}
+&
+\cite{rosalind_publication}
+&
+-
+&
+-
+&
+2020
+&
+Company: ROSALIND, Inc.
+\cite{rosalind_group1},
+Company: BenevolentAI
+\cite{rosalind_group2}
+\\
+
+
+\hline
+
+
+SDKG-11
+&
+-
+&
+\cite{sdkg11_publication}
+&
+GitHub
+\cite{sdkg11_github}
+&
+.csv
+\cite{sdkg11_data}
+&
+2022
+&
+Institutes of Biomedical Sciences, Fudan University
+\cite{sdkg115_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+SLKG
+&
+\cite{slkg_website}
+&
+\cite{slkg_publication}
+&
+-
+&
+Web UI
+\cite{slkg_data}
+&
+2021
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+SPOKE
+&
+\cite{spoke_website1}
+\cite{spoke_website2}
+\cite{spoke_website3}
+\cite{spoke_website4}
+&
+\cite{spoke_publication}
+&
+GitHub
+\cite{spoke_github}
+&
+REST API
+\cite{spoke_data}
+&
+2023
+&
+SPOKE Team
+\cite{spoke_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+SemKG
+&
+-
+&
+\cite{semkg_publication}
+&
+GitHub
+\cite{semkg_github}
+&
+.txt
+\cite{semkg_data}
+&
+2021
+&
+College of Computer Science and Technology, Dalian University of Technology
+\cite{semkg_group}
+\\
+
+
+\hline
+
+
+SemNet / SemMedDB
+&
+\cite{semnet_website}
+&
+\cite{semnet_publication1}
+\cite{semnet_publication2}
+&
+GitHub
+\cite{semnet_github}
+&
+.csv / .sql (MySQL)
+\cite{semnet_data}
+&
+2022
+&
+Laboratory for Pathology Dynamics, Emory University
+\cite{semnet_group}
+\\
+
+
+\hline
+
+
+StrokeKG
+&
+-
+&
+\cite{strokekg_publication}
+&
+GitHub
+\cite{strokekg_github}
+&
+.csv / .txt
+\cite{strokekg_github},
+Neo4j browser
+\cite{strokekg_data}
+&
+2020
+&
+College of Computer Science and Technology, National University of Defense Technology
+\cite{strokekg_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+SynLethKG /  KG4SL
+&
+\cite{kg4sl_website2}
+&
+\cite{kg4sl_publication1}
+\cite{kg4sl_publication2}
+&
+GitHub
+\cite{kg4sl_github1}
+\cite{kg4sl_github2}
+&
+.csv / .npy / .txt
+\cite{kg4sl_data1},
+.csv / .json / .graphml
+\cite{kg4sl_data2}
+&
+2023
+&
+Zheng Lab, ShanghaiTech University
+\cite{kg4sl_group}
+\\
+
+
+\hline
+
+
+TogoGenome
+&
+\cite{togogenome_website}
+&
+\cite{togogenome_publication}
+&
+GitHub
+\cite{togogenome_github}
+&
+SPARQL endpoint
+\cite{togogenome_data}
+&
+2019
+&
+Database Center for Life Science, University of Tokyo
+\cite{togogenome_group}
+\\
+
+
+\hline
+
+
+TypeDB Bio
+&
+\cite{typedbbio_website}
+&
+-
+&
+GitHub
+\cite{typedbbio_github}
+&
+.csv
+\cite{typedbbio_data}
+&
+2023
+&
+Company: Vaticle Ltd
+\cite{typedbbio_group}
+\\
+
+
+\hline
+
+
+Wikidata Biomedical Knowledge Graph
+&
+-
+&
+\cite{wbkg_publication}
+&
+GitHub
+\cite{wbkg_github1}
+\cite{wbkg_github2}
+\cite{wbkg_github3}
+\cite{wbkg_github4}
+\cite{wbkg_github5}
+&
+.json / .ttl / .nt / .xml
+\cite{wbkg_data1},
+SPARQL endpoint
+\cite{wbkg_data2}
+&
+2023
+&
+Su Lab, Scripps Research Institute
+\cite{wbkg_group}
+\\
+
+
+\caption{Projects that provide biomedical knowledge graphs.}
+\end{xltabular}
+
+\end{landscape}
+
+
+
+
+
+\newpage
+\section{Resources for creating biomedical knowledge graphs}
+\label{sec:resources}
+
+\subsection{Definitions}
+\label{sec:definitions}
+
+The phrase "knowledge graph" can be traced back in literature to the 1970s, but its contemporary use was initiated by a Google product announcement in 2012, which soon afterwards inspired similar releases by other companies and in turn led to a renaissance of studying the concept in academia \cite{hogan2021}. In light of this historical development, it comes to no surprise that the phrase "knowledge graph" is associated with more than one meaning in current practice. One way to characterize the various incarnations is to understand them as instances of different graph data models that can be defined unambiguously by formal notation from basic set theory. This approach has the advantage that it captures different kinds of knowledge graphs precisely, allows to study the properties that differentiate them, and thereby make informed decisions on what type is best suited for particular use cases.
+
+The following part of the survey provides a collection of several such definitions of the phrase "knowledge graph" in varying degrees of formal rigor. All of them were extracted from biomedical knowledge graph projects listed in the previous section and from references they provide in the descriptions of their data models. Outside of this restricted set of articles, a broader literature review might uncover other useful overviews and discussions, but the purpose of this section is to reflect what definitions are used in practice by projects that construct biomedical knowledge graphs in order to reflect the state of the art in the field of biomedicine. To this end, it is worth to note that 1) not all projects explicitly describe what type of knowledge graph they are constructing but rather require the reader to deduce it from the context and results, and 2) only a few projects provide references to detailed discussions of the graph data model they have chosen for their purposes, leaving it to the reader to identify and acquire presupposed background knowledge.
+
+Of all projects covered by this survey, two stood out by containing references to particularly high-quality discussions of the phrase "knowledge graph". First, OREGANO \cite{oregano_publication2} referred to a comprehensive article that covers various common types of knowledge graphs, languages to query and validate them, semantic frameworks to interpret them, and several other aspects in a highly accessible tutorial-like way \cite{hogan2021}. Second, SynLethKG / KG4SL \cite{kg4sl_publication1} referred to a recent book about graph representation learning which contains clean formal definitions of diverse graph types, moving from basic to more advanced variants, followed by an in depth discussion of various graph embedding approaches \cite{hamilton2020}.
+
+The following content is organized by listing each project that provides a definition of the phrase "knowledge graph" or associated concepts in a separate subsection. Relevant passages were quoted both from the project's own publications and, in the few cases where relevant references were available, also from external articles that contain more detailed elaborations. Bold text highlights were added by the author of this survey to mark relevant terms and phrases, while all other forms of emphasis were reproduced from the original sources. Citations were also kept as they are found in the original texts and therefore adhere to a few different styles.
+
+
+\subsubsection{Bio2RDF}
+
+\begin{itemize}
+
+\item Bio2RDF publication:
+\begin{displayquote}[\cite{bio2rdf_publication1}]
+Each year, NAR [3] publishes a new version of its bioinformatics database list. [...] With such a proliferation of knowledge sources, there is a pressing need for a global multisite search engine and for good \textbf{data integration tools}. According to the \textbf{data warehouse} approach, such services can be built by collecting information into a \textbf{central data repository} [5] and queried with an interface built on top of the repository. However, the warehouse approach does not address the problem of accessing a database outside the warehouse. A system that would be able to query and connect different databases available on Internet would solve that problem. This is one of the goals of the \textbf{semantic web approach}: to offer the data warehouse experience without the need of moving first the data into a central repository.\\
+To address the data integration problem, the semantic web community, led by the W3C, proposed a solution based on a series of standards: the \textbf{RDF format} for document [6] and the \textbf{OWL language} for ontology specification [7]. RDF and OWL generate a series of entities called ’\textbf{triple}’ in the form of a subject, predicate and object. Database systems able to handle triples are called \textbf{triplestore}. [...] We have developed a semantic web application called Bio2RDF to help solve the problem of knowledge integration in bioinformatics.
+\end{displayquote}
+
+
+\item Reference [5] in the Bio2RDF publication:
+\begin{displayquote}[\cite{stein2003}]
+There are three main ways in which groups have tried to \textbf{integrate biological databases}, which are referred to here as link integration, view integration and data warehouses.
+[...]
+
+\textbf{Link integration} has been by far the most successful, because it lends itself to the haphazard nature of the web. In the familiar and ubiquitous version of this technique, researchers begin their query with one data source, and then follow hypertext links to related information in other data sources.
+[...]
+
+\textbf{View integration} leaves the information in its source databases, but builds an environment around the databases that makes them all seem to be part of one large system.
+[...]
+
+The last general approach can be broadly described as bringing all the data under one roof in a single database (FIG. 5). The first step in \textbf{data warehousing} is to develop a unified data model that can accommodate all the information that is contained in the various source databases. The next step is to develop a series of software programs that will fetch the data from the source databases, transform them to match the unified data model and then load them into the warehouse. The warehouse can then be used as a ‘one-stop shop’ for answering any of the questions that the source databases can handle, as well as those that require integrated knowledge that the individual sources do not have.
+[...]
+
+\textbf{Ontologies} are a sophisticated type of controlled vocabulary that attempt to capture the main concepts in a KNOWLEDGE DOMAIN$ ^{13} $. [...] Although ontologies do not, by themselves, lead to the integration of biological databases, they are important facilitators. The existence of a shared ontology allows an integrator to merge two databases with some guarantee that a \textbf{term} that is used in one database corresponds to the same term used in the other. [...] An important feature of biological ontologies is that the terms are organized in a \textbf{hierarchical} manner, so that more specific terms are defined as specializations of more general ones. [...] To support the complex relationships that are common in biology, terms are allowed to have more than one parent in a data structure that is formally called a \textbf{directed acyclic graph (DAG)}.
+[...]
+
+\textbf{Globally unique identifiers}: Shared ontologies can help bioinformaticians agree on how to describe biological objects, but they do not necessarily help them to agree on how to name them. Recall the issues that the same biological object might have multiple names, and the same name might denote multiple objects. One approach is to designate an \textbf{authoritative names commission} to manage the definitive list of such names, as the HUGO Gene Nomenclature Committee is attempting to do with human gene symbols. This rarely works in practice because of the dynamic nature of the field. [...] Although a central naming authority is usually impractical, there are often \textbf{de facto authorities} for local subsets of the names. For example, the NCBI can be considered to be authoritative for GenBank identifiers, and WormBase is authoritative for C. elegans gene symbols.
+\end{displayquote}
+
+
+\item Reference [6] in the Bio2RDF publication:
+\begin{displayquote}[\cite{rdf2023}]
+\textbf{Resource Description Framework (RDF)}: RDF is a standard model for \textbf{data interchange} on the Web. RDF has features that facilitate data merging even if the underlying schemas differ, and it specifically supports the evolution of schemas over time without requiring all the data consumers to be changed.
+
+RDF extends the linking structure of the Web to use URIs to name the relationship between things as well as the two ends of the link (this is usually referred to as a “\textbf{triple}”). Using this simple model, it allows structured and semi-structured data to be mixed, exposed, and shared across different applications.
+
+This linking structure forms a \textbf{directed, labeled graph}, where the edges represent the named link between two resources, represented by the graph nodes. This graph view is the easiest possible mental model for RDF and is often used in easy-to-understand visual explanations. 
+\end{displayquote}
+
+
+\item Reference [7] in the Bio2RDF publication:
+\begin{displayquote}[\cite{owl2023}]
+The W3C \textbf{Web Ontology Language (OWL)} is a Semantic Web language designed to represent rich and complex knowledge about things, groups of things, and relations between things. OWL is a computational logic-based language such that knowledge expressed in OWL can be exploited by computer programs, e.g., to verify the consistency of that knowledge or to make implicit knowledge explicit. OWL documents, known as ontologies, can be published in the World Wide Web and may refer to or be referred from other OWL ontologies. OWL is part of the \textbf{W3C’s Semantic Web technology} stack, which includes RDF, RDFS, SPARQL, etc. 
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{BioKG}
+
+\begin{itemize}
+
+\item BioKG publication:
+\begin{displayquote}[\cite{biokg_publication}]
+The BioKG \textbf{knowledge graph} compiles biological data from different sources in a graph format with focus on data on proteins and chemical drugs. The contents of BioKG knowledge graph can be categorized into three categories: links, properties and metadata. Links represent the connections between the different biological entities, while properties represent the annotations associated to entities. Each biological entity type has its own set of links and properties that describe its activities in biological systems.
+[...]
+
+The \textbf{links} part of the BioKG data is the core part of BioKG which models the relationships between the biological entities as illustrated in Fig. 1.
+[...]
+
+The \textbf{properties} part of BioKG contains the associations between the previously discussed biological entities and their different attributes as illustrated in Fig. 5.
+[...]
+
+The \textbf{metadata} part contains data about biological entities names, types, synonyms, etc. This part of the data is not meant to be used in the training of relational learning models, and it does not contain any attributes or important associations for biological entities. Our objective, however, in this part is to maximize the richness of metadata on each of the included biological entities to facilitate analysing their related insights and to allow for tracking history of changes of ids and synonyms of biological entities’ databases entries.
+\end{displayquote}
+
+\end{itemize}
+
+\subsubsection{Bioteque}
+
+\begin{itemize}
+
+\item Bioteque publication:
+\begin{displayquote}[\cite{bioteque_publication1}]
+Building the \textbf{metagraph}. All gathered data was stored in a \textbf{graph database (KG)} in which nodes represent biological or chemical entities and edges represent associations between them.
+
+\textbf{Nodes} (\textbf{entities}). The nodes in the graph can belong to one of 12 types (aka metanodes). For each entity type, we predefined a universe of nodes and chose a reference vocabulary based on standard terminologies. [...]
+
+\textbf{Vocabulary mapping}. To integrate terminologies, we extracted curated cross-references from the official terminology sources and associated ontologies. As the nomenclatures used to identify diseases and pathways were particularly diverse and rarely cross-referenced, we further increased the mapping of these terms by inferring similarities within concepts as detailed below.
+[...]
+
+\textbf{Edges (associations)}. Edges in the graph are used to link biological and/or chemical entities. Since two entities may be connected by multiple edge types (i.e., ‘compound treats disease’ or ‘compound causes disease’), we define the associations as \textbf{triplets} (metapaths) of entity-relationship-entity (CPD-trt-DIS, CPD-cau-DIS).\\
+\textbf{Homogeneous associations} are those concerning entities (metanodes) of the same type (e.g.,‘gene is co-expressed with gene’, GENcex-GEN), while \textbf{heterogeneous associations} are related to entities of different types (e.g., ‘tissue has cell’, TIS-has-CLL).
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{CROssBAR}
+
+\begin{itemize}
+\item CROssBAR publication:
+\begin{displayquote}[\cite{crossbar_publication}]
+The term \textbf{knowledge graph (KG)} defines a specialized data representation structure, in which collections of entities (nodes) are linked to each other (edges) in a semantic context (29). In this study, we chose to represent \textbf{heterogeneous biomedical data} using a KG-based structure. In CROssBAR knowledge graphs (CROssBAR-KG), biological components/terms (i.e. drugs, compounds, genes/proteins, bio-processes/pathways, phenotypes and diseases) are represented as nodes, and their known or predicted pairwise relationships are annotated as edges (a protein and its coding gene is treated as one merged term/entry/node).
+\end{displayquote}
+
+
+\item Reference (29) in the CROssBAR publication:
+\begin{displayquote}[\cite{wang2014}]
+A \textbf{knowledge graph} is a \textbf{multi-relational graph} composed of entities as nodes and relations as different types of edges. An instance of edge is a \textbf{triplet} of fact \textit{(head entity, relation, tail entity)} (denoted as $ (h, r, t) $). In the past decade, there have been great achievements in building large scale knowledge graphs, however, the general paradigm to support computing is still not clear. Two major difficulties are: (1) A knowledge graph is a symbolic and logical system while applications often involve numerical computing in continuous spaces; (2) It is difficult to aggregate global knowledge over a graph. [...]
+
+Recently a new approach has been proposed to deal with the problem, which attempts to embed a knowledge graph into a \textbf{continuous vector space} while preserving certain properties of the original graph (Socher et al. 2013; Bordes et al. 2013a; Weston et al. 2013; Bordes et al. 2011; 2013b; 2012; Chang, Yih, and Meek 2013). For example, each entity $ h $ (or $ t $) is represented as a point $ \mathbf{h} $ (or $ \mathbf{t} $) in the vector space while each relation $ r $ is modeled as an operation in the space which is characterized by an a vector $ \mathbf{r} $, such as translation, projection, etc. The representations of entities and relations are obtained by minimizing a global loss function involving all entities and relations. As a result, even the embedding representation of a single entity/relation encodes global information from the whole knowledge graph. Then the embedding representations can be used to serve all kinds of applications. A straightforward one is to complete missing edges in a knowledge graph. For any candidate triplet $ (h, r, t) $, we can confirm the correctness simply by checking the compatibility of the representations $ \mathbf{h} $ and $ \mathbf{t} $ under the operation characterized by $ \mathbf{r} $.\\
+Generally, \textbf{knowledge graph embedding} represents an entity as a $ k $-dimensional vector $ \mathbf{h} $ (or $ \mathbf{t} $) and defines a \textbf{scoring function} $ f_r(\mathbf{h}, \mathbf{t}) $ to measure the plausibility of the triplet $ (h, r, t) $ in the embedding space. The score function implies a transformation $ \mathbf{r} $ on the pair of entities which characterizes the relation $ r $.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{Drug-CoV}
+
+\begin{itemize}
+
+\item Drug-CoV publication:
+\begin{displayquote}[\cite{drugcov_publication}]
+\textbf{Knowledge graph}. A KG is a type of structured data that represents knowledge as a graph. In this graph, nodes represent entities, and edges represent relationships or connections between them. A KG can be considered a type of \textbf{semantic network} that is used to organize and represent knowledge in a machine-readable format [66]. It represents information in the format of triples \textit{(subject, relation, object)}. Notable examples include Wikidata [59] and DrugBank [68]. The notation of the KG in this paper is denoted as $ G = (E, G) $, where $ E $ is the set of entities (e.g., drugs, diseases and genes) and $ R $ is the set of relations (e.g., cause, encode and target) that connect the entities.\\
+Entity and relation. In a KG, \textbf{entities} refer to the real-world objects, concepts, or events that are being represented. \textbf{Relations}, on the other hand, describe the connections or interactions between entities in the real world. In a triple $ (subject, relation, object) $, the term subject (or object) also can be used interchangeably with the subject entity (or object entity). In this paper, a subject is denoted as $ s \in E $, an object is denoted as $ o \in E $ and a relation is denoted as $ r \in R $.
+Multi-relation. In our paper, we adopt the definition of \textbf{multi-relations} introduced by [27]. Multi-relations refer to a situation where multiple types of relations (or edges) exist between a pair of entities.
+\end{displayquote}
+
+
+\item Reference [27] in the Drug-CoV publication:
+\begin{displayquote}[\cite{li2022}]
+A \textbf{Knowledge Graph (KG)} represents a \textbf{graph-structured knowledge base} to encode real-world entities and illustrate the relationship between them. There are two main branches: triple-based KGs and quadruple-based KGs. The former is typically represented as sets of \textbf{Resource Description Framework (RDF) triples} $ (s, r, o) $, where $ s $ is the subject entity, o is the object entity and $ r $ is the relation, e.g. (Barack Obama, president of, USA). The latter is often called Temporal KGs (TKGs) represented as quadruples $ (s, r, o, T) $, where $ T $ denotes the timestamp, e.g. (Barack Obama, president of, USA, 2010). Although typical KGs contain millions of entities and billions of triples, they are far from complete [1]. [...]
+
+Despite their success in predicting missing links, the triple/path-level learning methods disconnect the diverse aspects of \textbf{multi-relations} that are highly semantically related [10]. For an instance extracted from FB15k-237 as shown in Table 1, there are a total of four relations between entity Prince Edward Island and entity Canada, which indicates the positional relationship at different hierarchies. In the \textbf{triple-level learning}, models split the example into four different triples and feed them to the score function $ f: f(Prince Edward Island, r_a, Canada) $, $ f(Prince Edward Island, r_b, Canada) $, $ f (Prince Edward Island, r_c, Canada) $ and\\ $ f(Prince Edward Island, r_d, Canada) $. In the \textbf{path-level learning}, models firstly mine paths between entity $ Prince Edward Island $ and entity $ Canada $. Then models learn the score function based on the four triples and paths. Either triple-level learning or path-level learning treats this example as four different triples and therefore weakens the semantic connection between the four relations. Obviously, to reflect the relevant knowledge, it is more reasonable to model multi-relations between a pair of entities as an individual vector representation rather than divide them into four different triples [10].
+\end{displayquote}
+
+
+\item Reference [10] in the previous reference [27]:
+\begin{displayquote}[\cite{zhang2017}]
+An elementary fact of the \textbf{knowledge graph} is represented in the form of a triple with two entities and a relation, i.e., $ (head, relation, tail) $ denoted by $ (h, r, t) $. For example, $ (Obama, born here, USA) $ corresponds to the knowledge that Obama was born in the USA.
+[...] For a given pair of entities, if there is more than one relation simultaneously between them, then each of these relations is called a \textbf{hyper-relation}. Conversely, if a relation has never co-occurred with another relation in some entity pairs, it is called a \textbf{sole-relation}.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{DrugRep-HeSiaGraph}
+
+\begin{itemize}
+
+\item DrugRep-HeSiaGraph publication:
+\begin{displayquote}[\cite{drugrephesiagraph_publication}]
+KGs are a proper way to represent information and knowledge in a structural foundation. In order to create a KG, it is essential to address these fundamental aspects: KG construction, node and relationship definition (edge types), and numerical vector embedding, which all play a vital role in its effectiveness. A \textbf{knowledge graph} as $ G = <V, E, R> $ is defined where $ V $ shows the set of nodes, $ E $ demonstrates the set of edges, and $ R $ is the relationship types between nodes. In KG, each \textbf{triplet} is specified as $ <h, r, t> \in E $, where $ h, t \in V $, and $ r \in R $ shows the relationship type $ r $ between $ h, t $.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{GenomicKB}
+
+\begin{itemize}
+
+\item GenomicKB publication:
+\begin{displayquote}[\cite{genomickb_publication}]
+\textbf{Knowledge graphs} intuitively represent connected data entities, and have been applied to biological domains (7–12). Compared with traditional tabular-structured data stored at separate portals, GenomicKB emphasizes the relations between genomic entities at multiple resolutions and from multiple tissues and cell types. Entities from each consortium automatically and explicitly cross-link with one another in the knowledge graph without any operations such as table joining and sorting. In addition, our GenomicKB is rigorously built with well-defined schemata, identities, and ontologies to maintain the data structure, disambiguate genomic concepts, and support future extension. As a result, GenomicKB is not only flexible to adapt updates of nodes, relations, and entire data sources, but also connects with other knowledge graphs in related biomedical domains.
+[...]
+
+\textbf{Schemata} prescribe high-level structures and semantics that the knowledge graph follows, which reduces data errors and allows reasoning over the data graph (15).
+[...]
+
+\textbf{Identity} consolidates a set of unique identifiers and disambiguates different genomic identities in the knowledge graph. Since different data sources may follow different conventions to represent the same concept (e.g. ENSG00000223972 and gene DDX11L1), or use the same name to describe different concepts (e.g., gene p53 and protein p53), we use \textit{globally-unique identifiers} and \textit{external identity links} in GenomicKB. For example, for genes, transcripts and exons, we refer to Ensembl (16) IDs for their external identity links.
+[...]
+
+\textbf{Ontology} is a uniform language to describe scientific terms. Concepts such as cell lines and tissues are represented as ontology URLs and IDs instead of common names to ensure disambiguity and future integration with other knowledge graphs.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{GP-KG}
+
+\begin{itemize}
+
+\item GP-KG publication:
+\begin{displayquote}[\cite{gpkg_publication}]
+The embedding module of KG-Predict is used to transform entities (e.g., drugs, diseases), relations (e.g., Drug–treat–disease), and their features into low-dimensional vector representations whilst maximally preserving properties like graph structure and information. These entity and relation representations are used to predict unseen interactions in the knowledge graph. More specifically, we first define the \textbf{knowledge graph} as, $ G = (V , E, X, R, S) $ where $ V $ and $ E $ denote the set of entities and relations, respectively. $ T \subseteq V \times E \times V $ denotes the set of \textbf{triplets}, $ X $ represents features of nodes, $ R $ denotes the set of relations, $ S $ denotes the initial relation features. KG-Predict takes $ G $ as input and learns embeddings of entities and relations by aggregating multi-relational information in the knowledge graph.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{Hetionet}
+
+\begin{itemize}
+\item Hetionet publication:
+\begin{displayquote}[\cite{hetionet_publication2}]
+We created a general framework and open source software package for representing heterogeneous networks. Like traditional graphs, \textbf{heterogeneous networks} consist of nodes connected by edges, except that an additional meta layer defines type. Node type signifies the kind of entity encoded, whereas edge type signifies the kind of relationship encoded. Edge types are comprised of a source node type, target node type, kind (to differentiate between multiple edge types connecting the same node types), and direction (allowing for both directed and undirected edge types). The user defines these types and annotates each node and edge, upon creation, with its corresponding type. The meta layer itself can be represented as a graph consisting of node types connected by edge types. When referring to this graph of types, we use the prefix ‘meta’. \textbf{Metagraphs} — called \textbf{schemas} in previous work [34,35] — consist of metanodes connected by metaedges. In a heterogeneous network, each \textbf{path}, a series of edges with common intermediary nodes, corresponds to a \textbf{metapath} representing the type of path. A path’s metapath is the series of metaedges corresponding to that path’s edges. The possible metapaths within a heterogeneous network can be enumerated by traversing the metagraph.
+\end{displayquote}
+
+\newpage
+\item Reference [35] in the Hetionet publication:
+\begin{displayquote}[\cite{hetionet_publication2}]
+An \textbf{information network} is defined as a \textbf{directed graph} $ G = (\mathcal{V}, \mathcal{E}) $ with an object type mapping function $ \tau : \mathcal{V} \rightarrow \mathcal{A} $ and a link type mapping function $ \phi : \mathcal{E} \rightarrow \mathcal{R} $, where each object $ v \in \mathcal{V} $ belongs to one particular object type $ \tau(v) \in \mathcal{A} $, each link $ e \in \mathcal{E} $ belongs to a particular relation $ \phi(e) \in \mathcal{R} $, and if two links belong to the same relation type, the two links share the same starting object type as well as the ending object type.\\
+Different from the traditional network definition, we explicitly distinguish object types and
+relationship types in the network. [...] When the types of objects $ |\mathcal{A}| > 1 $ or the types of relations $ |\mathcal{R}| > 1 $, the network is called \textbf{heterogeneous information network}; otherwise, it is a \textbf{homogeneous information network}.\\
+Given a complex heterogeneous information network, it is necessary to provide its meta level (i.e., schema-level) description for better understanding the object types and link types in the network. Therefore, we propose the concept of \textbf{network schema} to describe the \textbf{meta structure of a network}. [...]
+
+The \textbf{network schema}, denoted as $ T_G = (\mathcal{A}, \mathcal{R}) $, is a \textbf{meta template for a heterogeneous network} $ G = (\mathcal{V}, \mathcal{E}) $ with the object type mapping $ \tau : \mathcal{V} \rightarrow \mathcal{A} $ and the link mapping $ \phi : \mathcal{E} \rightarrow \mathcal{R} $, which is a directed graph defined over object types $ \mathcal{A} $, with edges as relations from $ \mathcal{R} $.\\
+The network schema of a heterogeneous information network has specified type constraints on the sets of objects and relationships between the objects. These constraints make a heterogeneous information network semi-structured, guiding the exploration of the semantics of the network. [...]
+
+Heterogeneous information networks can be constructed almost in any domain, such as so-
+cial networks (e.g., Facebook), e-commerce (e.g., Amazon and eBay), online movie databases (e.g.,
+IMDB), and numerous database applications. Heterogeneous information networks can also be constructed from text data, such as news collections, by \textbf{entity and relationship extraction} using natural language processing and other advanced techniques.\\
+Diverse information can be associated with information networks. \textbf{Attributes} can be attached to the nodes or links in an information network. For example, location attributes, either categorical or numerical, are often associated with some users and tweets in a Twitter information network. Also, \textbf{temporal information} is often associated with nodes and links to reflect the dynamics of an information network. For example, in a bibliographic information network, new papers and authors emerge every year, as well as their associated links.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{KEGG50k}
+
+\begin{itemize}
+
+\item KEGG50k publication:
+\begin{displayquote}[\cite{kegg50k_publication}]
+\textbf{Knowledge graphs} are a data representation that model relational information as a graph, where the graph nodes represent knowledge entities and its edges represent relations between them. They model facts as (subject, predicate, object) (SPO) \textbf{triples} \textit{e.g. (Aspirin, Drug-Target, COX-1)}, where a subject entity is connected to an object entity through a predicate relation.\\
+In recent years, knowledge graphs have become a popular means for data representation in the \textbf{semantic web} community to create the "web of data", which is a network of interconnected entities that can be easily interpreted by both humans and machines [36], where knowledge graphs are used to model \textbf{linked data}.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{KGen}
+
+\begin{itemize}
+
+\item KGen publication:
+\begin{displayquote}[\cite{kgen_publication}]
+In formal terms, a \textbf{Knowledge Graph} $ \mathcal{KG} = (\mathcal{V}, \mathcal{E}) $ can be represented as a regular graph, containing a set of Vertices $ \mathcal{V} $ and Edges $ \mathcal{E} $. The vertices express entities or concepts, and the edges express how such concepts and entities relate to each other.\\
+A \textbf{RDF triple} refers to a data entity composed of a subject ($ s $), predicate ($ p $) and an object ($ o $), represented as $ t = (s, p, o) $. In KGs, the edges are, then, a set of predicates, such that $ \mathcal{E} = \{p_0, p_1, \ldots, p_n\} $. The vertices are, in turn, a set of subjects and objects, such that $ \mathcal{V} = \{s_0, s_1, \ldots, s_n, o_0, o_1, \ldots, o_n\} $. In this work, a KG is represented as a set of RDF triples, such that, $ \mathcal{KG} = \{t_0, t_1, \ldots, t_n\} $, where $ t_0 = (s_0, p_0, o_0) $, $ t_1 = (s_1, p_1, o_1), \ldots, t_n = (s_n, p_n, o_n) $.\\
+An \textbf{ontology} describes a real-world domain in terms of concepts, attributes, relationships and axioms [54]. Formally, an ontology $ \mathcal{O} $ is represented as a set of classes $ \mathcal{C_O} $ interrelated by directed relations $ \mathcal{R} $, and a set of attributes $ \mathcal{A_O} $, i.e., $ \mathcal{O} = ( \mathcal{C_O}, \mathcal{R_O}, \mathcal{A_O} ) $.\\
+In this sense, we may consider an \textbf{ontology-linked knowledge graph} $ \mathcal{KG^\prime} = (\mathcal{V^\prime}, \mathcal{E^\prime}) = \{t^\prime_0, t^\prime_1, \ldots, t^\prime_n\} $, having some of its constituents as instances of classes, relations, and attributes of a given ontology $ \mathcal{O^\prime} = (\mathcal{C_{O^\prime}} , \mathcal{R_{O^\prime}} , \mathcal{A_{O^\prime}} ) $. A given predicate $ p^\prime \in E^\prime $ may be an instance of a relation $ r^\prime \in \mathcal{R_{O^\prime}} $. A given subject $ s^\prime \in V^\prime $ and an object $ o^\prime \in V^\prime $ may be instances of, either a class $ c^\prime \in \mathcal{C_{O^\prime}} $, or an attribute $ a^\prime \in \mathcal{A_{O^\prime}} $.\\
+We introduce our KGen (a shorthand for Knowledge Graph Generation) method and tool implementation to generate ontology-linked KGs.
+\end{displayquote}
+
+
+\item Reference [54] in the KGen publication:
+\begin{displayquote}[\cite{gruber1995}]
+An \textbf{ontology} is an explicit specification of a conceptualization. The term is borrowed from philosophy, where an Ontology is a systematic account of Existence. For AI systems, what “exists” is that which can be represented. When the knowledge of a domain is represented in a declarative formalism, the set of objects that can be represented is called the \textbf{universe of discourse}. This set of objects, and the describable relationships among them, are reflected in the representational vocabulary with which a knowledge-based program represents knowledge. Thus, in the context of AI, we can describe the ontology of a program by defining a set of representational terms. In such an ontology, definitions associate the names of entities in the universe of discourse (e.g., classes, relations, functions, or other objects) with human-readable text describing what the names mean, and formal axioms that constrain the interpretation and well-formed use of these terms. Formally, an ontology is the statement of a \textbf{logical theory}.$^1$ [...]
+
+Formal ontologies are designed. When we choose how to represent something in an ontology, we are making design decisions. To guide and evaluate our designs, we need objective criteria that are founded on the purpose of the resulting artifact, rather than based on a priori notions of naturalness or Truth. Here we propose a preliminary set of \textbf{design criteria} for ontologies whose purpose is knowledge sharing and interoperation among programs based on a shared conceptualization.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{NGLY1 Deficiency KG}
+
+\begin{itemize}
+
+\item NGLY1 Deficiency KG publication:
+\begin{displayquote}[\cite{ngly1dkg_publication}]
+\textbf{Knowledge graphs} are computer-readable semantic representations of relational information, where concepts are encoded as nodes, and the relationships between those concepts are represented as edges. Knowledge graphs make it easy to integrate information from many sources, to explore \textbf{heterogeneous information} within a single data model and to infer new relationships via efficient queries. Knowledge graphs have been used to organize background knowledge for data interpretation and hypothesis generation in a wide variety of contexts (6–9,4,10–12).
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{OREGANO}
+
+\begin{itemize}
+
+\item OREGANO publication:
+\begin{displayquote}[\cite{oregano_publication2}]
+The data used by learning algorithms must be represented in such a way that machines can learn a general model. One of our assumptions is that the more information there is to characterise a drug, the better the pattern. It is therefore necessary to integrate as much drug data as possible. One of the concerns that emerges in this context is that the data are very heterogeneous and it is difficult to characterise drugs in the same way. In order to learn effectively on such \textbf{heterogeneous data}, it is necessary to find a way to represent the drug data and to leverage this representation. The type of representation that can be used at this stage is a \textbf{knowledge graph}, which has been defined by Hogan et al. as: “\textit{a graph of data intended to accumulate and convey knowledge of real world, whose nodes represent nodes of interest and whose edges represent links between nodes}”$^9$. A knowledge graph therefore accumulates knowledge of the real world in which the nodes represent notions of interest and whose edges represent links between them. A knowledge graph is thus a set of nodes (or entities) $ N $ and labelled links (or relations or predicates) $ L $ represented as \textbf{triples} of the form: $ (N_x, L_1, N_y) $. The edges describe the binary links between two nodes and they are generally oriented and meaningful. In this case, the nodes are differentiated: the subject is the source node of the relationship, the object is the target node resulting in a \textbf{triplet} expressed as (subject, predicate, object).\\
+From the perspective of defining a graph for drug repositioning, it is then possible to represent each drug, target, disease or other related entities by a node in the graph and then link these nodes together.\\
+Biomedical data are well suited to be stored in knowledge graphs because they are scattered over many knowledge sources without being linked to each other. In this context, the “\textit{\textbf{Semantic Web} initiative}” offers an idealised vision of the Web, with the idea that resources on the Web should be connected by \textbf{semantic links} (as opposed to hyperlinks) and that the meaning of these resources should be exploitable by machines$^{10}$. Following this paradigm, various initiatives aiming to interconnect existing knowledge sources have emerge$^{11,12}$ [sic].
+\end{displayquote}
+
+
+\item Reference $^9$ in the OREGANO publication:
+\begin{displayquote}[\cite{hogan2021}]
+Though the phrase “\textbf{knowledge graph}” has been used in the literature since at least 1972 [118], the modern incarnation of the phrase stems from the 2012 announcement of the Google Knowledge Graph [122], followed by further announcements of knowledge graphs by Airbnb, Amazon, eBay, Facebook, IBM, LinkedIn, Microsoft, Uber, and more besides [57, 95]. The growing industrial uptake of the concept proved difficult for academia to ignore, with more and more scientific literature being published on knowledge graphs in recent years [32, 77, 100, 105, 106, 140, 144]. [...]
+
+The definition of a “\textbf{knowledge graph}” remains contentious [13, 15, 32], where a number of (sometimes conflicting) definitions have emerged, varying from specific technical proposals to more inclusive general proposals.$^1$ Herein, we define a knowledge graph as a \textit{graph of data intended to accumulate and convey knowledge of the real world, whose nodes represent entities of interest and whose edges represent potentially different relations between these entities}. The graph of data (a.k.a. \textit{data graph}) conforms to a graph-based data model, which may be a \textit{directed edge-labelled graph}, a \textit{heterogeneous graph}, a \textit{property graph}, and so on (we discuss these models in Section 2).
+[...]
+
+A \textbf{directed edge-labelled graph}, or del graph for short (also known as a \textit{multi-relational graph} [9, 17, 93]) is defined as a set of nodes — such as Santiago, Arica, 2018-03-22~12:00 — and a set of directed labelled edges between those nodes, such as Santa Lucía—city$\rightarrow$Santiago. In knowledge graphs, nodes represent entities (the city Santiago; the hill Santa Lucía; noon on March 22nd, 2018; etc.) and edges represent binary relations between those entities (e.g., Santa Lucía is in the city Santiago). [...] Modelling data in this way offers more flexibility for integrating new sources of data, compared to the standard relational model, where a schema must be defined upfront and followed at each step. While other structured data models such as trees (XML, JSON, etc.) would offer similar flexibility, graphs do not require organising the data hierarchically (should venue be a parent, child, or sibling of type, for example?). They also allow cycles to be represented and queried (e.g., in Figure 1, note the directed cycle in the routes between Santiago, Arica, and Viña del Mar).\\
+A standard data model based on del graphs is the \textbf{Resource Description Framework (RDF)} [24]. RDF defines three types of nodes: \textit{Internationalised Resource Identifiers (IRIs)}, used for globally identifying entities and relations on the Web; \textit{literals}, used to represent strings and other datatype values (integers, dates, etc.); and \textit{blank nodes}, used to denote the existence of an entity.
+[...]
+
+A \textbf{heterogeneous graph} [61, 142, 154] (or heterogeneous information network [128, 129]) is a graph where each node and edge is assigned one type. Heterogeneous graphs are thus akin to del graphs—with edge labels corresponding to edge types—but where the type of node forms part of the graph model itself, rather than being expressed as a special relation, as seen in Figure 2. An edge is called \textbf{\textit{homogeneous}} if it is between two nodes of the same type (e.g., borders); otherwise it is called \textbf{\textit{heterogeneous}} (e.g., capital). Heterogeneous graphs allow for partitioning nodes according to their type, for example, for the purposes of machine learning tasks [61, 142, 154]. However, unlike del graphs, they typically assume a one-to-one relation between nodes and types (notice the node Santiago with zero types and EID15 with multiple types in the del graph of Figure 1).
+[...]
+
+A \textbf{property graph} allows a set of property–value pairs and a label to be associated with nodes and edges, offering additional flexibility when modelling data [4, 84]. [...] Though not yet standardised, property graphs are used in popular graph databases, such as \textbf{Neo4j} [4, 84]. While the more intricate model offers greater flexibility in terms of how to encode data as a property graph (e.g., using property graphs, we can continue modelling flights as edges in Figure 3(b)) potentially leading to a more intuitive representation, these additional details likewise require more intricate query languages, formal semantics, and inductive techniques versus simpler graph models such as del graphs or heterogeneous graphs.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{Otter-Knowledge}
+
+\begin{itemize}
+
+\item Otter-Knowledge publication:
+\begin{displayquote}[\cite{otter_publication}]
+A \textbf{Multimodal Knowledge Graph (MKG)} is a \textbf{directed labeled graph} where labels for nodes and edges have well-defined meanings, and each node has a modality, a particular mode that qualifies its type (text, image, protein, molecule, etc.). We consider two node subsets: \textit{entity nodes} (or entities), which corresponds to concepts in the knowledge graph (for example protein, or molecule), and \textit{attribute nodes} (or attributes), which represent qualifying attributes of an entity (for example the mass of a molecule, or the description of a protein). We refer to an edge that connects an entity to an attribute as \textit{data property}, and an edge that connects two entities as \textit{object property}. Each node in the graph has a unique identifier, and a unique modality (specified as a string).
+[...]
+
+The framework that builds the MKG ensures that each \textbf{triple} is unique, and it automatically merges entities having the same \textbf{unique identifier}, but whose data is extracted from different data sources. It is also possible to use the special relation $ \texttt{sameAs}^1 $ to indicate that two entities having different unique identifiers are to be considered as the same entity. The $ \texttt{sameAs} $ relation is useful when creating a MKG from multiple partially overlapping data sources; when the graph is built. Additionally, it is possible to build an MKG incrementally, by merging two or more graphs built using different \textbf{schemas}; The merge operation automatically combines entities with matching unique identifiers or distinct attributes (e.g., proteins with the same sequence).
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{PharmKG}
+
+\begin{itemize}
+
+\item PharmKG publication:
+\begin{displayquote}[\cite{pharmkg_publication}]
+For a decade, basic networks such as \textbf{undirected and unirelational graphs} were used to model intricate interactions in biomedical systems [4–8]. Despite the impressive performances of these models, these networks failed to capture the semantics within different types of relationships between biomedical entities. For example, drug–protein interactions modeled with basic networks cannot distinguish between different kinds of interactions such as inhibition, activation, binding, etc. Because of this, many recent works have since switched to using \textbf{multi-relational networks}, i.e. \textbf{knowledge graphs (KGs)}, where \textbf{KG embedding (KGE)} [9–12] approaches were utilized to map graphs into a low-dimensional space while maximally preserving its topological properties. As such, downstream tasks such as relation prediction, clustering and visualization can be done by typical non-network-based models [13–15].
+[...]
+
+\textbf{KGs} are \textbf{multi-relational, directed graphs} in which nodes represent entities and edges represent their relations.
+[...]
+
+The first major biomedical KG work was published by Belleau et al. [22], where \textbf{semantic web technologies} were applied to convert publicly available bioinformatics databases into \textbf{RDF formats}. From the processed RDF file, the biomedical \textbf{triplets} (entity, relation and entity) could be subsequently obtained to construct a biomedical KG. Unfortunately, this kind of KG contains a significant number of \textbf{metadata relations} that can interfere with the performance of link prediction algorithms, and special care was needed to exclude trivially inferable statements from the test set [23]. Since then, efforts have been focused on constructing \textbf{task-oriented KGs} and applying them to downstream biomedical applications, such as drug repositioning [15, 24, 31], with only a few KGs focused on the construction of annotated, clarified biomedical knowledge networks.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{PheKnowLator}
+
+\begin{itemize}
+
+\item PheKnowLator publication:
+\begin{displayquote}[\cite{pheknowlator_publication2}]
+Multiple definitions of KGs have been proposed in the literature, all sharing the assumption that KGs are more than simple large-scale graphs.$^{13–15}$ Existing definitions are best summarized by Ehrlinger's and Wöb's (2016) definition: "A \textbf{knowledge graph} acquires and integrates information into an ontology and applies a reasoner to derive new knowledge".$^{13}$ We provide an alternative definition and consider a KG a \textbf{graph-based data structure} representing a variety of \textbf{heterogeneous entities} and \textbf{multiple types of relationships} between them and serving as an abstract framework that is able to infer new knowledge (as well as reveal and resolve discrepancies or contradictions) to address a variety of applications and use cases.
+[...]
+
+1. Knowledge Model. Following \textbf{Semantic Web standards},$^{110}$ PKT-KG defines a \textbf{KG} as $ K = \langle T, A \rangle $, where $ T $ is the TBox and $ A $ is the ABox. The TBox represents the \textbf{taxonomy} of a particular domain.$ ^{111,112}$ It describes classes, properties/relationships, and assertions that are assumed to generally hold within a domain (e.g., a gene is a heritable unit of DNA located in the nucleus of cells [Figure 7a]). The ABox describes attributes and roles of instances of classes (i.e., individuals) and assertions about their membership in classes within the TBox (e.g., A2M is a type of gene that may cause Alzheimer’s Disease [Figure 7b]).$^{111,112}$
+[...]
+
+2. Relation Strategy. PKT-KG provides two relation strategies. The first strategy is standard or \textbf{directed relations}, through a single directed edge (e.g., “gene causes phenotype”). The second strategy is inverse or \textbf{bidirectional relations}, through inference if the relation is from an ontology like the RO (e.g., “chemical participates in pathway” and “pathway has participant chemical”) or through inferring implicitly symmetric relations for edge types that represent biological interactions (e.g., gene-gene interactions).
+
+3. Semantic Abstraction. KGs built using expressive languages like \textbf{OWL} are structurally complex and composed of \textbf{triples} or edges that are logically necessary but not biologically meaningful (e.g., anonymous subclasses used to express TBox assertions with all-some quantification). PKT-KG currently uses the \textbf{OWL-NETS}$^{41}$ semantic abstraction algorithm to convert or transform \textbf{complex KGs} into \textbf{hybrid KGs}. OWL-NETS v2.0$^{113}$ includes additional functionality that harmonizes a semantically abstracted KG to be consistent with a class- or instance-based knowledge model.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{PubChemRDF}
+
+\begin{itemize}
+
+\item PubChemRDF publication:
+\begin{displayquote}[\cite{pubchemrdf_publication1}]
+\textbf{Semantic Web technologies and standards} include the trio of the \textbf{Resource Description Framework (RDF)}, \textbf{Web Ontology Language (OWL)}, and \textbf{SPARQL query language} [16]. RDF is a standard model that uses machine-understandable metadata to describe the type and relation of any Web resource, which can be anything that has an identity, such as a document, a person, a datum, or an operation. RDF uses an abstract model to decompose information into small pieces with well-defined semantics (meaning), so as to express knowledge in a general, yet simple and flexible way. Each small piece of information is represented as an \textbf{RDF statement}, also called a “\textbf{triple}” of subject-predicate-object, and the RDF model can be expressed as a collection of triples. The semantics and syntax in a given RDF model are defined in \textbf{controlled vocabularies} or \textbf{ontologies}, and \textbf{OWL} is widely used to create domain-specific ontologies with increased expressivity. It is worth noting that ontologies are not only vocabularies that define a set of common and shared terms in a hierarchical structure to describe domain knowledge, they are also computable by enabling first-order logical reasoning, i.e. the statements asserted to the parent classes can be inherited by the child classes. The logic-based inference can be used to derive new RDF statements that are not explicitly asserted, and logic rules can be used to identify conflict statements on behalf of consistency checking. Hence, ontologies designed for automated inference must be carefully formulated according to the semantics of the language and as such are distinct from informal knowledge organization systems such as taxonomy and thesaurus. \textbf{SPARQL} serves as an RDF query language and data access protocol for the Semantic Web with the ability to locate and retrieve specific information across widespread databases as well as generate query reports that can be directly analyzed by network visualization and data mining applications. SPARQL may be used to query relational databases [17, 18] as well as RDF databases (triple stores) [19, 20], and may increase in popularity in the near future with the rapidly increasing scalability of RDF databases.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{PyKEEN}
+
+\begin{itemize}
+
+\item PyKEEN publication 1:
+\begin{displayquote}[\cite{pykeen_publication1}]
+In the last two decades, representing factual information as \textbf{knowledge graphs (KGs)} has gained significant attention. KGs have been successfully applied to tasks such as link prediction, clustering, and question answering. In the context of this paper, a KG is a \textbf{directed, multi-relational graph} that represents entities as nodes, and their relations as edges, and can be used as an abstraction of the real world. Factual information contained in KGs is represented as \textbf{triples} of the form $ (h, r, t) $, where $ h $ and $ t $ denote the head and tail entities, and r denotes their respective relation. Prominent examples of KGs are DBpedia [18], Wikidata [25], Freebase [5], and Knowledge Vault [10]. Traditionally, KGs have been processed in their essential form as symbolic systems, but recently, \textbf{knowledge graph embedding models (KGEs)} have become popular that encode the nodes and edges of KGs into low-dimensional continuous vector spaces while best preserving the structural properties of the KGs.
+\end{displayquote}
+
+\item PyKEEN publication 2:
+\begin{displayquote}[\cite{pykeen_publication3}]
+\textbf{Knowledge graphs (KGs)} encode knowledge as a set of \textbf{triples} $ \mathcal{K} \subseteq \mathcal{E} \times \mathcal{R} \times \mathcal{E} $ where $ \mathcal{E} $ denotes the set of entities and $ \mathcal{R} $ the set of relations. \textbf{Knowledge graph embedding models (KGEMs)} learn representations for entities and relations of KGs in vector spaces while preserving the graph structure. The learned embeddings can support machine learning tasks such as entity clustering, link prediction, entity disambiguation, as well as downstream tasks such as question answering and item recommendation (Nickel et al., 2015; Wang et al., 2017; Ruffinelli et al., 2020; Kazemi et al., 2020).
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{RNA-KG}
+
+\begin{itemize}
+
+\item RNA-KG publication:
+\begin{displayquote}[\cite{rnakg_publication1}]
+In this phase, we identified the KG representation and the kind of storage system to adopt. \textbf{RDF triples} have turned out to be suitable because of their common, flexible, and uniform data model. These properties result in an ontologically-graounded knowledge graph for conducting different kinds of analysis and reasoning.\\
+Since a standardized formal definition for the concept of a KG is still lacking, we considered the one adopted by Callahan and colleagues$^{19}$ where a \textbf{KG} is a pair $ \langle T, A \rangle $, where $ T $ is the TBox and $ A $ the ABox. The TBox represents the \textbf{taxonomy} of a particular domain including classes, properties/relationships, and assertions that are assumed to generally hold within a domain (e.g., a miRNA is a small regulatory ncRNA located in an exosome as depicted in Figure 4). The ABox describes \textbf{attributes} and roles of class instances (i.e., individuals) and assertions about their membership in classes within the TBox (e.g., hsa-miR-125b-5p is a type of miRNA that may cause leukemia). Non-ontological entities (i.e., entities from a data source that are not compliant to a given set of ontologies such as RNA molecules) can be integrated with ontologies using either a TBox (i.e., class-based) or ABox (i.e., instance-based) knowledge model. For the class-based approach, each database entity is represented as $ \texttt{subClassOf} $ an existing ontology class, while for the instance-based approach it is represented as $ \texttt{instanceOf} $ an existing ontology class.
+\end{displayquote}
+
+\item Reference $^{19}$ in the RNA-KG publication is the PheKnowLator publication covered previously.
+
+\end{itemize}
+
+
+\subsubsection{ROBOKOP}
+
+\begin{itemize}
+
+\item ROBOKOP publication 1:
+\begin{displayquote}[\cite{robokop_publication1}]
+A \textbf{knowledge graph (KG)} uses an appropriate ontology to express domain knowledge as a graph of relationships (edges) between entities (nodes), with related nodes connected by edges. \textbf{KG databases} such as \textbf{Neo4j} allow KGs to be queried using a query language such as Cypher that is designed to find matching relationship paths or sub-graphs within the KG.
+\end{displayquote}
+
+\item ROBOKOP publication 2:
+\begin{displayquote}[\cite{robokop_publication2}]
+ROBOKOP KG is based on a set of semantic types, as defined in the \textbf{BioLink data model}.$^6$ (A simplified version of the ROBOKOP \textbf{KG database schema} is provided as a graphical abstract, with nodes representing entities in the BioLink data model, and edges representing predicates or relationships between connected entities.) This model defines the high-level concepts between which relationships can be made, as well as a series of properties belonging to these concepts. The BioLink data model is hierarchical, with more specific concepts deriving from more general ones; for instance “cellular component” is derived from “anatomical entity”. The model also contains union terms that provide capabilities to, for example, group diseases and phenotypes. Entities are identified with conceptual terms from biomedical \textbf{ontologies} such as Gene Ontology (GO).$^7$ ROBOKOP KG requires all nodes to be an instance of one or more BioLink data model types.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{SemKG}
+
+\begin{itemize}
+
+\item SemKG publication:
+\begin{displayquote}[\cite{semkg_publication}]
+\textbf{Knowledge graph} is a \textbf{multi-relational graph} composed of entities as nodes and relations as different types of edges. In this work, we constructed a biomedical knowledge graph, called SemKG, with the predications which are extracted from PubMed abstracts by SemRep. In the SemKG, let $ E = \{ e_1, e_2, \ldots, e_N \} $ denote the set of n entities, $ R = \{ r_1, r_2, \ldots, r_M \} $ denote the set of relations between entities and $ T = \{ t_1, t_2, \ldots, t_K \} $ denote semantic type of entities. The elements of $ R $ and $ T $ are all from the UMLS semantic network. The edge between entities $ e_i $ and $ e_j $ is weighted by the number of predications that have been extracted. Besides, the \textbf{attribute} of edge includes the abstracts’ PubMed ID (pmid) from where the predications are extracted.
+\end{displayquote}
+
+\end{itemize}
+
+
+\subsubsection{SynLethKG / KG4SL}
+
+\begin{itemize}
+
+\item SynLethKG / KG4SL publication:
+
+\begin{displayquote}[\cite{kg4sl_publication1}]
+\textbf{Knowledge graphs (KGs)} are a type of \textbf{multi-relational graph}, where nodes and edges have different types. A KG is denoted by $ G = (V, E) $, where edges in set $ E $ are defined as \textbf{triplets} $ e = (h, \tau, t) $ indicating a particular relationship $ \tau \in T $ between two nodes (Hamilton, 2020).
+[...]
+
+The KG SynLethKG is denoted by $ G = (V_e, V_r)  $, which contains a set of entities $ V_e $ and a set of relationships $ V_r $. Each edge in the KG is defined as a triplet $ T = (h, r, t) $, which shows a relationship of type $ r $ between head entity $ h $ and tail entity $ t $, where $ h, t \in V_e $ and $ r \in V_r $.
+\end{displayquote}
+
+\item Reference (Hamilton, 2020) in the SynLethKG / KG4SL publication:
+
+\begin{displayquote}[\cite{hamilton2020}]
+Formally, a \textbf{graph} $ G = (\mathcal{V}, \mathcal{E}) $ is defined by a set of nodes $ \mathcal{V} $ and a set of edges $ \mathcal{E} $ between these nodes. We denote an edge going from node $ u \in \mathcal{V} $ to node $ v \in \mathcal{V} $ as $ (u, v) \in \mathcal{E} $. In many cases we will be concerned only with \textbf{simple graphs}, where there is at most one edge between each pair of nodes, no edges between a node and itself, and where the edges are all undirected, i.e., $ (u, v) \in \mathcal{E} $ $\leftrightarrow$ $ (v, u) \in \mathcal{E} $.\\
+A convenient way to represent graphs is through an \textit{adjacency matrix} $ \mathbf{A} \in 	\mathbb{R}^{|\mathcal{V}| \times |\mathcal{V}|} $. To represent a graph with an adjacency matrix, we order the nodes in the graph so that every node indexes a particular row and column in the adjacency matrix. We can then represent the presence of edges as entries in this matrix: $ \mathbf{A}[u, v] = 1 $ if $ (u, v) \in \mathcal{E} $ and $ \mathbf{A}[u, v] = 0 $ otherwise. If the graph contains only \textbf{undirected} edges then $ \mathbf{A} $ will be a symmetric matrix, but if the graph is \textbf{\textit{directed}} (i.e., edge direction matters) then $ \mathbf{A} $ will not necessarily be symmetric. Some graphs can also have \textbf{\textit{weighted}} edges, where the entries in the adjacency matrix are arbitrary real-values rather than $ \{0, 1\} $. For instance, a weighted edge in a protein-protein interaction graph might indicated the strength of the association between two proteins.
+
+\textbf{Multi-relational graphs}: Beyond the distinction beween undirected, directed, and weighted edges, we will also consider graphs that have different \textit{types} of edges. For instance, in graphs representing drug-drug interactions, we might want different edges to correspond to different side effects that can occur when you take a pair of drugs at the same time. In these cases we can extend the edge notation to include an edge or relation type $ \tau $, e.g., $ (u, \tau, v) \in \mathcal{E} $, and we can define one adjacency matrix $ \mathbf{A}_{\tau} $ per edge type. We call such graphs \textit{multi-relational}, and the entire graph can be summarized by an adjacency tensor $ \mathcal{A}^{|\mathcal{V}| \times |\mathcal{R}| \times |\mathcal{V}|} $, where $ \mathcal{R} $ is the set of relations. Two important subsets of multi-relational graphs are often known as \textit{heterogeneous} and \textit{multiplex} graphs.
+
+\textbf{Heterogeneous graphs}: In heterogeneous graphs, nodes are also imbued with \textit{types}, meaning that we can partition the set of nodes into disjoint sets $ \mathcal{V} = \mathcal{V}_1 \cup \mathcal{V}_2 \cup \ldots \cup \mathcal{V}_k $ where $ \mathcal{V}_i \cap \mathcal{V}_j = \emptyset, \forall i \ne j $ . Edges in heterogeneous graphs generally satisfy constraints according to the node types, most commonly the constraint that certain edges only connect nodes of certain types, i.e., $ (u, \tau_i, v) \in \mathcal{E} \rightarrow u \in \mathcal{V}_j, v \in \mathcal{V}_k $. For example, in a heterogeneous biomedical graph, there might be one type of node representing proteins, one type of representing drugs, and one type representing diseases. Edges representing “treatments” would only occur between drug nodes and disease nodes. Similarly, edges representing “polypharmacy side-effects” would only occur between two drug nodes. \textbf{\textit{Multipartite} graphs} are a well-known special case of heterogeneous graphs, where edges can only connect nodes that have different types, i.e., $ (u, \tau_i, v) \in \mathcal{E} \rightarrow u \in \mathcal{V}_j, v \in \mathcal{V}_k \wedge j \ne k $.
+
+\textbf{Multiplex graphs}: In multiplex graphs we assume that the graph can be decomposed in a set of k \textit{layers}. Every node is assumed to belong to every layer, and each layer corresponds to a unique relation, representing the \textit{intra-layer} edge type for that layer. We also assume that \textit{inter-layer} edges types can exist, which connect the same node across layers. Multiplex graphs are best understood via examples. For instance, in a multiplex transportation network, each node might represent a city and each layer might represent a different mode of transportation (e.g., air travel or train travel). Intra-layer edges would then represent cities that are connected by different modes of transportation, while inter-layer edges represent the possibility of switching modes of transportation within a particular city.
+
+\textbf{Feature information}: Last, in many cases we also have \textbf{\textit{attribute} or \textit{feature} information} associated with a graph (e.g., a profile picture associated with a user in a social network). Most often these are node-level attributes that we represent using a real-valued matrix $ \mathbf{X} \in \mathbb{R}^{|\mathcal{V}| \times m} $, where we assume that the ordering of the nodes is consistent with the ordering in the adjacency matrix. In heterogeneous graphs we generally assume that each different type of node has its own distinct type of attributes. In rare cases we will also consider graphs that have real-valued edge features in addition to discrete edge types, and in some cases we even associate real-valued features with entire graphs.
+
+[...]
+
+In knowledge graph completion, we are given a \textbf{multi-relational graph} $ \mathcal{G} = (\mathcal{V}, \mathcal{E})$, where the edges are defined as tuples $ e = (u, \tau, v) $ indicating the presence of a particular relation $ \tau \in \mathcal{T} $ holding between two nodes. Such multirelational graphs are often referred to as \textbf{\textit{knowledge graphs}}, since we can interpret the tuple $ (u, \tau, v) $ as specifying that a particular “fact” holds between the two nodes $ u $ and $ v $. For example, in a biomedical knowledge graph we might have an edge type $ \tau = \textrm{TREATS} $ and the edge $ (u, \textrm{TREATS}, v) $ could indicate that the drug associated with node $ u $ treats the disease associated with node $ v $. Generally, the goal in knowledge graph completion is to predict missing edges in the graph, i.e., relation prediction, but there are also examples of node classification tasks using multi-relational graphs [Schlichtkrull et al., 2017].
+\end{displayquote}
+
+\end{itemize}
+
+
+
+
+\newpage
+\begin{landscape}
+
+\subsection{File formats}
+\label{sec:file_formats}
+
+Knowledge graphs are stored and shared in various file formats, some of which are associated with a particular graph data model. Table \ref{table:file_formats} covers formats and models encountered in the domain of biomedicine, which is represented by the projects collected in section~\ref{sec:kg}.
+
+
+\begin{xltabular}{\textwidth}{p{3cm}|p{3cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|p{6cm}}
+Format name
+&
+Extensions
+&
+Websites
+&
+Specification
+&
+Graph model
+&
+Organization
+\\
+
+
+\hline
+\hline
+
+
+BEL
+&
+.bel
+&
+\cite{bel_website1}
+\cite{bel_website2}
+&
+\cite{bel_spec}
+&
+BEL network
+&
+BEL.bio organization
+\cite{bel_group}
+\\
+
+
+\hline
+
+
+CSV
+&
+.csv
+&
+\cite{csv_wiki}
+&
+\cite{csv_spec}
+&
+Various models
+&
+IETF Network Working Group
+\cite{csv_group}
+\\
+
+
+\hline
+
+
+GraphDB
+&
+.graphdb
+&
+\cite{graphdb_wiki}
+&
+\cite{graphdb_spec}
+&
+RDF graph
+&
+Company: Ontotext
+\cite{graphdb_group}
+\\
+
+
+\hline
+
+
+GraphML
+&
+.graphml
+&
+\cite{graphml_wiki}
+&
+\cite{graphml_spec}
+&
+Various models
+&
+GraphML Project Group
+\cite{graphml_group}
+\\
+
+
+\hline
+
+
+JSON-LD
+&
+.jsonld, .json
+&
+\cite{jsonld_wiki}
+&
+\cite{jsonld_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+KGX
+&
+.json, .jsonl, .tsv, .ttl
+&
+\cite{kgx_format_website}
+&
+\cite{kgx_format_spec}
+&
+Property graph
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+N-Quads
+&
+.nq
+&
+\cite{nquads_wiki}
+&
+\cite{nquads_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+N-Triples
+&
+.nt
+&
+\cite{ntriples_wiki}
+&
+\cite{ntriples_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+Neo4j
+&
+.dump
+&
+\cite{neo4j_wiki}
+&
+\cite{neo4j_spec}
+&
+Property graph
+&
+Company: Neo4j, Inc.
+\cite{neo4j_group}
+\\
+
+
+\hline
+
+
+Notation3
+&
+.n3
+&
+\cite{notation3_wiki}
+&
+\cite{notation3_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+RDF/JSON
+&
+.json
+&
+\cite{rdfjson_website}
+&
+\cite{rdfjson_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+RDF/XML
+&
+.rdf
+&
+\cite{rdfxml_wiki}
+&
+\cite{rdfxml_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+RDFa
+&
+.html, .svg, .xml
+&
+\cite{rdfa_wiki}
+&
+\cite{rdfa_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+SIF
+&
+.sif
+&
+\cite{sif_website}
+&
+\cite{sif_spec}
+&
+Various models
+&
+Cytoscape Consoritum
+\cite{sif_group}
+\\
+
+
+\hline
+
+
+TriG
+&
+.trig
+&
+\cite{trig_wiki}
+&
+\cite{trig_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+TriX
+&
+.trix
+&
+\cite{trix_wiki}
+&
+\cite{trix_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\hline
+
+
+Turtle
+&
+.ttl
+&
+\cite{turtle_wiki}
+&
+\cite{turtle_spec}
+&
+RDF graph
+&
+W3C
+\cite{w3c_group}
+\\
+
+
+\caption{File formats for representing knowledge graphs.}
+\label{table:file_formats}
+\end{xltabular}
+
+\end{landscape}
+
+
+
+
+
+\newpage
+\begin{landscape}
+
+\subsection{Databases}
+\label{sec:databases}
+
+There are thousands of databases that collect data related to biomedicine in varying degrees of quality and recency. Listing them is beyond the scope of this survey, however, table~\ref{table:databases} contains a list of projects that provide comprehensive collections of biomedical databases in form of web interfaces with search functionality. In addition, some of these projects provide annotations for each entry in their collection. For example, NAR db status \cite{nardbstatus_website} indicates whether a database is online, when it was last updated and whether a full download of its contents is provided by the host.
+
+
+\begin{xltabular}{\textwidth}{p{5cm}|p{2.2cm}|p{2.2cm}|p{4cm}|p{6cm}}
+Database name
+&
+Website
+&
+Publications
+&
+Number of databases
+&
+Organization
+\\
+
+
+\hline
+\hline
+
+
+Bio.tools
+&
+\cite{biotools_website}
+&
+\cite{biotools_publication}
+&
+2377
+&
+ELIXIR
+\cite{biotools_group}
+\\
+
+
+\hline
+
+
+DaTo
+&
+\cite{dato_website}
+&
+\cite{dato_publication}
+&
+35400 (count includes tools)
+&
+Ming Chen's Lab,
+Zhejiang University
+\cite{dato_group}
+\\
+
+
+\hline
+
+
+Database Commons
+&
+\cite{databasecommons_website}
+&
+\cite{databasecommons_publication}
+&
+6389
+&
+China National Center for Bioinformation (CNCB),
+Chinese Academy of Sciences
+\cite{databasecommons_group}
+\\
+
+
+\hline
+
+
+FAIRsharing
+&
+\cite{fairsharing_website}
+&
+\cite{fairsharing_publication}
+&
+2075
+&
+The FAIRsharing team,
+University of Oxford
+\cite{fairsharing_group}
+\\
+
+
+\hline
+
+
+MetaBase
+&
+\cite{metabase_website}
+&
+\cite{metabase_publication}
+&
+1802 (last online in 2014)
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+NAR db status
+&
+\cite{nardbstatus_website}
+&
+\cite{nardbstatus_publication}
+&
+2246
+&
+Bioinformatics/Medical Informatics department,
+Bielefeld University
+\cite{nardbstatus_group}
+\\
+
+
+\hline
+
+
+NAR online Molecular Biology Database Collection
+&
+\cite{nar_website}
+&
+\cite{nar_publication}
+&
+1764
+&
+Nucleic Acids Research (NAR) Journal,
+University of Oxford
+\cite{nar_group}
+\\
+
+
+\hline
+
+
+Online Bioinformatics Resources Collection (OBRC)
+&
+\cite{obrc_website}
+&
+\cite{obrc_publication}
+&
+2408 (count includes tools)
+&
+Health Sciences Library System,
+University of Pittsburgh
+\cite{obrc_group}
+\\
+
+
+\hline
+
+
+Online Resource Finder For Life Sciences (OReFiL)
+&
+\cite{orefil_website}
+&
+\cite{orefil_publication}
+&
+N/A
+&
+Database Center for Life Science,
+University of Tokyo
+\cite{orefil_group}
+\\
+
+
+\hline
+
+
+The Bioinformatics Link Directory
+&
+\cite{tbld_website}
+&
+\cite{tbld_publication1}
+\cite{tbld_publication2}
+&
+621 (last online in 2017)
+&
+The Canadian Bioinformatics Workshops (CBW)
+\cite{tbld_group}
+\\
+
+
+\caption{Projects that provide listings of biomedical databases.}
+\label{table:databases}
+\end{xltabular}
+
+\end{landscape}
+
+
+
+
+
+\newpage
+\subsection{Ontologies and controlled vocabularies}
+\label{sec:ontologies}
+
+There are hundreds of ontologies in the domain of biomedicine. As with databases, it is beyond the scope of this survey to list them here directly. Instead, table~\ref{table:ontologies} contains projects that provide collections of biomedical ontologies in searchable web interfaces.
+
+
+\begin{xltabular}{\textwidth}{p{3cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|p{6cm}}
+Ontology name
+&
+Website
+&
+Publications
+&
+Number of Ontologies
+&
+Organization
+\\
+
+
+\hline
+\hline
+
+
+BioPortal
+&
+\cite{bioportal_website}
+&
+\cite{bioportal_publication}
+&
+1077
+&
+Center for Biomedical Informatics Research (BMIR), Stanford University
+\cite{bioportal_group}
+\\
+
+
+\hline
+
+
+Ontobee
+&
+\cite{ontobee_website}
+&
+\cite{ontobee_publication}
+&
+262
+&
+He Group,
+University of Michigan Medical School
+\cite{ontobee_group}
+\\
+
+
+\hline
+
+
+Ontology Lookup Service (OLS)
+&
+\cite{ols_website}
+&
+\cite{ols_publication1}
+\cite{ols_publication2}
+&
+251
+&
+Samples, Phenotypes and Ontologies Team (SPOT), EMBL-EBI
+\cite{ols_group}
+\\
+
+
+\hline
+
+
+Open Biomedical Ontologies (OBO) Foundry
+&
+\cite{obo_website}
+&
+\cite{obo_publication}
+&
+258
+&
+Individuals from various research institutes
+\\
+
+
+\caption{Projects that provide listings of biomedical ontologies.}
+\label{table:ontologies}
+\end{xltabular}
+
+
+
+
+
+\newpage
+\begin{landscape}
+
+\subsection{Tools}
+\label{sec:tools}
+
+The creation and usage of knowledge graphs involves a series of steps that are sometimes combined in a dedicated tool. Table~\ref{table:tools} provides an overview of such tools that were either built or mentioned by the projects collected in section~\ref{sec:kg}.
+
+
+\begin{xltabular}{\textwidth}{p{5cm}|p{2.2cm}|p{2.2cm}|p{2.2cm}|p{1cm}|p{6cm}}
+Creator name
+&
+Websites
+&
+Publications
+&
+Code
+&
+Last Update
+&
+Organization
+\\
+
+
+\hline
+\hline
+
+
+AgreementMakerLight
+&
+\cite{agreementmakerlight_website}
+&
+\cite{agreementmakerlight_publication}
+&
+GitHub
+\cite{agreementmakerlight_github}
+&
+2023
+&
+LASIGE Computer Science and Engineering Research Centre,
+University of Lisbon
+\cite{agreementmakerlight_group}
+\\
+
+
+\hline
+
+
+BioCypher
+&
+\cite{biocypher_website}
+&
+\cite{biocypher_publication}
+&
+GitHub
+\cite{biocypher_github},
+PyPI
+\cite{biocypher_pypi}
+&
+2023
+&
+Saez-Rodriguez Group,
+Heidelberg University
+\cite{biocypher_group}
+\\
+
+
+\hline
+
+
+BioDBLinker
+&
+-
+&
+\cite{biokg_publication}
+&
+GitHub
+\cite{biokg_github2},
+PyPI
+\cite{biokg_pypi}
+&
+2020
+&
+Biomedical Discovery Informatics Unit, NUI Galway
+\cite{biokg_group1}
+\cite{biokg_group2}
+\\
+
+
+\hline
+
+
+DemKG
+&
+-
+&
+\cite{demkg_publication}
+&
+GitHub
+\cite{demkg_github}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+IASiS Open Data Graph
+&
+\cite{iasisodg_website}
+&
+\cite{iasisodg_publication}
+&
+GitHub
+\cite{iasisodg_github}
+&
+2020
+&
+Institute of Informatics and Telecommunications, NCSR Demokritos
+\cite{iasisodg_group}
+\\
+
+
+\hline
+
+
+INDRA
+&
+\cite{indra_website1}
+\cite{indra_website2}
+&
+\cite{indra_publication1}
+\cite{indra_publication2}
+&
+GitHub
+\cite{indra_github},
+PyPI
+\cite{indra_pypi}
+&
+2023
+&
+Sorger Lab, Harvard Medical School
+\cite{indra_group}
+\\
+
+
+\hline
+
+
+K-BiOnt
+&
+-
+&
+\cite{kbiont_publication}
+&
+GitHub
+\cite{kbiont_github}
+&
+2022
+&
+Biomedical Text Mining Team (BioTM), LASIGE, University of Lisbon
+\cite{kbiont_group1}
+\cite{kbiont_group2}
+\\
+
+
+\hline
+
+
+KG-Hub
+&
+\cite{kghub_website}
+&
+\cite{kghub_publication}
+&
+GitHub
+\cite{kghub_github}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+KGTK
+&
+\cite{kgtk_website}
+&
+\cite{kgtk_publication}
+&
+GitHub
+\cite{kgtk_github},
+PyPI
+\cite{kgtk_pypi}
+&
+2023
+&
+Information Sciences Institute,
+University of Southern California
+\cite{kgtk_group}
+\\
+
+
+\hline
+
+
+KGX
+&
+\cite{kgx_website1}
+\cite{kgx_website2}
+&
+-
+&
+GitHub
+\cite{kgx_github},
+PyPI
+\cite{kgx_pypi}
+&
+2023
+&
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+KGen
+&
+-
+&
+\cite{kgen_publication}
+&
+GitHub
+\cite{kgen_github}
+&
+2022
+&
+Institute of Computing, University of Campinas
+\cite{kgen_group}
+\\
+
+
+\hline
+
+
+ORION
+&
+-
+&
+-
+&
+GitHub
+\cite{orion_github}
+&
+2023
+&
+Renaissance Computing Institute (RENCI), University of North Carolina
+\cite{orion_group}
+\\
+
+
+\hline
+
+
+PheKnowLator
+&
+\cite{pheknowlator_website}
+&
+\cite{pheknowlator_publication1}
+\cite{pheknowlator_publication2}
+&
+GitHub
+\cite{pheknowlator_github},
+PyPI
+\cite{pheknowlator_pypi},
+Zenodo
+\cite{pheknowlator_zenodo}
+&
+2021
+&
+Computational Bioscience Program, University of Colorado
+\cite{pheknowlator_group},
+Individuals from various research institutes
+\\
+
+
+\hline
+
+
+ROBOKOP Knowledge Graph Builder (KGB)
+&
+\cite{robokop_website1}
+&
+\cite{robokop_publication2}
+&
+GitHub
+\cite{robokop_github}
+&
+2023
+&
+Renaissance Computing Institute (RENCI), University of North Carolina
+\cite{robokop_group}
+\\
+
+
+\hline
+
+
+SEmantic Modeling machIne (SeMi)
+&
+\cite{semi_website}
+&
+\cite{semi_publication}
+&
+GitHub
+\cite{semi_github}
+&
+2020
+&
+Company: Elsevier
+\\
+
+
+\hline
+
+
+Stitcher
+&
+-
+&
+\cite{stitcher_publication}
+&
+GitHub
+\cite{stitcher_github}
+&
+2023
+&
+Division of Pre-Clinical Innovation, NCATS, NIH
+\cite{stitcher_group}
+\\
+
+
+\caption{Projects that provide tools for creating biomedical knowledge graphs.}
+\label{table:tools}
+\end{xltabular}
+
+\end{landscape}
+
+
+
+
+
+\newpage
+\printbibliography
+
+\end{document}

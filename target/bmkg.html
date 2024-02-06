@@ -1,0 +1,3201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biomedical knowledge graphs</title>
+<script src="sorttable.js"></script>
+<style>
+body {
+    margin: 2vh 4vw;
+    background-color: white;
+}
+h1 {
+    color: #333;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+h2 {
+    color: #333;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    margin-left: 1em;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+.intro {
+    margin-left: 1em;
+    margin-right: 1em;
+    font-family: sans-serif;
+}
+.cont {
+    margin-left: 1em;
+    margin-right: 1em;
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: solid #ddd 1px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border: solid #ddd 1px;
+    font-size: 0.8em;
+    font-family: sans-serif;
+}
+table thead tr {
+    background-color: #0c6533;
+    color: #fff;
+    text-align: left;
+}
+table thead {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+table th {
+    padding: 10px 12px;
+}
+table td {
+    padding: 10px 12px;
+}
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+table tbody tr:hover {
+    background-color: #ccc!important;
+    border-bottom: 1px solid #ccc!important;
+}
+table tbody tr:nth-of-type(even) {
+    background-color: #f8f8f8;
+}
+table tbody tr:nth-of-type(odd) {
+    background-color: #f1f1f1;
+}
+table tbody td:nth-child(1) {
+    font-weight: 300;
+}
+table tbody td:nth-child(2) {
+    font-weight: 600;
+}
+a {
+    color: #007859;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    width: 30em;
+    left: -13em;
+    top: 1.5em;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #333;
+    color: white;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+</style>
+</head>
+<body>
+<h1>Introduction</h1>
+<div class="intro">
+<p>This website supplements the PDF report
+<a href="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/target/bmkg.pdf">A survey of biomedical knowledge graphs and of resources to construct them</a>.
+</p>
+<p>
+All tables contained in the report are provided here in a more user-friendly way, for example by allowing to sort tables by a chosen column and to open references directly in a new browser tab.
+Other content of the report is not included here, in particular a section about various knowledge graph definitions encountered in practice.
+</p>
+</div>
+<h1>Projects that provide biomedical knowledge graphs</h1>
+<div class="cont">
+<table class="sortable">
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Websites</th>
+<th>Publications</th>
+<th>Code</th>
+<th>Data</th>
+<th>Last Update</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+ADHD-KG
+</td>
+<td>
+<a href="https://emmanuelpapadakis.github.io/ADHD-KG" target="_blank" class="tooltip">[13]<span class="tooltiptext">ADHD-KG</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1007/s13755-023-00253-8" target="_blank" class="tooltip">[14]<span class="tooltiptext">ADHD-KG: a knowledge graph of attention deficit hyperactivity disorder</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/emmanuelpapadakis/ADHD-KG" target="_blank" class="tooltip">[15]<span class="tooltiptext">ADHD-KG</span></a>
+</td>
+<td>
+.n3 / .nt <a href="https://github.com/emmanuelpapadakis/ADHD-KG" target="_blank" class="tooltip">[16]<span class="tooltiptext">ADHD-KG</span></a> <a href="https://zenodo.org/records/7422526" target="_blank" class="tooltip">[17]<span class="tooltiptext">ADHD-KG v1.0</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+School of Computing and Engineering, University of Huddersfield <a href="https://pure.hud.ac.uk/en/organisations/school-of-computing-and-engineering" target="_blank" class="tooltip">[18]<span class="tooltiptext">School of Computing and Engineering</span></a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+BIKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1101/2021.10.28.466262" target="_blank" class="tooltip">[19]<span class="tooltiptext">Biological Insights Knowledge Graph: an integrated knowledge graph to support drug development</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+-
+</td>
+<td>
+2022
+</td>
+<td>
+Company: AstraZeneca <a href="https://www.astrazeneca.com/what-science-can-do/topics/data-science-ai/connected-medicines-innovations-data-science-ai.html" target="_blank" class="tooltip">[20]<span class="tooltiptext">AI and knowledge graphs for drug discovery</span></a> <a href="https://github.com/AstraZeneca" target="_blank" class="tooltip">[21]<span class="tooltiptext">AstraZeneca</span></a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+BIOS
+</td>
+<td>
+<a href="https://bios.idea.edu.cn/lang-en" target="_blank" class="tooltip">[22]<span class="tooltiptext">Biomedical Informatics Ontology System - BIOS@IDEA</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2203.09975" target="_blank" class="tooltip">[23]<span class="tooltiptext">BIOS: An Algorithmically Generated Biomedical Knowledge Graph</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/xiaj1011/bios_ner" target="_blank" class="tooltip">[24]<span class="tooltiptext">BIOS NER</span></a> <a href="https://github.com/xiaj1011/bios_entity_classification" target="_blank" class="tooltip">[25]<span class="tooltiptext">BIOS EntityClassification</span></a>
+</td>
+<td>
+.txt <a href="https://bios.idea.edu.cn/download" target="_blank" class="tooltip">[26]<span class="tooltiptext">Biomedical Informatics Ontology System - BIOS@IDEA</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+International Digital Economy Academy <a href="https://www.idea.edu.cn" target="_blank" class="tooltip">[27]<span class="tooltiptext">International Digital Economy Academy (IDEA)</span></a> , Center for Statistical Science, Tsinghua University <a href="http://www.stat.tsinghua.edu.cn/en" target="_blank" class="tooltip">[28]<span class="tooltiptext">Center for Statistical Science</span></a> , Individuals from other research institutes
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+BY-COVID-KG
+</td>
+<td>
+-
+</td>
+<td>
+-
+</td>
+<td>
+GitHub <a href="https://github.com/Fraunhofer-ITMP/BY-COVID-KG" target="_blank" class="tooltip">[29]<span class="tooltiptext">COVID-19 Knowledge Graph: A comprehensive representation of chemical and biological entities associated with COVID-19</span></a>
+</td>
+<td>
+.pkl / .csv / .graphml / .sif <a href="https://www.ebi.ac.uk/biomodels/MODEL2209020001#Files" target="_blank" class="tooltip">[30]<span class="tooltiptext">BY-COVID Knowledge Graph: A comprehensive network integrating various data resources of BY-COVID project - BioModels</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+BeYond-COVID (BY-COVID) project, various European research institutes <a href="https://by-covid.org" target="_blank" class="tooltip">[31]<span class="tooltiptext">BY-COVID</span></a>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+Bio2RDF
+</td>
+<td>
+<a href="https://bio2rdf.org" target="_blank" class="tooltip">[32]<span class="tooltiptext">Bio2RDF v2.7a</span></a> <a href="https://github.com/bio2rdf/bio2rdf-scripts/wiki" target="_blank" class="tooltip">[33]<span class="tooltiptext">Bio2RDF Home</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.jbi.2008.03.004" target="_blank" class="tooltip">[34]<span class="tooltiptext">Bio2RDF: Towards a mashup to build bioinformatics knowledge systems</span></a> <a href="https://dl.acm.org/doi/10.5555/2878453.2878554" target="_blank" class="tooltip">[35]<span class="tooltiptext">Bio2RDF release 3: a larger connected network of linked data for the life sciences</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/bio2rdf/bio2rdf-scripts" target="_blank" class="tooltip">[36]<span class="tooltiptext">Bio2RDF-scripts</span></a>
+</td>
+<td>
+.nq / .owl <a href="https://download.bio2rdf.org/files/release/3/release.html" target="_blank" class="tooltip">[37]<span class="tooltiptext">Bio2RDF Release 3</span></a> <a href="https://download.bio2rdf.org" target="_blank" class="tooltip">[38]<span class="tooltiptext">File Browser</span></a> , SPARQL endpoint <a href="https://bio2rdf.org/sparql" target="_blank" class="tooltip">[39]<span class="tooltiptext">OpenLink Virtuoso SPARQL Query Editor</span></a>
+</td>
+<td>
+2014
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+Bio4j
+</td>
+<td>
+<a href="https://web.archive.org/web/20160215040814/https://bio4j.com" target="_blank" class="tooltip">[40]<span class="tooltiptext">Bio4j</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1101/016758" target="_blank" class="tooltip">[41]<span class="tooltiptext">Bio4j: a high-performance cloud-enabled graph-based data platform</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/bio4j/bio4j" target="_blank" class="tooltip">[42]<span class="tooltiptext">Bio4j bioinformatics graph data platform</span></a> <a href="https://github.com/bio4j/bio4j-titan" target="_blank" class="tooltip">[43]<span class="tooltiptext">Bio4j Titan</span></a>
+</td>
+<td>
+.dmp (TitanDB) <a href="https://github.com/bio4j/bio4j-titan/blob/master/docs/Bio4jAWSReleases.md" target="_blank" class="tooltip">[44]<span class="tooltiptext">bio4j-titan/docs/Bio4jAWSReleases.md at master · bio4j/bio4j-titan</span></a> <a href="https://github.com/bio4j/bio4j-titan/blob/master/docs/ImportingTitanBio4j.md" target="_blank" class="tooltip">[45]<span class="tooltiptext">bio4j-titan/docs/ImportingTitanBio4j.md at master · bio4j/bio4j-titan</span></a>
+</td>
+<td>
+2014
+</td>
+<td>
+Company: Era7 Bioinformatics <a href="https://era7bioinformatics.com/en/page_id_392_title_oh-no-sequences_-research-group.html" target="_blank" class="tooltip">[46]<span class="tooltiptext">Oh no sequences! Research Group - Era7 Bioinformatics</span></a>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+BioGrakn
+</td>
+<td>
+<a href="https://medium.com/@tasabat" target="_blank" class="tooltip">[47]<span class="tooltiptext">Tomas Sabat</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-319-61566-0_28" target="_blank" class="tooltip">[48]<span class="tooltiptext">BioGrakn: A Knowledge Graph-Based Semantic Database for Biomedical Sciences</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/vaticle/biograkn" target="_blank" class="tooltip">[49]<span class="tooltiptext">BioGrakn</span></a>
+</td>
+<td>
+.zip (Grakn) <a href="https://github.com/vaticle/biograkn/releases" target="_blank" class="tooltip">[50]<span class="tooltiptext">Releases · vaticle/biograkn · GitHub</span></a>
+</td>
+<td>
+2018
+</td>
+<td>
+Company: Vaticle Ltd <a href="https://github.com/vaticle" target="_blank" class="tooltip">[51]<span class="tooltiptext">Vaticle · GitHub</span></a>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+BioGraph
+</td>
+<td>
+<a href="http://andromeda.matf.bg.ac.rs:54321" target="_blank" class="tooltip">[52]<span class="tooltiptext">BioGraph</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.3390/ijms24086954" target="_blank" class="tooltip">[53]<span class="tooltiptext">BioGraph: Data Model for Linking and Querying Diverse Biological Metadata</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/aleksandar-veljkovic/biograph" target="_blank" class="tooltip">[54]<span class="tooltiptext">BioGraph</span></a>
+</td>
+<td>
+.zip (Neo4J) <a href="https://github.com/aleksandar-veljkovic/biograph/tree/master/biograph-backend/importers" target="_blank" class="tooltip">[55]<span class="tooltiptext">biograph/biograph-backend/importers at master · aleksandar-veljkovic/biograph · GitHub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>
+BioKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1145/3340531.3412776" target="_blank" class="tooltip">[56]<span class="tooltiptext">BioKG: A Knowledge Graph for Relational Learning On Biological Data</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/dsi-bdi/biokg" target="_blank" class="tooltip">[57]<span class="tooltiptext">biokg</span></a> <a href="https://github.com/dsi-bdi/biodblinker" target="_blank" class="tooltip">[58]<span class="tooltiptext">biodblinker</span></a> , PyPI <a href="https://pypi.org/project/biodblinker" target="_blank" class="tooltip">[59]<span class="tooltiptext">biodblinker · PyPI</span></a>
+</td>
+<td>
+.tsv <a href="https://github.com/dsi-bdi/biokg/releases/tag/v1.0.0" target="_blank" class="tooltip">[60]<span class="tooltiptext">Release biokg-v1.0.0 · dsi-bdi/biokg</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Biomedical Discovery Informatics Unit, NUI Galway <a href="https://www.universityofgalway.ie/dsi" target="_blank" class="tooltip">[61]<span class="tooltiptext">Data Science Institute - University of Galway</span></a> <a href="https://github.com/dsi-bdi" target="_blank" class="tooltip">[62]<span class="tooltiptext">DSI - Biomedical Discovery Informatics</span></a>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td>
+Biomedical Data Translator
+</td>
+<td>
+<a href="https://ncats.nih.gov/research/research-activities/translator" target="_blank" class="tooltip">[63]<span class="tooltiptext">Biomedical Data Translator - National Center for Advancing Translational Sciences</span></a> <a href="https://ncatstranslator.github.io/TranslatorTechnicalDocumentation" target="_blank" class="tooltip">[64]<span class="tooltiptext">Translator Developer Documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1111/cts.12592" target="_blank" class="tooltip">[65]<span class="tooltiptext">The Biomedical Data Translator Program: Conception, Culture, and Community</span></a> <a href="https://doi.org/10.1111/cts.13301" target="_blank" class="tooltip">[66]<span class="tooltiptext">Progress toward a universal biomedical data translator</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/NCATSTranslator/ReasonerAPI" target="_blank" class="tooltip">[67]<span class="tooltiptext">ReasonerAPI</span></a> <a href="https://github.com/NCATSTranslator/Knowledge_Graph_Exchange_Registry" target="_blank" class="tooltip">[68]<span class="tooltiptext">Knowledge Graph Exchange (KGE) Archive and Registry Working Group</span></a> <a href="https://github.com/NCATSTranslator/TranslatorTechnicalDocumentation" target="_blank" class="tooltip">[69]<span class="tooltiptext">TranslatorTechnicalDocumentation</span></a>
+</td>
+<td>
+REST API <a href="https://smart-api.info/portal/translator" target="_blank" class="tooltip">[70]<span class="tooltiptext">SmartAPI - Translator</span></a> , Web UI <a href="https://ui.transltr.io" target="_blank" class="tooltip">[71]<span class="tooltiptext">NCATS Biomedical Data Translator</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH) <a href="https://ncats.nih.gov" target="_blank" class="tooltip">[72]<span class="tooltiptext">National Center for Advancing Translational Sciences</span></a>
+</td>
+</tr>
+<tr>
+<td>11</td>
+<td>
+Bioteque
+</td>
+<td>
+<a href="https://bioteque.irbbarcelona.org" target="_blank" class="tooltip">[73]<span class="tooltiptext">BIOTEQUE: Metapath Explorer</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41467-022-33026-0" target="_blank" class="tooltip">[74]<span class="tooltiptext">Integrating and formatting biomedical data as pre-calculated knowledge graph embeddings in the Bioteque</span></a> <a href="https://doi.org/10.1093/bioinformatics/btad581" target="_blank" class="tooltip">[75]<span class="tooltiptext">BQsupports: systematic assessment of the support and novelty of new biomedical associations</span></a>
+</td>
+<td>
+GitLab <a href="https://gitlabsbnb.irbbarcelona.org/bioteque/bioteque" target="_blank" class="tooltip">[76]<span class="tooltiptext">bioteque / Bioteque</span></a>
+</td>
+<td>
+.tsv <a href="https://bioteque.irbbarcelona.org/downloads" target="_blank" class="tooltip">[77]<span class="tooltiptext">BIOTEQUE: Downloads</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Structural Bioinformatics and Network Biology Group, IRB Barcelona <a href="https://sbnb.irbbarcelona.org" target="_blank" class="tooltip">[78]<span class="tooltiptext">Structural Bioinformatics and Network Biology Group</span></a>
+</td>
+</tr>
+<tr>
+<td>12</td>
+<td>
+Biozon
+</td>
+<td>
+<a href="https://web.archive.org/web/20180307024822/http://biozon.org" target="_blank" class="tooltip">[79]<span class="tooltiptext">Biozon</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkj153" target="_blank" class="tooltip">[80]<span class="tooltiptext">BIOZON: a hub of heterogeneous biological data</span></a> <a href="https://doi.org/10.1186/1471-2105-7-70" target="_blank" class="tooltip">[81]<span class="tooltiptext">BIOZON: a system for unification, management and analysis of heterogeneous biological data</span></a>
+</td>
+<td>
+Website <a href="https://web.archive.org/web/20180831035044/http://biozon.org/ftp/downloads.html" target="_blank" class="tooltip">[82]<span class="tooltiptext">Biozon : Download files and software</span></a>
+</td>
+<td>
+.sql (PostgreSQL) <a href="https://web.archive.org/web/20180831035044/http://biozon.org/ftp/downloads.html" target="_blank" class="tooltip">[83]<span class="tooltiptext">Biozon : Download files and software</span></a>
+</td>
+<td>
+2005
+</td>
+<td>
+Department of Developmental Biology, Stanford University <a href="https://devbio.stanford.edu" target="_blank" class="tooltip">[84]<span class="tooltiptext">Stanford Developmental Biology</span></a>
+</td>
+</tr>
+<tr>
+<td>13</td>
+<td>
+COVID-19 Knowledge Graph
+</td>
+<td>
+<a href="https://research.bioinformatics.udel.edu/covid19kg" target="_blank" class="tooltip">[85]<span class="tooltiptext">COVID-19 Knowledge Graph</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btab694" target="_blank" class="tooltip">[86]<span class="tooltiptext">COVID-19 Knowledge Graph from semantic integration of biomedical literature and databases</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/udel-cbcb/covid19kg_rdf" target="_blank" class="tooltip">[87]<span class="tooltiptext">covid19kg_rdf</span></a>
+</td>
+<td>
+.ttl <a href="https://research.bioinformatics.udel.edu/covid19kg/rdfdumps" target="_blank" class="tooltip">[88]<span class="tooltiptext">COVID-19 Knowledge Graph - RDF Dumps</span></a> , REST API <a href="https://research.bioinformatics.udel.edu/covid19kg/api" target="_blank" class="tooltip">[89]<span class="tooltiptext">COVID-19 Knowledge Graph - RESTful API</span></a> , SPARQL GUI <a href="https://research.bioinformatics.udel.edu/covid19kg/yasgui" target="_blank" class="tooltip">[90]<span class="tooltiptext">COVID-19 Knowledge Graph - YASGUI SPARQL GUI</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Department of Computer and Information Sciences, University of Delaware <a href="https://www.cis.udel.edu" target="_blank" class="tooltip">[91]<span class="tooltiptext">Computer & Information Sciences at the University of Delaware</span></a>
+</td>
+</tr>
+<tr>
+<td>14</td>
+<td>
+COVID-19-Net
+</td>
+<td>
+<a href="https://covidinfocommons.datascience.columbia.edu/content/peter-rose" target="_blank" class="tooltip">[92]<span class="tooltiptext">Peter Rose - COVID Information Commons</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+GitHub <a href="https://github.com/covid-19-net/covid-19-community" target="_blank" class="tooltip">[93]<span class="tooltiptext">Covid-19-Community</span></a>
+</td>
+<td>
+Neo4j Browser <a href="http://132.249.238.185:7474/browser/?connectURL=neo4j://reader:demo@132.249.238.185:7687" target="_blank" class="tooltip">[94]<span class="tooltiptext">reader@neo4j://132.249.238.185:7687 - Neo4j Browser</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>
+COVID-KG
+</td>
+<td>
+<a href="https://blender.cs.illinois.edu/covid19" target="_blank" class="tooltip">[95]<span class="tooltiptext">BLENDER Lab - Software</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.18653/v1/2021.naacl-demos.8" target="_blank" class="tooltip">[96]<span class="tooltiptext">COVID-19 Literature Knowledge Graph Construction and Drug Repurposing Report Generation</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+.csv <a href="https://web.archive.org/web/20210124013751/http://159.89.180.81/demo/covid/KG.zip" target="_blank" class="tooltip">[97]<span class="tooltiptext">Wayback Machine: KG.zip</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+BLENDER Lab, University of Illinois <a href="https://blender.cs.illinois.edu" target="_blank" class="tooltip">[98]<span class="tooltiptext">BLENDER Lab</span></a>
+</td>
+</tr>
+<tr>
+<td>16</td>
+<td>
+CROssBAR
+</td>
+<td>
+<a href="https://cansyl.metu.edu.tr/crossbar" target="_blank" class="tooltip">[99]<span class="tooltiptext">CROssBAR Project</span></a> <a href="https://crossbar.kansil.org" target="_blank" class="tooltip">[100]<span class="tooltiptext">CROssBAR Knowledge Graphs</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkab543" target="_blank" class="tooltip">[101]<span class="tooltiptext">CROssBAR: comprehensive resource of biomedical relations with knowledge graph representations</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/cansyl/CROssBAR" target="_blank" class="tooltip">[102]<span class="tooltiptext">CROssBAR: Comprehensive Resource of Biomedical Relations with Deep Learning Applications and Knowledge Graph Representations</span></a>
+</td>
+<td>
+.csv / .tsv <a href="https://github.com/cansyl/CROssBAR/tree/master/CROssBAR_INTEGRATED_KGs" target="_blank" class="tooltip">[103]<span class="tooltiptext">CROssBAR integrated knowledge graphs (KG) · cansyl/CROssBAR</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Cancer Systems Biology Laboratory (CanSyL), METU <a href="https://cansyl2.metu.edu.tr/en" target="_blank" class="tooltip">[104]<span class="tooltiptext">CanSyL - Cancer Systems Biology Laboratory</span></a> , Protein Function Development Team, EMBL-EBI <a href="https://www.ebi.ac.uk/about/teams/protein-function-development" target="_blank" class="tooltip">[105]<span class="tooltiptext">Protein Function Development – Services for protein sequences and their function</span></a>
+</td>
+</tr>
+<tr>
+<td>17</td>
+<td>
+Chem2Bio2RDF
+</td>
+<td>
+<a href="http://cheminfov.informatics.indiana.edu:8080/c2b2r" target="_blank" class="tooltip">[106]<span class="tooltiptext">chem2bio2rdf</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/1471-2105-11-255" target="_blank" class="tooltip">[107]<span class="tooltiptext">Chem2Bio2RDF: a semantic framework for linking and data mining chemogenomic and systems chemical biology data</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+RDF <a href="https://web.archive.org/web/20150121065022/http://cheminfov.informatics.indiana.edu:8080/datasets.html" target="_blank" class="tooltip">[108]<span class="tooltiptext">Wayback machine: chem2bio2rdf datasets</span></a>
+</td>
+<td>
+2010
+</td>
+<td>
+School of Informatics and Computing, Indiana University <a href="https://luddy.indiana.edu/index.html" target="_blank" class="tooltip">[109]<span class="tooltiptext">IU School of Informatics, Computing, and Engineering</span></a>
+</td>
+</tr>
+<tr>
+<td>18</td>
+<td>
+Clinical Knowledge Graph (CKG)
+</td>
+<td>
+<a href="https://ckg.readthedocs.io" target="_blank" class="tooltip">[110]<span class="tooltiptext">Clinical Knowledge Graph — ClinicalKnowledgeGraph 1.0 documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1101/2020.05.09.084897" target="_blank" class="tooltip">[111]<span class="tooltiptext">Clinical Knowledge Graph Integrates Proteomics Data into Clinical Decision-Making</span></a> <a href="https://doi.org/10.1038/s41587-021-01145-6" target="_blank" class="tooltip">[112]<span class="tooltiptext">A knowledge graph to interpret clinical proteomics data</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/MannLabs/CKG" target="_blank" class="tooltip">[113]<span class="tooltiptext">CKG</span></a>
+</td>
+<td>
+.dump (Neo4j) <a href="https://doi.org/10.17632/mrcf7f4tc2" target="_blank" class="tooltip">[114]<span class="tooltiptext">Clinical Knowledge Graph</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+NNF Center for Protein Research, University of Copenhagen <a href="https://www.cpr.ku.dk" target="_blank" class="tooltip">[115]<span class="tooltiptext">Novo Nordisk Foundation Center for Protein Research</span></a>
+</td>
+</tr>
+<tr>
+<td>19</td>
+<td>
+CovidGraph
+</td>
+<td>
+<a href="https://healthecco.org" target="_blank" class="tooltip">[116]<span class="tooltiptext">HealthECCO</span></a> <a href="https://web.archive.org/web/20230327061808/https://healthecco.org/covidgraph" target="_blank" class="tooltip">[117]<span class="tooltiptext">CovidGraph - a COVID-19 Knowledge Graph - HealthECCO</span></a> <a href="https://github.com/covidgraph/documentation/wiki" target="_blank" class="tooltip">[118]<span class="tooltiptext">CovidGraph Documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btac592" target="_blank" class="tooltip">[119]<span class="tooltiptext">CovidGraph: a graph to fight COVID-19</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/covidgraph/documentation" target="_blank" class="tooltip">[120]<span class="tooltiptext">documentation</span></a>
+</td>
+<td>
+Web UI <a href="https://live.yworks.com/covidgraph" target="_blank" class="tooltip">[121]<span class="tooltiptext">CovidGraph Explorer</span></a> , Neo4j Browser <a href="https://db.covidgraph.org/browser" target="_blank" class="tooltip">[122]<span class="tooltiptext">Neo4j Browser</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Covidgraph.org Team, Individuals from various research institutes <a href="https://github.com/covidgraph" target="_blank" class="tooltip">[123]<span class="tooltiptext">Covidgraph.org Team</span></a>
+</td>
+</tr>
+<tr>
+<td>20</td>
+<td>
+CovidPubKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41597-022-01298-2" target="_blank" class="tooltip">[124]<span class="tooltiptext">CovidPubGraph: A FAIR Knowledge Graph of COVID-19 Publications</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/dice-group/COVID19DS" target="_blank" class="tooltip">[125]<span class="tooltiptext">CovidPubKG: A FAIR Knowledge Graph of COVID-19 Publications</span></a>
+</td>
+<td>
+.nt / .ttl <a href="https://files.dice-research.org/datasets/CovidPubGraph/archive" target="_blank" class="tooltip">[126]<span class="tooltiptext">/datasets/CovidPubGraph/archive/</span></a> <a href="https://doi.org/10.5281/zenodo.4650261" target="_blank" class="tooltip">[127]<span class="tooltiptext">CovidPubGraph: A FAIR Knowledge Graph of COVID-19 Publications</span></a> , SPARQL endpoint <a href="https://covid-19ds.data.dice-research.org/sparql" target="_blank" class="tooltip">[128]<span class="tooltiptext">Virtuoso SPARQL Query Editor</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+DICE group, Paderborn University <a href="https://dice-research.org" target="_blank" class="tooltip">[129]<span class="tooltiptext">The Data Science (DICE) group</span></a>
+</td>
+</tr>
+<tr>
+<td>21</td>
+<td>
+DDI-BLKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-030-59137-3_12" target="_blank" class="tooltip">[130]<span class="tooltiptext">Drug-Drug Interaction Prediction on a Biomedical Literature Knowledge Graph</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/kbogas/DDI_BLKG" target="_blank" class="tooltip">[131]<span class="tooltiptext">Drug-Drug Interaction Prediction on a Biomedical Literature Knowledge Graph (DDI-BLKG)</span></a>
+</td>
+<td>
+.txt <a href="https://owncloud.skel.iit.demokritos.gr:443/index.php/s/WFpHQ6aegYK1J7M" target="_blank" class="tooltip">[132]<span class="tooltiptext">ownCloud - A safe home for all your data</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Institute of Informatics and Telecommunications, NCSR Demokritos <a href="https://www.iit.demokritos.gr" target="_blank" class="tooltip">[133]<span class="tooltiptext">National Centre for Scientific Research "Demokritos"</span></a>
+</td>
+</tr>
+<tr>
+<td>22</td>
+<td>
+DRKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://github.com/gnn4dr/DRKG/blob/master/DRKG%20Drug%20Repurposing%20Knowledge%20Graph.pdf" target="_blank" class="tooltip">[134]<span class="tooltiptext">DRKG/DRKG Drug Repurposing Knowledge Graph.pdf at master · gnn4dr/DRKG</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/gnn4dr/DRKG" target="_blank" class="tooltip">[135]<span class="tooltiptext">Drug Repurposing Knowledge Graph (DRKG)</span></a>
+</td>
+<td>
+.tsv / .npy <a href="https://github.com/gnn4dr/DRKG#download-drkg" target="_blank" class="tooltip">[136]<span class="tooltiptext">GitHub - gnn4dr/DRKG: A knowledge graph and a set of tools for drug repurposing</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>23</td>
+<td>
+DeepKG
+</td>
+<td>
+<a href="https://web.archive.org/web/20230930133838/http://covidkg.ai" target="_blank" class="tooltip">[137]<span class="tooltiptext">COVID-19 KG</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btab767" target="_blank" class="tooltip">[138]<span class="tooltiptext">DeepKG: an end-to-end deep learning-based workflow for biomedical knowledge graph extraction, optimization and applications</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+Triplets <a href="https://web.archive.org/web/20230930133838/http://covidkg.ai" target="_blank" class="tooltip">[139]<span class="tooltiptext">COVID-19 KG</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>24</td>
+<td>
+DisGeNET-RDF
+</td>
+<td>
+<a href="https://www.disgenet.org" target="_blank" class="tooltip">[140]<span class="tooltiptext">DisGeNET - a database of gene-disease associations</span></a> <a href="https://www.disgenet.org/rdf" target="_blank" class="tooltip">[141]<span class="tooltiptext">DisGeNET RDF</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/database/bav028" target="_blank" class="tooltip">[142]<span class="tooltiptext">DisGeNET: a discovery platform for the dynamical exploration of human diseases and their genes</span></a> <a href="https://doi.org/10.1093/bioinformatics/btw214" target="_blank" class="tooltip">[143]<span class="tooltiptext">DisGeNET-RDF: harnessing the innovative power of the Semantic Web to explore the genetic basis of diseases</span></a> <a href="https://doi.org/10.1093/nar/gkz1021" target="_blank" class="tooltip">[144]<span class="tooltiptext">The DisGeNET knowledge platform for disease genomics: 2019 update</span></a>
+</td>
+<td>
+Bitbucket <a href="https://bitbucket.org/ibi_group/disgenet2r" target="_blank" class="tooltip">[145]<span class="tooltiptext">disgenet2r — Bitbucket</span></a> <a href="https://bitbucket.org/ibi_group/disgenet-app" target="_blank" class="tooltip">[146]<span class="tooltiptext">disgenet-app — Bitbucket</span></a>
+</td>
+<td>
+.ttl <a href="http://rdf.disgenet.org/download" target="_blank" class="tooltip">[147]<span class="tooltiptext">Index of /download</span></a> ,  SPARQL endpoint <a href="http://rdf.disgenet.org/sparql" target="_blank" class="tooltip">[148]<span class="tooltiptext">Virtuoso SPARQL Query Editor</span></a> <a href="http://rdf.disgenet.org/lodestar/sparql" target="_blank" class="tooltip">[149]<span class="tooltiptext">SPARQL Explorer</span></a> ,  .tsv / .sql (SQLite) <a href="https://www.disgenet.org/downloads" target="_blank" class="tooltip">[150]<span class="tooltiptext">DisGeNET - a database of gene-disease associations</span></a> ,  REST API <a href="https://www.disgenet.org/api" target="_blank" class="tooltip">[151]<span class="tooltiptext">DisGeNET Programmatic Access</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Integrative Biomedical Informatics (IBI) group, Research Programme on Biomedical Informatics (GRIB) <a href="http://grib.imim.es/research/integrative-biomedical-informatics" target="_blank" class="tooltip">[152]<span class="tooltiptext">Integrative Biomedical Informatics - Research - Grib</span></a>
+</td>
+</tr>
+<tr>
+<td>25</td>
+<td>
+Drug-CoV
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1007/s10115-023-01923-5" target="_blank" class="tooltip">[153]<span class="tooltiptext">Drug-CoV: a drug-origin knowledge graph discovering drug repurposing targeting COVID-19</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/SRL94/kg" target="_blank" class="tooltip">[154]<span class="tooltiptext">kg</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/SRL94/kg/tree/main/Drug-CoV" target="_blank" class="tooltip">[155]<span class="tooltiptext">kg/Drug-CoV at main · SRL94/kg</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+School of Information Technology, Murdoch University <a href="https://murdoch.edu.au/schools/information-technology" target="_blank" class="tooltip">[156]<span class="tooltiptext">School of Information Technology - Murdoch University</span></a>
+</td>
+</tr>
+<tr>
+<td>26</td>
+<td>
+DrugMechDB
+</td>
+<td>
+<a href="https://sulab.github.io/DrugMechDB" target="_blank" class="tooltip">[157]<span class="tooltiptext">Indication Mechanism of Action Database - DrugMechDB</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41597-023-02534-z" target="_blank" class="tooltip">[158]<span class="tooltiptext">DrugMechDB: A Curated Database of Drug Mechanisms</span></a> <a href="https://doi.org/10.1093/bioinformatics/btac205" target="_blank" class="tooltip">[159]<span class="tooltiptext">Design and application of a knowledge network for automatic prioritization of drug mechanisms</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/SuLab/DrugMechDB" target="_blank" class="tooltip">[160]<span class="tooltiptext">DrugMechDB</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+2023
+</td>
+<td>
+Su Lab, Scripps Research Institute <a href="https://sulab.org" target="_blank" class="tooltip">[161]<span class="tooltiptext">The Su Lab - Quantitative methods in biomedical discovery</span></a>
+</td>
+</tr>
+<tr>
+<td>27</td>
+<td>
+DrugRep-HeSiaGraph
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12859-023-05479-7" target="_blank" class="tooltip">[162]<span class="tooltiptext">DrugRep-HeSiaGraph: when heterogenous siamese neural network meets knowledge graphs for drug repurposing</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/CBRC-lab/DrugRep-HeSiaGraph" target="_blank" class="tooltip">[163]<span class="tooltiptext">DrugRep-HeSiaGraph</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/CBRC-lab/DrugRep-HeSiaGraph" target="_blank" class="tooltip">[164]<span class="tooltiptext">DrugRep-HeSiaGraph</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+CBRC Lab, Amirkabir University Of Technology <a href="http://bioinformatics.aut.ac.ir" target="_blank" class="tooltip">[165]<span class="tooltiptext">CBRC</span></a>
+</td>
+</tr>
+<tr>
+<td>28</td>
+<td>
+DrugRep-KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1021/acs.jcim.2c01291" target="_blank" class="tooltip">[166]<span class="tooltiptext">DrugRep-KG: Toward Learning a Unified Latent Space for Drug Repurposing Using Knowledge Graphs</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/CBRC-lab/DrugRep-KG" target="_blank" class="tooltip">[167]<span class="tooltiptext">DrugRep-KG</span></a>
+</td>
+<td>
+.csv / .txt <a href="https://github.com/CBRC-lab/DrugRep-KG/tree/main/DRP-KGE-Data%20and%20Code" target="_blank" class="tooltip">[168]<span class="tooltiptext">DrugRep-KG/DRP-KGE-Data and Code at main · CBRC-lab/DrugRep-KG · GitHub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+CBRC Lab, Amirkabir University Of Technology <a href="http://bioinformatics.aut.ac.ir" target="_blank" class="tooltip">[169]<span class="tooltiptext">CBRC</span></a>
+</td>
+</tr>
+<tr>
+<td>29</td>
+<td>
+EmBiology
+</td>
+<td>
+<a href="https://www.elsevier.com/products/embiology" target="_blank" class="tooltip">[170]<span class="tooltiptext">EmBiology - Biological data structured for insights - Elsevier</span></a>
+</td>
+<td>
+<a href="https://assets.ctfassets.net/o78em1y1w4i4/1o4TSxumH9ZFQFc2cd27Qf/16dd4d6afb7621db4d5655478f00d3e5/EmBiology_Fact_Sheet.pdf" target="_blank" class="tooltip">[171]<span class="tooltiptext">EmBiology</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+Commercial access
+</td>
+<td>
+2023
+</td>
+<td>
+Company: Elsevier <a href="https://www.elsevier.com" target="_blank" class="tooltip">[172]<span class="tooltiptext">Elsevier - An Information Analytics Business</span></a>
+</td>
+</tr>
+<tr>
+<td>30</td>
+<td>
+EpiGraphDB
+</td>
+<td>
+<a href="http://epigraphdb.org" target="_blank" class="tooltip">[173]<span class="tooltiptext">EpiGraphDB</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btaa961" target="_blank" class="tooltip">[174]<span class="tooltiptext">EpiGraphDB: a database and data mining platform for health data science</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/MRCIEU/epigraphdb" target="_blank" class="tooltip">[175]<span class="tooltiptext">epigraphdb</span></a> <a href="https://github.com/MRCIEU/epigraphdb-r" target="_blank" class="tooltip">[176]<span class="tooltiptext">epigraphdb-r</span></a>
+</td>
+<td>
+Neo4j build pipeline <a href="https://github.com/MRCIEU/epigraphdb-graph" target="_blank" class="tooltip">[177]<span class="tooltiptext">neo4j-build-pipeline</span></a> , REST API <a href="https://api.epigraphdb.org" target="_blank" class="tooltip">[178]<span class="tooltiptext">EpiGraphDB API - Swagger UI</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+MRC Integrative Epidemiology Unit, University of Bristol <a href="https://www.bristol.ac.uk/integrative-epidemiology" target="_blank" class="tooltip">[179]<span class="tooltiptext">MRC Integrative Epidemiology Unit - University of Bristol</span></a>
+</td>
+</tr>
+<tr>
+<td>31</td>
+<td>
+GP-KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.jbi.2022.104133" target="_blank" class="tooltip">[180]<span class="tooltiptext">KG-Predict: A knowledge graph computational framework for drug repurposing</span></a>
+</td>
+<td>
+File server <a href="http://nlp.case.edu/public/data/GPKG-Predict" target="_blank" class="tooltip">[181]<span class="tooltiptext">Index of /public/data/GPKG-Predict</span></a>
+</td>
+<td>
+.txt <a href="http://nlp.case.edu/public/data/GPKG-Predict/data" target="_blank" class="tooltip">[182]<span class="tooltiptext">Index of /public/data/GPKG-Predict/data</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Center for Artificial Intelligence in Drug Discovery, Case Western Reserve University <a href="https://case.edu/medicine/aicenter" target="_blank" class="tooltip">[183]<span class="tooltiptext">Center for Artificial Intelligence in Drug Discovery - Case Western Reserve University</span></a>
+</td>
+</tr>
+<tr>
+<td>32</td>
+<td>
+GenomicKB
+</td>
+<td>
+<a href="https://gkb.dcmb.med.umich.edu" target="_blank" class="tooltip">[184]<span class="tooltiptext">GenomicKB</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkac957" target="_blank" class="tooltip">[185]<span class="tooltiptext">GenomicKB: a knowledge graph for the human genome</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+.dump (Neo4j) <a href="https://liu-bioinfo-lab.github.io/GenomicKB_documentation/documentation/db_download/index.html" target="_blank" class="tooltip">[186]<span class="tooltiptext">Database Download :: GKB Documentation</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Liu Lab, University of Michigan <a href="https://jieliu6.github.io" target="_blank" class="tooltip">[187]<span class="tooltiptext">Liu Lab</span></a>
+</td>
+</tr>
+<tr>
+<td>33</td>
+<td>
+Google Health Knowledge Graph
+</td>
+<td>
+<a href="https://blog.google/products/search/health-info-knowledge-graph" target="_blank" class="tooltip">[188]<span class="tooltiptext">A remedy for your health-related questions: health info in the Knowledge Graph</span></a> <a href="https://blog.google/products/search/about-knowledge-graph-and-knowledge-panels" target="_blank" class="tooltip">[189]<span class="tooltiptext">A reintroduction to our Knowledge Graph and knowledge panels</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+-
+</td>
+<td>
+REST API with JSON-LD responses <a href="https://developers.google.com/knowledge-graph" target="_blank" class="tooltip">[190]<span class="tooltiptext">Google Knowledge Graph Search API</span></a> <a href="https://cloud.google.com/enterprise-knowledge-graph/docs/search-api" target="_blank" class="tooltip">[191]<span class="tooltiptext">Google Knowledge Graph Search API - Enterprise Knowledge Graph</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Company: Google <a href="https://about.google" target="_blank" class="tooltip">[192]<span class="tooltiptext">Google - About Google, Our Culture & Company News</span></a>
+</td>
+</tr>
+<tr>
+<td>34</td>
+<td>
+GrEDeL
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1109/ACCESS.2018.2886311" target="_blank" class="tooltip">[193]<span class="tooltiptext">GrEDeL: A Knowledge Graph Embedding Based Method for Drug Discovery From Biomedical Literatures</span></a>
+</td>
+<td>
+<a href="https://web.archive.org/web/20200914193006/https://github.com/ShengtianSang/GrEDeL" target="_blank" class="tooltip">[194]<span class="tooltiptext">GitHub - ShengtianSang/GrEDeL: GrEDeL</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+2019
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>35</td>
+<td>
+HALD
+</td>
+<td>
+<a href="https://bis.zju.edu.cn/hald" target="_blank" class="tooltip">[195]<span class="tooltiptext">HALD</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41597-023-02781-0" target="_blank" class="tooltip">[196]<span class="tooltiptext">HALD, a human aging and longevity knowledge graph for precision gerontology and geroscience analyses</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/zexuwu/hald" target="_blank" class="tooltip">[197]<span class="tooltiptext">hald</span></a>
+</td>
+<td>
+.json / .csv <a href="https://doi.org/10.6084/m9.figshare.22828196.v4" target="_blank" class="tooltip">[198]<span class="tooltiptext">HALD, a human aging and longevity knowledge graph for precision gerontology and geroscience analyses</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Ming Chen's Group of Bioinformatics, Zhejiang University <a href="https://bis.zju.edu.cn/binfo" target="_blank" class="tooltip">[199]<span class="tooltiptext">Ming Chen's Group of Bioinformatics!</span></a>
+</td>
+</tr>
+<tr>
+<td>36</td>
+<td>
+HemeKG
+</td>
+<td>
+<a href="https://hemekg.github.io/hemekg" target="_blank" class="tooltip">[200]<span class="tooltiptext">HemeKG v0.0.1-dev</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.3389/fbioe.2020.00074" target="_blank" class="tooltip">[201]<span class="tooltiptext">A Computational Approach for Mapping Heme Biology in the Context of Hemolytic Disorders</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/hemekg/hemekg" target="_blank" class="tooltip">[202]<span class="tooltiptext">HemeKG</span></a> , PyPI <a href="https://pypi.org/project/hemekg" target="_blank" class="tooltip">[203]<span class="tooltiptext">hemekg · PyPI</span></a>
+</td>
+<td>
+.json (BEL JSON) <a href="https://github.com/hemekg/hemekg/tree/master/hemekg" target="_blank" class="tooltip">[204]<span class="tooltiptext">hemekg/hemekg at master · hemekg/hemekg · GitHub</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Pharmaceutical Biochemistry and Bioanalytics, University of Bonn <a href="https://www.pharma.uni-bonn.de/pharmazeutische-biochemie-und-bioanalytik/en" target="_blank" class="tooltip">[205]<span class="tooltiptext">Department of Pharmaceutical Biochemistry and Bioanalytics</span></a> , Department of Bioinformatics, Fraunhofer SCAI <a href="https://www.scai.fraunhofer.de/en/business-research-areas/bioinformatics.html" target="_blank" class="tooltip">[206]<span class="tooltiptext">Bioinformatics - Fraunhofer SCAI</span></a>
+</td>
+</tr>
+<tr>
+<td>37</td>
+<td>
+Hetionet
+</td>
+<td>
+<a href="https://het.io" target="_blank" class="tooltip">[207]<span class="tooltiptext">Hetionet - An integrative network of biomedical knowledge</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.7554/eLife.26726" target="_blank" class="tooltip">[208]<span class="tooltiptext">Systematic integration of biomedical knowledge prioritizes drugs for repurposing</span></a> <a href="https://doi.org/10.1371/journal.pcbi.1004259" target="_blank" class="tooltip">[209]<span class="tooltiptext">Heterogeneous Network Edge Prediction: A Data Integration Approach to Prioritize Disease-Associated Genes</span></a>
+</td>
+<td>
+Website <a href="https://het.io/software" target="_blank" class="tooltip">[210]<span class="tooltiptext">Het.io - Software</span></a> , GitHub <a href="https://github.com/hetio/hetionet" target="_blank" class="tooltip">[211]<span class="tooltiptext">hetio/hetionet: Data repository containing Hetionet downloads</span></a> <a href="https://github.com/hetio/hetnetpy" target="_blank" class="tooltip">[212]<span class="tooltiptext">hetio/hetnetpy repository: Hetnets in Python</span></a> , PyPI <a href="https://pypi.org/project/hetio" target="_blank" class="tooltip">[213]<span class="tooltiptext">hetio · PyPI</span></a> <a href="https://pypi.org/project/hetnetpy" target="_blank" class="tooltip">[214]<span class="tooltiptext">hetnetpy · PyPI</span></a>
+</td>
+<td>
+.json / .tsv / .dump (Neo4j) / .npy (NumPy) <a href="https://het.io/explore/#download-dataset" target="_blank" class="tooltip">[215]<span class="tooltiptext">Het.io - Explore</span></a> Neo4j Browser <a href="https://neo4j.het.io/browser" target="_blank" class="tooltip">[216]<span class="tooltiptext">Hetionet in Neo4j</span></a>
+</td>
+<td>
+2018
+</td>
+<td>
+Baranzini Lab, UCSF <a href="https://baranzinilab.ucsf.edu" target="_blank" class="tooltip">[217]<span class="tooltiptext">Baranzini Lab</span></a> , Greene Lab, University of Pennsylvania <a href="https://greenelab.com" target="_blank" class="tooltip">[218]<span class="tooltiptext">Greene Lab</span></a>
+</td>
+</tr>
+<tr>
+<td>38</td>
+<td>
+HuadingKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.ipm.2020.102324" target="_blank" class="tooltip">[219]<span class="tooltiptext">HKGB: An Inclusive, Extensible, Intelligent, Semi-auto-constructed Knowledge Graph Framework for Healthcare with Clinicians’ Expertise Incorporated</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/dagege/huadingkg" target="_blank" class="tooltip">[220]<span class="tooltiptext">huadingkg</span></a>
+</td>
+<td>
+RDF (Apache Jena) <a href="https://github.com/dagege/huadingkg" target="_blank" class="tooltip">[221]<span class="tooltiptext">huadingkg</span></a>
+</td>
+<td>
+2019
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>39</td>
+<td>
+IASiS Open Data Graph
+</td>
+<td>
+<a href="https://project-iasis.eu/node/178" target="_blank" class="tooltip">[222]<span class="tooltiptext">The iASiS project Knowledge Graph - IASIS</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1109/CBMS49503.2020.00049" target="_blank" class="tooltip">[223]<span class="tooltiptext">iASiS Open Data Graph: Automated Semantic Integration of Disease-Specific Knowledge</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/tasosnent/Biomedical-Knowledge-Integration" target="_blank" class="tooltip">[224]<span class="tooltiptext">iASiS Open Data Graph</span></a>
+</td>
+<td>
+MongoDB / Neo4j build pipeline <a href="https://github.com/tasosnent/Biomedical-Knowledge-Integration" target="_blank" class="tooltip">[225]<span class="tooltiptext">iASiS Open Data Graph</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Institute of Informatics and Telecommunications, NCSR Demokritos <a href="https://www.iit.demokritos.gr" target="_blank" class="tooltip">[226]<span class="tooltiptext">National Centre for Scientific Research "Demokritos"</span></a>
+</td>
+</tr>
+<tr>
+<td>40</td>
+<td>
+IDSM
+</td>
+<td>
+<a href="https://idsm.elixir-czech.cz" target="_blank" class="tooltip">[227]<span class="tooltiptext">IDSM - Integrated Database of Small Molecules</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/s13321-021-00515-1" target="_blank" class="tooltip">[228]<span class="tooltiptext">IDSM ChemWebRDF: SPARQLing small-molecule datasets</span></a>
+</td>
+<td>
+GitLab <a href="https://ip-147-251-124-124.flt.cloud.muni.cz/chemdb" target="_blank" class="tooltip">[229]<span class="tooltiptext">chemdb · GitLab</span></a>
+</td>
+<td>
+.owl / .ttl / .sql (PostgreSQL) pipeline <a href="https://ip-147-251-124-124.flt.cloud.muni.cz/chemdb/loaders" target="_blank" class="tooltip">[230]<span class="tooltiptext">chemdb / loaders · GitLab</span></a> , SPARQL endpoints <a href="https://idsm.elixir-czech.cz/sparql" target="_blank" class="tooltip">[231]<span class="tooltiptext">IDSM / SPARQL GUI</span></a> <a href="https://idsm.elixir-czech.cz/chemweb" target="_blank" class="tooltip">[232]<span class="tooltiptext">IDSM / SPARQL GUI</span></a> <a href="https://idsm.elixir-czech.cz/sparql/endpoint/idsm" target="_blank" class="tooltip">[233]<span class="tooltiptext">YASGUI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Institute of Organic Chemistry and Biochemistry, Czech Academy of Sciences <a href="https://www.uochb.cz/en" target="_blank" class="tooltip">[234]<span class="tooltiptext">IOCB Prague - Institute of Organic Chemistry and Biochemistry of the CAS</span></a>
+</td>
+</tr>
+<tr>
+<td>41</td>
+<td>
+INDRA
+</td>
+<td>
+<a href="http://www.indra.bio" target="_blank" class="tooltip">[235]<span class="tooltiptext">INDRA</span></a> <a href="https://indra.readthedocs.io" target="_blank" class="tooltip">[236]<span class="tooltiptext">INDRA documentation — INDRA 1.22.0 documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.15252/msb.20177651" target="_blank" class="tooltip">[237]<span class="tooltiptext">From word models to executable models of signaling networks using automated assembly</span></a> <a href="https://doi.org/10.15252/msb.202211325" target="_blank" class="tooltip">[238]<span class="tooltiptext">Automated assembly of molecular mechanisms at scale from text mining and curated databases</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/sorgerlab/indra" target="_blank" class="tooltip">[239]<span class="tooltiptext">INDRA</span></a> , PyPI <a href="https://pypi.org/project/indra" target="_blank" class="tooltip">[240]<span class="tooltiptext">indra · PyPI</span></a>
+</td>
+<td>
+.tsv <a href="https://github.com/sorgerlab/indra_assembly_paper/tree/master/data" target="_blank" class="tooltip">[241]<span class="tooltiptext">indra_assembly_paper/data at master · sorgerlab/indra_assembly_paper · GitHub</span></a> , .pkl / .json <a href="https://doi.org/10.5281/zenodo.7559353" target="_blank" class="tooltip">[242]<span class="tooltiptext">INDRA assembly Benchmark Corpus</span></a> , REST API <a href="http://api.indra.bio:8000" target="_blank" class="tooltip">[243]<span class="tooltiptext">INDRA REST API</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Sorger Lab, Harvard Medical School <a href="https://sorger.med.harvard.edu" target="_blank" class="tooltip">[244]<span class="tooltiptext">Sorger Lab</span></a>
+</td>
+</tr>
+<tr>
+<td>42</td>
+<td>
+Implicitome
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1371/journal.pone.0149621" target="_blank" class="tooltip">[245]<span class="tooltiptext">The Implicitome: A Resource for Rationalizing Gene-Disease Associations</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/BiosemanticsDotOrg/GeneDiseasePaper" target="_blank" class="tooltip">[246]<span class="tooltiptext">GeneDiseasePaper</span></a>
+</td>
+<td>
+.csv / .nq <a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.gn219" target="_blank" class="tooltip">[247]<span class="tooltiptext">Dryad - Data -- The implicitome: a resource for rationalizing gene-disease associations</span></a>
+</td>
+<td>
+2017
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>43</td>
+<td>
+KEGG50k
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1145/3297280.3297282" target="_blank" class="tooltip">[248]<span class="tooltiptext">Drug target discovery using knowledge graph embeddings</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+.txt <a href="https://figshare.com/s/bbfc7b82d17e0b8b6a43" target="_blank" class="tooltip">[249]<span class="tooltiptext">KEGG50k-drugtargets</span></a>
+</td>
+<td>
+2018
+</td>
+<td>
+Data Science Institute, University of Galway <a href="https://www.universityofgalway.ie/dsi" target="_blank" class="tooltip">[250]<span class="tooltiptext">Data Science Institute - University of Galway</span></a>
+</td>
+</tr>
+<tr>
+<td>44</td>
+<td>
+KG-COVID-19
+</td>
+<td>
+<a href="https://kghub.org/kg-covid-19" target="_blank" class="tooltip">[251]<span class="tooltiptext">KG-COVID-19 documentation — kg-covid-19 1.0.0 documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.patter.2020.100155" target="_blank" class="tooltip">[252]<span class="tooltiptext">KG-COVID-19: A Framework to Produce Customized Knowledge Graphs for COVID-19 Response</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/Knowledge-Graph-Hub/kg-covid-19" target="_blank" class="tooltip">[253]<span class="tooltiptext">kg-covid-19</span></a>
+</td>
+<td>
+.nt / .tsv <a href="https://github.com/Knowledge-Graph-Hub/kg-covid-19/wiki" target="_blank" class="tooltip">[254]<span class="tooltiptext">KG-COVID-19</span></a> , SPARQL endpoint <a href="http://kg-hub-rdf.berkeleybop.io/blazegraph/#query" target="_blank" class="tooltip">[255]<span class="tooltiptext">Blazegraph Workbench</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>45</td>
+<td>
+KG-Hub
+</td>
+<td>
+<a href="https://kghub.org" target="_blank" class="tooltip">[256]<span class="tooltiptext">Knowledge Graph Hub</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2302.10800" target="_blank" class="tooltip">[257]<span class="tooltiptext">KG-Hub -- Building and Exchanging Biological Knowledge Graphs</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/Knowledge-Graph-Hub" target="_blank" class="tooltip">[258]<span class="tooltiptext">Knowledge-Graph-Hub</span></a>
+</td>
+<td>
+.nt <a href="https://kghub.io" target="_blank" class="tooltip">[259]<span class="tooltiptext">KG-Hub Index</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>46</td>
+<td>
+KGen
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12911-020-01341-5" target="_blank" class="tooltip">[260]<span class="tooltiptext">KGen: a knowledge graph generator from biomedical scientific literature</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/rossanez/KGen" target="_blank" class="tooltip">[261]<span class="tooltiptext">KGen</span></a>
+</td>
+<td>
+.txt / .ttl <a href="https://github.com/rossanez/KGen/tree/master/examples/biomedical" target="_blank" class="tooltip">[262]<span class="tooltiptext">KGen/examples/biomedical at master · rossanez/KGen · GitHub</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Institute of Computing, University of Campinas <a href="https://ic.unicamp.br/en" target="_blank" class="tooltip">[263]<span class="tooltiptext">Institute of Computing</span></a>
+</td>
+</tr>
+<tr>
+<td>47</td>
+<td>
+KIDS
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41467-022-29993-z" target="_blank" class="tooltip">[264]<span class="tooltiptext">Knowledge integration and decision support for accelerated discovery of antibiotic resistance genes</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/IBPA/KIDS" target="_blank" class="tooltip">[265]<span class="tooltiptext">Knowledge Integration and Decision Support (KIDS)</span></a>
+</td>
+<td>
+.txt / .xml <a href="https://github.com/IBPA/KIDS/tree/master/kg_constructor/data" target="_blank" class="tooltip">[266]<span class="tooltiptext">KIDS/kg_constructor/data at master · IBPA/KIDS · GitHub</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Tagkopoulos Lab, University of California <a href="http://tagkopouloslab.ucdavis.edu" target="_blank" class="tooltip">[267]<span class="tooltiptext">Integrative Biology and Predictive Analytics – @ UC DAVIS</span></a>
+</td>
+</tr>
+<tr>
+<td>48</td>
+<td>
+KaBOB
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12859-015-0559-3" target="_blank" class="tooltip">[268]<span class="tooltiptext">KaBOB: ontology-based semantic integration of biomedical databases</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/drlivingston/kabob" target="_blank" class="tooltip">[269]<span class="tooltiptext">KaBOB</span></a>
+</td>
+<td>
+RDF pipeline <a href="https://github.com/drlivingston/kabob" target="_blank" class="tooltip">[270]<span class="tooltiptext">KaBOB</span></a>
+</td>
+<td>
+2015
+</td>
+<td>
+Computational Bioscience Program, University of Colorado <a href="https://www.cuanschutz.edu/graduate-programs/computational-bioscience/home" target="_blank" class="tooltip">[271]<span class="tooltiptext">Computational Bioscience Home - School of Medicine</span></a>
+</td>
+</tr>
+<tr>
+<td>49</td>
+<td>
+Knowledge4COVID-19 KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.websem.2022.100760" target="_blank" class="tooltip">[272]<span class="tooltiptext">Knowledge4COVID-19: A semantic-based approach for constructing a COVID-19 related knowledge graph from various sources and analyzing treatments’ toxicities</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/SDM-TIB/Knowledge4COVID-19" target="_blank" class="tooltip">[273]<span class="tooltiptext">Knowledge4COVID-19</span></a> , Zenodo <a href="https://zenodo.org/records/4701817" target="_blank" class="tooltip">[274]<span class="tooltiptext">Knowledge4COVID-19</span></a>
+</td>
+<td>
+SPARQL endpoint <a href="https://labs.tib.eu/sdm/covid19kg/sparql" target="_blank" class="tooltip">[275]<span class="tooltiptext">Virtuoso SPARQL Query Editor</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+L3S Research Center, University of Hannover <a href="https://www.l3s.de/research-at-l3s/all-projects" target="_blank" class="tooltip">[276]<span class="tooltiptext">L3S Research Center - All Projects</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>50</td>
+<td>
+LMKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.knosys.2023.111323" target="_blank" class="tooltip">[277]<span class="tooltiptext">LMKG: A large-scale and multi-source medical knowledge graph for intelligent medicine applications</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ypr17/LMKG" target="_blank" class="tooltip">[278]<span class="tooltiptext">LMKG</span></a>
+</td>
+<td>
+.json <a href="https://drive.google.com/drive/folders/13oDTHUnkgaN__pw_XKGEotmu97odmUpF" target="_blank" class="tooltip">[279]<span class="tooltiptext">LMKG – Google Drive</span></a> , Neo4j Browser <a href="http://43.140.200.9:7474/browser" target="_blank" class="tooltip">[280]<span class="tooltiptext">Neo4j Browser</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Department of Electronic Engineering, Tsinghua University <a href="https://www.ee.tsinghua.edu.cn/en" target="_blank" class="tooltip">[281]<span class="tooltiptext">Department Of Electronic Engineering Tsinghua University</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>51</td>
+<td>
+MDKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-030-61951-0_8" target="_blank" class="tooltip">[282]<span class="tooltiptext">An Integrated Knowledge Graph for Microbe-Disease Associations</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ccszbd/MDKG" target="_blank" class="tooltip">[283]<span class="tooltiptext">MDKG</span></a>
+</td>
+<td>
+.dict / .txt <a href="https://github.com/ccszbd/MDKG/blob/master/dataset.rar" target="_blank" class="tooltip">[284]<span class="tooltiptext">MDKG/dataset.rar at master · ccszbd/MDKG · GitHub</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Central China Normal University <a href="https://www.ccnu.edu.cn" target="_blank" class="tooltip">[285]<span class="tooltiptext">Central China Normal University</span></a>
+</td>
+</tr>
+<tr>
+<td>52</td>
+<td>
+Monarch KG
+</td>
+<td>
+<a href="https://monarchinitiative.org" target="_blank" class="tooltip">[286]<span class="tooltiptext">Monarch Initiative</span></a> <a href="https://monarch-app.monarchinitiative.org" target="_blank" class="tooltip">[287]<span class="tooltiptext">monarch-py</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1534/genetics.116.188870" target="_blank" class="tooltip">[288]<span class="tooltiptext">Navigating the Phenotype Frontier: The Monarch Initiative</span></a> <a href="https://doi.org/10.1093/nar/gkw1128" target="_blank" class="tooltip">[289]<span class="tooltiptext">The Monarch Initiative: an integrative data and analytic platform connecting phenotypes to genotypes across species</span></a> <a href="https://doi.org/10.1093/nar/gkad1082" target="_blank" class="tooltip">[290]<span class="tooltiptext">The Monarch Initiative in 2024: an analytic platform integrating phenotypes, genes and diseases across species</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/monarch-initiative/monarch-ingest" target="_blank" class="tooltip">[291]<span class="tooltiptext">monarch_ingest</span></a> <a href="https://github.com/monarch-initiative/monarch-app" target="_blank" class="tooltip">[292]<span class="tooltiptext">Monarch App</span></a> , PyPI <a href="https://pypi.org/project/monarch-py" target="_blank" class="tooltip">[293]<span class="tooltiptext">monarch-py · PyPI</span></a>
+</td>
+<td>
+.nt, .jsonl, .tsv, .db (SQLite), .dump (Neo4j) <a href="https://data.monarchinitiative.org" target="_blank" class="tooltip">[294]<span class="tooltiptext">Directory index for https://data.monarchinitiative.org/</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Department of Biomedical Informatics, University of Colorado <a href="https://medschool.cuanschutz.edu/dbmi" target="_blank" class="tooltip">[295]<span class="tooltiptext">Department of Biomedical Informatics</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>53</td>
+<td>
+Mpox Knowledge Graph
+</td>
+<td>
+<a href="https://www.ebi.ac.uk/biomodels/MODEL2208040001" target="_blank" class="tooltip">[296]<span class="tooltiptext">Monkeypox Knowledge Graph: A comprehensive representation embedding chemical entities and associated biology of Monkeypox - BioModels</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioadv/vbad045" target="_blank" class="tooltip">[297]<span class="tooltiptext">Mpox Knowledge Graph: a comprehensive representation embedding chemical entities and associated biology of Mpox</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/Fraunhofer-ITMP/mpox-kg" target="_blank" class="tooltip">[298]<span class="tooltiptext">Monkeypox Knowledge Graph: A comprehensive representation of chemical and biological entities associated with Monkeypox</span></a>
+</td>
+<td>
+.csv / .graphml / .pkl / .sif <a href="https://www.ebi.ac.uk/biomodels/MODEL2208040001#Files" target="_blank" class="tooltip">[299]<span class="tooltiptext">Monkeypox Knowledge Graph: A comprehensive representation embedding chemical entities and associated biology of Monkeypox - BioModels</span></a> <a href="https://zenodo.org/records/7944120" target="_blank" class="tooltip">[300]<span class="tooltiptext">Mpox Knowledge Graph: A comprehensive representation of chemical and biological entities associated with Mpox</span></a> , Web UI <a href="https://doi.org/10.18119/N9SG7D" target="_blank" class="tooltip">[301]<span class="tooltiptext">Mpox Knowledge Graph - A comprehensive representation embedding chemical entities and associated biology of Mpox</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Fraunhofer Institute for Translational Medicine and Pharmacology (ITMP) <a href="https://www.itmp.fraunhofer.de/en.html" target="_blank" class="tooltip">[302]<span class="tooltiptext">Fraunhofer ITMP</span></a>
+</td>
+</tr>
+<tr>
+<td>54</td>
+<td>
+NGLY1 Deficiency KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1093/database/baaa015" target="_blank" class="tooltip">[303]<span class="tooltiptext">Structured reviews for data and knowledge-driven research</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/SuLab/ngly1-graph" target="_blank" class="tooltip">[304]<span class="tooltiptext">The NGLY1 Deficiency Knowledge Graph</span></a> <a href="https://github.com/SuLab/bioknowledge-reviewer" target="_blank" class="tooltip">[305]<span class="tooltiptext">BioKnowledge reviewer library</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/SuLab/ngly1-graph/tree/master/neo4j-graphs" target="_blank" class="tooltip">[306]<span class="tooltiptext">ngly1-graph/neo4j-graphs at master · SuLab/ngly1-graph</span></a> , Neo4j Browser <a href="https://web.archive.org/web/20211204195413/http://ngly1graph.org/browser" target="_blank" class="tooltip">[307]<span class="tooltiptext">Neo4j Browser</span></a>
+</td>
+<td>
+2019
+</td>
+<td>
+Su Lab, Scripps Research Institute <a href="https://sulab.org" target="_blank" class="tooltip">[308]<span class="tooltiptext">The Su Lab - Quantitative methods in biomedical discovery</span></a>
+</td>
+</tr>
+<tr>
+<td>55</td>
+<td>
+NeDRex
+</td>
+<td>
+<a href="https://nedrex.net" target="_blank" class="tooltip">[309]<span class="tooltiptext">NeDRex</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41467-021-27138-2" target="_blank" class="tooltip">[310]<span class="tooltiptext">Network medicine for disease module identification and drug repurposing with the NeDRex platform</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/repotrial/nedrex" target="_blank" class="tooltip">[311]<span class="tooltiptext">NeDRex</span></a> <a href="https://github.com/repotrial/NeDRexApp" target="_blank" class="tooltip">[312]<span class="tooltiptext">NeDRexApp</span></a> <a href="https://github.com/repotrial/nedrexdb" target="_blank" class="tooltip">[313]<span class="tooltiptext">nedrexdb</span></a>
+</td>
+<td>
+REST API <a href="https://api.nedrex.net" target="_blank" class="tooltip">[314]<span class="tooltiptext">NeDRexDB</span></a> , Neo4j API <a href="http://neo4j.nedrex.net" target="_blank" class="tooltip">[315]<span class="tooltiptext">NeDRexDB - Neo4j</span></a> , Cytoscape app <a href="https://apps.cytoscape.org/apps/nedrex" target="_blank" class="tooltip">[316]<span class="tooltiptext">Cytoscape App Store - NeDRex</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>56</td>
+<td>
+Neo4COVID-19
+</td>
+<td>
+<a href="https://web.archive.org/web/20210621192816/https://neo4covid19.ncats.io" target="_blank" class="tooltip">[317]<span class="tooltiptext">Neo4COVID-19</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1021/acs.jcim.1c00431" target="_blank" class="tooltip">[318]<span class="tooltiptext">A Workflow of Integrated Resources to Catalyze Network Pharmacology Driven COVID-19 Research</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ncats/neo4covid19" target="_blank" class="tooltip">[319]<span class="tooltiptext">neo4covid19</span></a>
+</td>
+<td>
+Neo4j Browser <a href="https://aspire.covid19.ncats.io:7473" target="_blank" class="tooltip">[320]<span class="tooltiptext">Neo4j Data Browser</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH) <a href="https://ncats.nih.gov" target="_blank" class="tooltip">[321]<span class="tooltiptext">National Center for Advancing Translational Sciences</span></a>
+</td>
+</tr>
+<tr>
+<td>57</td>
+<td>
+OREGANO
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1145/3340531.3418510" target="_blank" class="tooltip">[322]<span class="tooltiptext">Computational Approaches for Drug Repositioning: Towards a Holistic Perspective based on Knowledge Graphs</span></a> <a href="https://doi.org/10.1038/s41597-023-02757-0" target="_blank" class="tooltip">[323]<span class="tooltiptext">The OREGANO knowledge graph for computational drug repurposing</span></a>
+</td>
+<td>
+GitLab <a href="https://gitub.u-bordeaux.fr/erias/oregano" target="_blank" class="tooltip">[324]<span class="tooltiptext">oregano · GitLab</span></a>
+</td>
+<td>
+.tsv <a href="https://gitub.u-bordeaux.fr/erias/oregano/-/tree/master/Data_OREGANO/Graphs" target="_blank" class="tooltip">[325]<span class="tooltiptext">Data_OREGANO/Graphs · oregano · GitLab</span></a> <a href="https://doi.org/10.5281/zenodo.10103842" target="_blank" class="tooltip">[326]<span class="tooltiptext">The OREGANO knowledge graph for computational drug repurposing</span></a> <a href="https://doi.org/10.6084/m9.figshare.23553114.v3" target="_blank" class="tooltip">[327]<span class="tooltiptext">The OREGANO knowledge graph for computational drug repurposing</span></a> , SPARQL endpoint <a href="http://91.121.148.199:8889/bigdata/#query" target="_blank" class="tooltip">[328]<span class="tooltiptext">Blazegraph Workbench</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Population Health Research Center, University of Bordeaux <a href="https://www.bordeaux-population-health.center/the-teams/ahead" target="_blank" class="tooltip">[329]<span class="tooltiptext">AHeaD - Bordeaux population health</span></a>
+</td>
+</tr>
+<tr>
+<td>58</td>
+<td>
+Open Graph Benchmark: ogbl-biokg
+</td>
+<td>
+<a href="https://snap-stanford.github.io/ogb-web/docs/linkprop/#ogbl-biokg" target="_blank" class="tooltip">[330]<span class="tooltiptext">Link Property Prediction</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2005.00687" target="_blank" class="tooltip">[331]<span class="tooltiptext">Open Graph Benchmark: Datasets for Machine Learning on Graphs</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/snap-stanford/ogb" target="_blank" class="tooltip">[332]<span class="tooltiptext">ogb</span></a> , PyPI <a href="https://pypi.org/project/ogb" target="_blank" class="tooltip">[333]<span class="tooltiptext">ogb · PyPI</span></a>
+</td>
+<td>
+.csv <a href="https://snap.stanford.edu/ogb/data/linkproppred" target="_blank" class="tooltip">[334]<span class="tooltiptext">Index of /ogb/data/linkproppred</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Department of Computer Science, Stanford University <a href="https://engineering.stanford.edu/faculty-research/departments/computer-science" target="_blank" class="tooltip">[335]<span class="tooltiptext">Computer Science - Stanford University School of Engineering</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>59</td>
+<td>
+OpenBioLink
+</td>
+<td>
+<a href="https://openbiolink.github.io" target="_blank" class="tooltip">[336]<span class="tooltiptext">OpenBioLink2021 Challenge</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btaa274" target="_blank" class="tooltip">[337]<span class="tooltiptext">OpenBioLink: a benchmarking framework for large-scale biomedical link prediction</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/OpenBioLink/OpenBioLink" target="_blank" class="tooltip">[338]<span class="tooltiptext">OpenBioLink</span></a> , PyPI <a href="https://pypi.org/project/openbiolink" target="_blank" class="tooltip">[339]<span class="tooltiptext">openbiolink · PyPI</span></a>
+</td>
+<td>
+.tsv <a href="https://openbiolink.github.io/dataset" target="_blank" class="tooltip">[340]<span class="tooltiptext">OpenBioLink2021 Challenge</span></a> , .tsv / .nt / .bel <a href="https://doi.org/10.5281/zenodo.5361324" target="_blank" class="tooltip">[341]<span class="tooltiptext">OpenBioLink2020</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Institute of Artificial Intelligence, Medical University of Vienna <a href="https://www.ai.meduniwien.ac.at/en" target="_blank" class="tooltip">[342]<span class="tooltiptext">Section for Artificial Intelligence and Decision Support, CeMSIIS, MedUni Vienna</span></a>
+</td>
+</tr>
+<tr>
+<td>60</td>
+<td>
+Otter-Knowledge
+</td>
+<td>
+<a href="https://medium.com/ibm-data-ai/otter-knowledge-2400afe3fe17" target="_blank" class="tooltip">[343]<span class="tooltiptext">Otter-Knowledge</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2306.12802" target="_blank" class="tooltip">[344]<span class="tooltiptext">Otter-Knowledge: benchmarks of multimodal knowledge graph representation learning from different sources for drug discovery</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/IBM/otter-knowledge" target="_blank" class="tooltip">[345]<span class="tooltiptext">Otter Knowledge</span></a>
+</td>
+<td>
+.nt <a href="https://huggingface.co/datasets/ibm/otter_uniprot_bindingdb_chembl" target="_blank" class="tooltip">[346]<span class="tooltiptext">ibm/otter_uniprot_bindingdb_chembl · Datasets at Hugging Face</span></a> <a href="https://huggingface.co/datasets/ibm/otter_stitch" target="_blank" class="tooltip">[347]<span class="tooltiptext">ibm/otter_stitch · Datasets at Hugging Face</span></a> <a href="https://huggingface.co/datasets/ibm/otter_primekg" target="_blank" class="tooltip">[348]<span class="tooltiptext">ibm/otter_primekg · Datasets at Hugging Face</span></a> <a href="https://huggingface.co/datasets/ibm/otter_dude" target="_blank" class="tooltip">[349]<span class="tooltiptext">ibm/otter_dude · Datasets at Hugging Face</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Company: IBM <a href="https://github.com/IBM" target="_blank" class="tooltip">[350]<span class="tooltiptext">International Business Machines · GitHub</span></a>
+</td>
+</tr>
+<tr>
+<td>61</td>
+<td>
+PGxLOD
+</td>
+<td>
+<a href="https://pgxlod.loria.fr" target="_blank" class="tooltip">[351]<span class="tooltiptext">PGxLOD</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/s13326-017-0125-1" target="_blank" class="tooltip">[352]<span class="tooltiptext">Learning from biomedical linked data to suggest valid pharmacogenes</span></a> <a href="https://doi.org/10.1186/s12859-019-2693-9" target="_blank" class="tooltip">[353]<span class="tooltiptext">PGxO and PGxLOD: a reconciliation of pharmacogenomic knowledge of various provenances, enabling further comparison</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/yassmarzou/pgx-lod-mining" target="_blank" class="tooltip">[354]<span class="tooltiptext">RDF-data-mining</span></a> <a href="https://github.com/practikpharma/pgxlod-reconciliation-rules" target="_blank" class="tooltip">[355]<span class="tooltiptext">pgxlod-reconciliation-rules</span></a>
+</td>
+<td>
+SPARQL endpoint <a href="https://pgxlod.loria.fr/sparql" target="_blank" class="tooltip">[356]<span class="tooltiptext">Virtuoso SPARQL Query Editor</span></a> , FCT Browser <a href="https://pgxlod.loria.fr/fct" target="_blank" class="tooltip">[357]<span class="tooltiptext">Precision Search & Find</span></a>
+</td>
+<td>
+2019
+</td>
+<td>
+PractiKPharma project, Loria <a href="https://practikpharma.mystrikingly.com" target="_blank" class="tooltip">[358]<span class="tooltiptext">PractiKPharma Project Homepage</span></a> , Loria, Joint Research Unit between CNRS, University of Lorraine, INRIA <a href="https://www.loria.fr/en" target="_blank" class="tooltip">[359]<span class="tooltiptext">Loria</span></a>
+</td>
+</tr>
+<tr>
+<td>62</td>
+<td>
+PharMeBINet
+</td>
+<td>
+<a href="https://pharmebi.net" target="_blank" class="tooltip">[360]<span class="tooltiptext">PharMeBINet</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41597-022-01510-3" target="_blank" class="tooltip">[361]<span class="tooltiptext">The heterogeneous pharmacological medical biochemical network PharMeBINet</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ckoenigs/PharMeBINet" target="_blank" class="tooltip">[362]<span class="tooltiptext">PharMeBINet: The heterogeneous pharmacological medical biochemical network</span></a>
+</td>
+<td>
+.db (Neo4j) / .graphml <a href="https://pharmebi.net/#/download" target="_blank" class="tooltip">[363]<span class="tooltiptext">PharMeBINet: Downloads</span></a> <a href="https://doi.org/10.5281/zenodo.6578218" target="_blank" class="tooltip">[364]<span class="tooltiptext">PharMeBINet</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Bioinformatics / Medical Informatics Department, University Bielefeld <a href="https://www.techfak.uni-bielefeld.de/ags/bi" target="_blank" class="tooltip">[365]<span class="tooltiptext">Bioinformatics / Medical Informatics Department</span></a>
+</td>
+</tr>
+<tr>
+<td>63</td>
+<td>
+PharmKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1093/bib/bbaa344" target="_blank" class="tooltip">[366]<span class="tooltiptext">PharmKG: a dedicated knowledge graph benchmark for bomedical data mining</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/MindRank-Biotech/PharmKG" target="_blank" class="tooltip">[367]<span class="tooltiptext">PharmKG</span></a>
+</td>
+<td>
+.tsv <a href="https://doi.org/10.5281/zenodo.4525237" target="_blank" class="tooltip">[368]<span class="tooltiptext">PharmKG: A Dedicated Knowledge Graph Benchmark for Biomedical Data Mining</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+School of Data and Computer Science, Sun Yat-sen University <a href="https://www.sysu.edu.cn/sysuen/Research1/ResearchInstitutes/National_Level.htm" target="_blank" class="tooltip">[369]<span class="tooltiptext">Sun Yat-Sen University: Research Institutes</span></a>
+</td>
+</tr>
+<tr>
+<td>64</td>
+<td>
+PheKnowLator
+</td>
+<td>
+<a href="https://github.com/callahantiff/PheKnowLator/wiki" target="_blank" class="tooltip">[370]<span class="tooltiptext">PheKnowLator</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1101/2020.04.30.071407" target="_blank" class="tooltip">[371]<span class="tooltiptext">A Framework for Automated Construction of Heterogeneous Large-Scale Biomedical Knowledge Graphs</span></a> <a href="https://doi.org/10.48550/arXiv.2307.05727" target="_blank" class="tooltip">[372]<span class="tooltiptext">An Open-Source Knowledge Graph Ecosystem for the Life Sciences</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/callahantiff/PheKnowLator" target="_blank" class="tooltip">[373]<span class="tooltiptext">PheKnowLator</span></a> , PyPI <a href="https://pypi.org/project/pkt-kg" target="_blank" class="tooltip">[374]<span class="tooltiptext">pkt-kg · PyPI</span></a> , Zenodo <a href="https://zenodo.org/communities/pheknowlator-ecosystem" target="_blank" class="tooltip">[375]<span class="tooltiptext">Search PheKnowLator</span></a>
+</td>
+<td>
+.owl / .nt / .gpickle / .pkl / .tsv / .json <a href="https://github.com/callahantiff/PheKnowLator/wiki/Archived-Builds" target="_blank" class="tooltip">[376]<span class="tooltiptext">Archived Builds</span></a> <a href="https://doi.org/10.5281/zenodo.10065431" target="_blank" class="tooltip">[377]<span class="tooltiptext">PheKnowLator Human Disease Knowledge Graph Benchmarks Archive</span></a> <a href="https://console.cloud.google.com/storage/browser/pheknowlator" target="_blank" class="tooltip">[378]<span class="tooltiptext">pheknowlator – Bucket-Details – Cloud Storage – Google Cloud Console</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Computational Bioscience Program, University of Colorado <a href="https://www.cuanschutz.edu/graduate-programs/computational-bioscience/home" target="_blank" class="tooltip">[379]<span class="tooltiptext">Computational Bioscience Home - School of Medicine</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>65</td>
+<td>
+PrimeKG
+</td>
+<td>
+<a href="https://zitniklab.hms.harvard.edu/projects/PrimeKG" target="_blank" class="tooltip">[380]<span class="tooltiptext">Precision Medicine Oriented Knowledge Graph</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41597-023-01960-3" target="_blank" class="tooltip">[381]<span class="tooltiptext">Building a knowledge graph to enable precision medicine</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/mims-harvard/PrimeKG" target="_blank" class="tooltip">[382]<span class="tooltiptext">PrimeKG</span></a>
+</td>
+<td>
+.csv / .tab <a href="https://doi.org/10.7910/DVN/IXA7BM" target="_blank" class="tooltip">[383]<span class="tooltiptext">PrimeKG</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Zitnik Lab, Harvard University <a href="https://zitniklab.hms.harvard.edu" target="_blank" class="tooltip">[384]<span class="tooltiptext">Artificial Intelligence for Medicine and Science</span></a>
+</td>
+</tr>
+<tr>
+<td>66</td>
+<td>
+PubChemRDF
+</td>
+<td>
+<a href="https://pubchem.ncbi.nlm.nih.gov/docs/rdf" target="_blank" class="tooltip">[385]<span class="tooltiptext">PubChemRDF</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/s13321-015-0084-4" target="_blank" class="tooltip">[386]<span class="tooltiptext">PubChemRDF: towards the semantic annotation of PubChem compound and substance databases</span></a> <a href="https://doi.org/10.1093/nar/gkac956" target="_blank" class="tooltip">[387]<span class="tooltiptext">PubChem 2023 update</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+.ttl <a href="https://pubchem.ncbi.nlm.nih.gov/docs/rdf-ftp" target="_blank" class="tooltip">[388]<span class="tooltiptext">FTP Download</span></a> <a href="https://pubchem.ncbi.nlm.nih.gov/docs/rdf-load" target="_blank" class="tooltip">[389]<span class="tooltiptext">Loading PubChemRDF</span></a> , REST API <a href="https://pubchem.ncbi.nlm.nih.gov/docs/rdf-rest" target="_blank" class="tooltip">[390]<span class="tooltiptext">RESTful Interface</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+PubChem, NCBI <a href="https://pubchem.ncbi.nlm.nih.gov" target="_blank" class="tooltip">[391]<span class="tooltiptext">PubChem</span></a>
+</td>
+</tr>
+<tr>
+<td>67</td>
+<td>
+PyKEEN
+</td>
+<td>
+<a href="https://pykeen.readthedocs.io" target="_blank" class="tooltip">[392]<span class="tooltiptext">PyKEEN</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-030-30796-7_1" target="_blank" class="tooltip">[393]<span class="tooltiptext">The KEEN Universe</span></a> <a href="https://doi.org/10.1093/bioinformatics/btz117" target="_blank" class="tooltip">[394]<span class="tooltiptext">BioKEEN: a library for learning and evaluating biological knowledge graph embeddings</span></a> <a href="http://jmlr.org/papers/v22/20-825.html" target="_blank" class="tooltip">[395]<span class="tooltiptext">PyKEEN 1.0: a Python library for training and evaluating knowledge graph embeddings</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/pykeen/pykeen" target="_blank" class="tooltip">[396]<span class="tooltiptext">PyKEEN</span></a> , PyPI <a href="https://pypi.org/project/pykeen" target="_blank" class="tooltip">[397]<span class="tooltiptext">pykeen · PyPI</span></a>
+</td>
+<td>
+.csv <a href="https://pykeen.readthedocs.io/en/latest/reference/datasets.html" target="_blank" class="tooltip">[398]<span class="tooltiptext">Datasets — pykeen 1.10.2-dev documentation</span></a> <a href="https://github.com/pykeen/pykeen/tree/master/src/pykeen/datasets" target="_blank" class="tooltip">[399]<span class="tooltiptext">pykeen/src/pykeen/datasets at master · pykeen/pykeen · GitHub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Smart Data Analytics Group, University of Bonn <a href="https://sda.tech" target="_blank" class="tooltip">[400]<span class="tooltiptext">Smart Data Analytics</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>68</td>
+<td>
+RDKG-115
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.compbiomed.2023.107262" target="_blank" class="tooltip">[401]<span class="tooltiptext">RDKG-115: Assisting drug repurposing and discovery for rare diseases by trimodal knowledge graph embedding</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ZhuChaoY/RDKG-115" target="_blank" class="tooltip">[402]<span class="tooltiptext">RDKG-115</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/ZhuChaoY/RDKG-115/tree/main/Model/KG" target="_blank" class="tooltip">[403]<span class="tooltiptext">RDKG-115/Model/KG at main · ZhuChaoY/RDKG-115 · GitHub</span></a> <a href="https://github.com/ZhuChaoY/RDKG-115/tree/main/RDKG-115" target="_blank" class="tooltip">[404]<span class="tooltiptext">RDKG-115/RDKG-115 at main · ZhuChaoY/RDKG-115 · GitHub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Intelligent Medicine Institute, Fudan University <a href="https://imien.fudan.edu.cn" target="_blank" class="tooltip">[405]<span class="tooltiptext">Intelligent Medicine Institute, Fudan University</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>69</td>
+<td>
+RNA-KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2312.00183" target="_blank" class="tooltip">[406]<span class="tooltiptext">RNA-KG: An ontology-based knowledge graph for representing interactions involving RNA molecules</span></a> <a href="https://doi.org/10.1007/978-3-031-34953-9_13" target="_blank" class="tooltip">[407]<span class="tooltiptext">A Meta-Graph for the Construction of an RNA-Centered Knowledge Graph</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/AnacletoLAB/RNA-KG" target="_blank" class="tooltip">[408]<span class="tooltiptext">RNA-KG</span></a>
+</td>
+<td>
+.nt / .txt <a href="https://zenodo.org/records/10078876" target="_blank" class="tooltip">[409]<span class="tooltiptext">RNA-KG</span></a> , SPARQL endpoint <a href="http://fievel.anacleto.di.unimi.it:9999/blazegraph/#splash" target="_blank" class="tooltip">[410]<span class="tooltiptext">Blazegraph Workbench</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+AnacletoLAB, University of Milan <a href="https://anacletolab.di.unimi.it" target="_blank" class="tooltip">[411]<span class="tooltiptext">AnacletoLAB - Computational Biology and Bioinformatics</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>70</td>
+<td>
+ROBOKOP
+</td>
+<td>
+<a href="https://robokop.renci.org" target="_blank" class="tooltip">[412]<span class="tooltiptext">ROBOKOP</span></a> <a href="https://github.com/RobokopU24" target="_blank" class="tooltip">[413]<span class="tooltiptext">ROBOKOP U24 · GitHub</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btz604" target="_blank" class="tooltip">[414]<span class="tooltiptext">ROBOKOP: an abstraction layer and user interface for knowledge graphs to support question answering</span></a> <a href="https://doi.org/10.1021/acs.jcim.9b00683" target="_blank" class="tooltip">[415]<span class="tooltiptext">ROBOKOP KG and KGB: Integrated Knowledge Graphs from Federated Sources</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/NCATS-Gamma/robokop" target="_blank" class="tooltip">[416]<span class="tooltiptext">robokop</span></a>
+</td>
+<td>
+.dump (Neo4j) / .json / .jsonl <a href="https://stars.renci.org/var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c" target="_blank" class="tooltip">[417]<span class="tooltiptext">Index of /var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c/</span></a> , Neo4j Browser <a href="http://robokopkg.renci.org/browser" target="_blank" class="tooltip">[418]<span class="tooltiptext">Neo4j Browser</span></a> , REST API <a href="https://robokop.renci.org/api-docs/docs/automat/robokop-kg" target="_blank" class="tooltip">[419]<span class="tooltiptext">ROBOKOP KG</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Renaissance Computing Institute (RENCI), University of North Carolina <a href="https://renci.org" target="_blank" class="tooltip">[420]<span class="tooltiptext">RENCI - Renaissance Computing Institute at UNC</span></a>
+</td>
+</tr>
+<tr>
+<td>71</td>
+<td>
+RPath KGs
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1371/journal.pcbi.1009909" target="_blank" class="tooltip">[421]<span class="tooltiptext">Causal reasoning over knowledge graphs leveraging drug-perturbed and disease-specific transcriptomic signatures for drug discovery</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/enveda/RPath" target="_blank" class="tooltip">[422]<span class="tooltiptext">RPath</span></a>
+</td>
+<td>
+.tsv <a href="https://github.com/enveda/RPath/tree/master/data/kg" target="_blank" class="tooltip">[423]<span class="tooltiptext">RPath/data/kg at master · enveda/RPath · GitHub</span></a> <a href="https://doi.org/10.5281/zenodo.5865857" target="_blank" class="tooltip">[424]<span class="tooltiptext">Causal reasoning over knowledge graphs leveraging drug-perturbed and disease-specific transcriptomic signatures for drug discovery</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Company: Enveda Biosciences <a href="https://www.envedabio.com" target="_blank" class="tooltip">[425]<span class="tooltiptext">Enveda Biosciences - Plant-Powered Drug Discovery</span></a>
+</td>
+</tr>
+<tr>
+<td>72</td>
+<td>
+RTX-KG2
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12859-022-04932-3" target="_blank" class="tooltip">[426]<span class="tooltiptext">RTX-KG2: a system for building a semantically standardized knowledge graph for translational biomedicine</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/RTXteam/RTX-KG2" target="_blank" class="tooltip">[427]<span class="tooltiptext">KG2: the second-generation RTX knowledge graph</span></a>
+</td>
+<td>
+.json <a href="http://rtx-kg2-public.s3-website-us-west-2.amazonaws.com" target="_blank" class="tooltip">[428]<span class="tooltiptext">RTX KG2</span></a> <a href="https://github.com/ncats/translator-lfs-artifacts/tree/main/files" target="_blank" class="tooltip">[429]<span class="tooltiptext">translator-lfs-artifacts/files at main · ncats/translator-lfs-artifacts</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Development team for the RTX biomedical reasoning tool <a href="https://github.com/RTXteam" target="_blank" class="tooltip">[430]<span class="tooltiptext">Development team for the RTX biomedical reasoning tool · GitHub</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>73</td>
+<td>
+Rare diseases integrative KG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s13326-020-00232-y" target="_blank" class="tooltip">[431]<span class="tooltiptext">An integrative knowledge graph for rare diseases, derived from the Genetic and Rare Diseases Information Center (GARD)</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ncats/stitcher" target="_blank" class="tooltip">[432]<span class="tooltiptext">Stitcher</span></a>
+</td>
+<td>
+Neo4j Browser <a href="https://disease.ncats.io" target="_blank" class="tooltip">[433]<span class="tooltiptext">Neo4j Browser</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Division of Pre-Clinical Innovation, NCATS, NIH <a href="https://ncats.nih.gov/about/divisions-and-offices" target="_blank" class="tooltip">[434]<span class="tooltiptext">Divisions and Offices - National Center for Advancing Translational Sciences</span></a>
+</td>
+</tr>
+<tr>
+<td>74</td>
+<td>
+Reactome Graph Database
+</td>
+<td>
+<a href="https://reactome.org/dev/graph-database" target="_blank" class="tooltip">[435]<span class="tooltiptext">Graph Database - Reactome Pathway Database</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gki072" target="_blank" class="tooltip">[436]<span class="tooltiptext">Reactome: a knowledgebase of biological pathways</span></a> <a href="https://doi.org/10.1371/journal.pcbi.1005968" target="_blank" class="tooltip">[437]<span class="tooltiptext">Reactome graph database: Efficient access to complex pathway data</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/reactome/graph-core" target="_blank" class="tooltip">[438]<span class="tooltiptext">Reactome Graph Database</span></a> <a href="https://github.com/reactome/graph-importer" target="_blank" class="tooltip">[439]<span class="tooltiptext">Reactome Graph Database Batch Importer</span></a>
+</td>
+<td>
+.graphdb (Neo4j) <a href="https://reactome.org/download-data" target="_blank" class="tooltip">[440]<span class="tooltiptext">Download - Reactome Pathway Database</span></a> , REST API <a href="https://reactome.org/dev/content-service" target="_blank" class="tooltip">[441]<span class="tooltiptext">Content Service - Reactome Pathway Database</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Reactome Team <a href="https://reactome.org/about/team" target="_blank" class="tooltip">[442]<span class="tooltiptext">Team - Reactome Pathway Database</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>75</td>
+<td>
+Rosalind knowledge graph
+</td>
+<td>
+<a href="https://www.rosalind.bio/knowledge-graph" target="_blank" class="tooltip">[443]<span class="tooltiptext">Knowledge Graph & Search</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41598-020-74922-z" target="_blank" class="tooltip">[444]<span class="tooltiptext">Preclinical validation of therapeutic targets predicted by tensor factorization on heterogeneous graphs</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+-
+</td>
+<td>
+2020
+</td>
+<td>
+Company: ROSALIND, Inc. <a href="https://www.rosalind.bio" target="_blank" class="tooltip">[445]<span class="tooltiptext">Discovery Platform & Data Hub for Scientists - ROSALIND</span></a> , Company: BenevolentAI <a href="https://www.benevolent.com" target="_blank" class="tooltip">[446]<span class="tooltiptext">BenevolentAI - AI Drug Discovery - AI Pharma</span></a>
+</td>
+</tr>
+<tr>
+<td>76</td>
+<td>
+SDKG-11
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btac085" target="_blank" class="tooltip">[447]<span class="tooltiptext">Multimodal reasoning based on knowledge graph embedding for specific diseases</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ZhuChaoY/SDKG-11" target="_blank" class="tooltip">[448]<span class="tooltiptext">SDKG-11</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/ZhuChaoY/SDKG-11/tree/main/Dataset" target="_blank" class="tooltip">[449]<span class="tooltiptext">SDKG-11/Dataset at main · ZhuChaoY/SDKG-11 · GitHub</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Institutes of Biomedical Sciences, Fudan University <a href="https://ibs.fudan.edu.cn/ibsen" target="_blank" class="tooltip">[450]<span class="tooltiptext">Institute of Biomedical Sciences, Fudan University</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>77</td>
+<td>
+SLKG
+</td>
+<td>
+<a href="https://www.slkg.net" target="_blank" class="tooltip">[451]<span class="tooltiptext">Synthetic Lethality Knowledge Graph</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41467-021-21544-2" target="_blank" class="tooltip">[452]<span class="tooltiptext">The tumor therapy landscape of synthetic lethality</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+Web UI <a href="https://www.slkg.net/query" target="_blank" class="tooltip">[453]<span class="tooltiptext">Synthetic Lethality Knowledge Graph</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>78</td>
+<td>
+SPOKE
+</td>
+<td>
+<a href="https://spoke.ucsf.edu" target="_blank" class="tooltip">[454]<span class="tooltiptext">SPOKE</span></a> <a href="https://spoke.rbvi.ucsf.edu" target="_blank" class="tooltip">[455]<span class="tooltiptext">Neighborhood Explorer</span></a> <a href="https://spoke.rbvi.ucsf.edu/docs" target="_blank" class="tooltip">[456]<span class="tooltiptext">SPOKE Nodes and Edges</span></a> <a href="https://cns-iu.github.io/spoke-vis" target="_blank" class="tooltip">[457]<span class="tooltiptext">Spoke</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btad080" target="_blank" class="tooltip">[458]<span class="tooltiptext">The scalable precision medicine open knowledge engine (SPOKE): a massive knowledge graph of biomedical information</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/cns-iu/spoke-vis" target="_blank" class="tooltip">[459]<span class="tooltiptext">Envisioning SPOKE: Visualizing 3M Nodes and 30M Edges</span></a>
+</td>
+<td>
+REST API <a href="https://spoke.rbvi.ucsf.edu/swagger" target="_blank" class="tooltip">[460]<span class="tooltiptext">Swagger UI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+SPOKE Team <a href="https://spoke.ucsf.edu/SPOKE-team" target="_blank" class="tooltip">[461]<span class="tooltiptext">People</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>79</td>
+<td>
+SemKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12859-018-2167-5" target="_blank" class="tooltip">[462]<span class="tooltiptext">SemaTyP: a knowledge graph based literature mining method for drug discovery</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ShengtianSang/SemaTyP" target="_blank" class="tooltip">[463]<span class="tooltiptext">SemaTyP: a knowledge graph based literature mining method for drug discovery</span></a>
+</td>
+<td>
+.txt <a href="https://github.com/ShengtianSang/SemaTyP/tree/main/data" target="_blank" class="tooltip">[464]<span class="tooltiptext">SemaTyP/data at main · ShengtianSang/SemaTyP · GitHub</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+College of Computer Science and Technology, Dalian University of Technology <a href="https://www.dlut.edu.cn" target="_blank" class="tooltip">[465]<span class="tooltiptext">Dalian University of Technology</span></a>
+</td>
+</tr>
+<tr>
+<td>80</td>
+<td>
+SemNet / SemMedDB
+</td>
+<td>
+<a href="https://sites.gatech.edu/cassie-mitchell-lab/semnet-2-0" target="_blank" class="tooltip">[466]<span class="tooltiptext">SemNet 2.0</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.3389/fbioe.2019.00156" target="_blank" class="tooltip">[467]<span class="tooltiptext">SemNet: Using Local Features to Navigate the Biomedical Concept Graph</span></a> <a href="https://doi.org/10.3390/bdcc6010027" target="_blank" class="tooltip">[468]<span class="tooltiptext">Optimizations for Computing Relatedness in Biomedical Heterogeneous Information Networks: SemNet 2.0</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/pathology-dynamics/semnet-2" target="_blank" class="tooltip">[469]<span class="tooltiptext">SemNet</span></a>
+</td>
+<td>
+.csv / .sql (MySQL) <a href="https://lhncbc.nlm.nih.gov/ii/tools/SemRep_SemMedDB_SKR.html" target="_blank" class="tooltip">[470]<span class="tooltiptext">Access to SemRep/SemMedDB/SKR Resources</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Laboratory for Pathology Dynamics, Emory University <a href="https://sites.gatech.edu/cassie-mitchell-lab" target="_blank" class="tooltip">[471]<span class="tooltiptext">Pathology Dynamics</span></a>
+</td>
+</tr>
+<tr>
+<td>81</td>
+<td>
+StrokeKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12859-021-04292-4" target="_blank" class="tooltip">[472]<span class="tooltiptext">Mining a stroke knowledge graph from literature</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/yangxi1016/Stroke" target="_blank" class="tooltip">[473]<span class="tooltiptext">Stroke</span></a>
+</td>
+<td>
+.csv / .txt <a href="https://github.com/yangxi1016/Stroke" target="_blank" class="tooltip">[474]<span class="tooltiptext">Stroke</span></a> , Neo4j browser <a href="http://114.115.208.144:7474/browser" target="_blank" class="tooltip">[475]<span class="tooltiptext">Neo4j Browser</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+College of Computer Science and Technology, National University of Defense Technology <a href="https://english.nudt.edu.cn/nav/Academics/CollegesandInstitutes" target="_blank" class="tooltip">[476]<span class="tooltiptext">Colleges & Institutes - National University of Defense Technology</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>82</td>
+<td>
+SynLethKG /  KG4SL
+</td>
+<td>
+<a href="https://synlethdb.sist.shanghaitech.edu.cn" target="_blank" class="tooltip">[477]<span class="tooltiptext">SynLethDB</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/bioinformatics/btab271" target="_blank" class="tooltip">[478]<span class="tooltiptext">KG4SL: knowledge graph neural network for synthetic lethality prediction in human cancers</span></a> <a href="https://doi.org/10.1093/nar/gkv1108" target="_blank" class="tooltip">[479]<span class="tooltiptext">SynLethDB: synthetic lethality database toward discovery of selective and sensitive anticancer drug targets</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/JieZheng-ShanghaiTech/KG4SL" target="_blank" class="tooltip">[480]<span class="tooltiptext">KG4SL</span></a> <a href="https://github.com/JieZheng-ShanghaiTech/SynLethDB" target="_blank" class="tooltip">[481]<span class="tooltiptext">SynLethDB</span></a>
+</td>
+<td>
+.csv / .npy / .txt <a href="https://github.com/JieZheng-ShanghaiTech/KG4SL/tree/main/data" target="_blank" class="tooltip">[482]<span class="tooltiptext">KG4SL/data at main · JieZheng-ShanghaiTech/KG4SL · GitHub</span></a> , .csv / .json / .graphml <a href="https://synlethdb.sist.shanghaitech.edu.cn/#/download" target="_blank" class="tooltip">[483]<span class="tooltiptext">SynLethDB: Download</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Zheng Lab, ShanghaiTech University <a href="https://shanghaitechzhengjielab.github.io/Zhenglab.github.io" target="_blank" class="tooltip">[484]<span class="tooltiptext">Jie Zheng Lab at ShanghaiTech</span></a>
+</td>
+</tr>
+<tr>
+<td>83</td>
+<td>
+TogoGenome
+</td>
+<td>
+<a href="http://togogenome.org" target="_blank" class="tooltip">[485]<span class="tooltiptext">TogoGenome</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/database/bay132" target="_blank" class="tooltip">[486]<span class="tooltiptext">TogoGenome/TogoStanza: modularized Semantic Web genome database</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/togogenome/togogenome" target="_blank" class="tooltip">[487]<span class="tooltiptext">togogenome</span></a>
+</td>
+<td>
+SPARQL endpoint <a href="http://togogenome.org/sparql" target="_blank" class="tooltip">[488]<span class="tooltiptext">sparql-proxy</span></a>
+</td>
+<td>
+2019
+</td>
+<td>
+Database Center for Life Science, University of Tokyo <a href="https://dbcls.rois.ac.jp/index-en.html" target="_blank" class="tooltip">[489]<span class="tooltiptext">DBCLS | Database Center for Life Science</span></a>
+</td>
+</tr>
+<tr>
+<td>84</td>
+<td>
+TypeDB Bio
+</td>
+<td>
+<a href="https://typedb.com/blog/accelerating-drug-discovery-with-applied-knowledge-engineering-and-typedb" target="_blank" class="tooltip">[490]<span class="tooltiptext">TypeDB Blog: Accelerating drug discovery with applied knowledge engineering and TypeDB</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+GitHub <a href="https://github.com/typedb-osi/typedb-bio" target="_blank" class="tooltip">[491]<span class="tooltiptext">TypeDB Bio: Biomedical Knowledge Graph</span></a>
+</td>
+<td>
+.csv <a href="https://github.com/typedb-osi/typedb-bio/tree/master/dataset" target="_blank" class="tooltip">[492]<span class="tooltiptext">typedb-bio/dataset at master · typedb-osi/typedb-bio · GitHub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Company: Vaticle Ltd <a href="https://typedb.com" target="_blank" class="tooltip">[493]<span class="tooltiptext">TypeDB: The polymorphic database powered by types</span></a>
+</td>
+</tr>
+<tr>
+<td>85</td>
+<td>
+Wikidata Biomedical Knowledge Graph
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.7554/eLife.52614" target="_blank" class="tooltip">[494]<span class="tooltiptext">Wikidata as a knowledge graph for the life sciences</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/SuLab/genewikiworld" target="_blank" class="tooltip">[495]<span class="tooltiptext">genewikiworld</span></a> <a href="https://github.com/SuLab/WikidataIntegrator" target="_blank" class="tooltip">[496]<span class="tooltiptext">WikidataIntegrator</span></a> <a href="https://github.com/SuLab/scheduled-bots" target="_blank" class="tooltip">[497]<span class="tooltiptext">scheduled-bots</span></a> <a href="https://github.com/SuLab/WD-rephetio-analysis" target="_blank" class="tooltip">[498]<span class="tooltiptext">WD-rephetio-analysis</span></a> <a href="https://github.com/SuLab/Wikidata-phenomizer" target="_blank" class="tooltip">[499]<span class="tooltiptext">Wikidata-phenomizer</span></a>
+</td>
+<td>
+.json / .ttl / .nt / .xml <a href="https://www.wikidata.org/wiki/Wikidata:Database_download" target="_blank" class="tooltip">[500]<span class="tooltiptext">Wikidata:Database download - Wikidata</span></a> , SPARQL endpoint <a href="https://query.wikidata.org" target="_blank" class="tooltip">[501]<span class="tooltiptext">Wikidata Query Service</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Su Lab, Scripps Research Institute <a href="https://sulab.org" target="_blank" class="tooltip">[502]<span class="tooltiptext">The Su Lab - Quantitative methods in biomedical discovery</span></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1>Resources for creating biomedical knowledge graphs</h1>
+<h2>File formats</h2>
+<div class="cont">
+<table class="sortable">
+<thead>
+<tr>
+<th>#</th>
+<th>Format name</th>
+<th>Extensions</th>
+<th>Websites</th>
+<th>Specification</th>
+<th>Graph model</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+BEL
+</td>
+<td>
+.bel
+</td>
+<td>
+<a href="https://biological-expression-language.github.io" target="_blank" class="tooltip">[503]<span class="tooltiptext">Biological Expression Language</span></a> <a href="https://bel.bio" target="_blank" class="tooltip">[504]<span class="tooltiptext">BEL: Biological Expression Language</span></a>
+</td>
+<td>
+<a href="https://github.com/belbio/bel_specifications" target="_blank" class="tooltip">[505]<span class="tooltiptext">bel_specifications</span></a>
+</td>
+<td>
+BEL network
+</td>
+<td>
+BEL.bio organization <a href="https://bel.bio/about" target="_blank" class="tooltip">[506]<span class="tooltiptext">About BEL.bio</span></a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+CSV
+</td>
+<td>
+.csv
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=Comma-separated_values" target="_blank" class="tooltip">[507]<span class="tooltiptext">Comma-separated values</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.17487/RFC4180" target="_blank" class="tooltip">[508]<span class="tooltiptext">Common Format and MIME Type for Comma-Separated Values (CSV) Files</span></a>
+</td>
+<td>
+Various models
+</td>
+<td>
+IETF Network Working Group <a href="https://www.ietf.org/how/wgs" target="_blank" class="tooltip">[509]<span class="tooltiptext">Working Groups</span></a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+GraphDB
+</td>
+<td>
+.graphdb
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=Ontotext_GraphDB" target="_blank" class="tooltip">[510]<span class="tooltiptext">Ontotext GraphDB</span></a>
+</td>
+<td>
+<a href="https://www.ontotext.com/products/graphdb" target="_blank" class="tooltip">[511]<span class="tooltiptext">Ontotext GraphDB</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+Company: Ontotext <a href="https://www.ontotext.com" target="_blank" class="tooltip">[512]<span class="tooltiptext">Ontotext Home</span></a>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+GraphML
+</td>
+<td>
+.graphml
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=GraphML&oldid=1060832076" target="_blank" class="tooltip">[513]<span class="tooltiptext">GraphML</span></a>
+</td>
+<td>
+<a href="http://graphml.graphdrawing.org" target="_blank" class="tooltip">[514]<span class="tooltiptext">The GraphML File Format</span></a>
+</td>
+<td>
+Various models
+</td>
+<td>
+GraphML Project Group <a href="http://graphml.graphdrawing.org/about.html" target="_blank" class="tooltip">[515]<span class="tooltiptext">About GraphML</span></a>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+JSON-LD
+</td>
+<td>
+.jsonld, .json
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=JSON-LD" target="_blank" class="tooltip">[516]<span class="tooltiptext">JSON-LD</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/json-ld" target="_blank" class="tooltip">[517]<span class="tooltiptext">JSON-LD 1.1</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[518]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+KGX
+</td>
+<td>
+.json, .jsonl, .tsv, .ttl
+</td>
+<td>
+<a href="https://kgx.readthedocs.io/en/latest/kgx_format.html" target="_blank" class="tooltip">[519]<span class="tooltiptext">KGX Format</span></a>
+</td>
+<td>
+<a href="https://github.com/biolink/kgx/blob/master/specification/kgx-format.md" target="_blank" class="tooltip">[520]<span class="tooltiptext">kgx/specification/kgx-format.md</span></a>
+</td>
+<td>
+Property graph
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+N-Quads
+</td>
+<td>
+.nq
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=N-Triples#N-Quads" target="_blank" class="tooltip">[521]<span class="tooltiptext">N-Triples: N-Quads</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/n-quads" target="_blank" class="tooltip">[522]<span class="tooltiptext">RDF 1.1 N-Quads</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[523]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+N-Triples
+</td>
+<td>
+.nt
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=N-Triples" target="_blank" class="tooltip">[524]<span class="tooltiptext">N-Triples</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/n-triples" target="_blank" class="tooltip">[525]<span class="tooltiptext">RDF 1.1 N-Triples</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[526]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>
+Neo4j
+</td>
+<td>
+.dump
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=Neo4j" target="_blank" class="tooltip">[527]<span class="tooltiptext">Neo4j</span></a>
+</td>
+<td>
+<a href="https://neo4j.com/docs/desktop-manual/current/operations/create-dump" target="_blank" class="tooltip">[528]<span class="tooltiptext">Create a DBMS dump file - Neo4j Desktop</span></a>
+</td>
+<td>
+Property graph
+</td>
+<td>
+Company: Neo4j, Inc. <a href="https://neo4j.com" target="_blank" class="tooltip">[529]<span class="tooltiptext">Neo4j Graph Database & Analytics - The Leader in Graph Databases</span></a>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td>
+Notation3
+</td>
+<td>
+.n3
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=Notation3" target="_blank" class="tooltip">[530]<span class="tooltiptext">Notation3</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TeamSubmission/n3" target="_blank" class="tooltip">[531]<span class="tooltiptext">Notation3 (N3): A readable RDF syntax</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[532]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>11</td>
+<td>
+RDF/JSON
+</td>
+<td>
+.json
+</td>
+<td>
+<a href="https://jena.apache.org/documentation/io/rdf-json.html" target="_blank" class="tooltip">[533]<span class="tooltiptext">RDF JSON - docs.api</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/rdf-json" target="_blank" class="tooltip">[534]<span class="tooltiptext">RDF 1.1 JSON Alternate Serialization (RDF/JSON)</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[535]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>12</td>
+<td>
+RDF/XML
+</td>
+<td>
+.rdf
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=RDF/XML" target="_blank" class="tooltip">[536]<span class="tooltiptext">RDF/XML</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/rdf-syntax-grammar" target="_blank" class="tooltip">[537]<span class="tooltiptext">RDF 1.1 XML Syntax</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[538]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>13</td>
+<td>
+RDFa
+</td>
+<td>
+.html, .svg, .xml
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=RDFa" target="_blank" class="tooltip">[539]<span class="tooltiptext">RDFa</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/rdfa-primer" target="_blank" class="tooltip">[540]<span class="tooltiptext">RDFa 1.1 Primer - Third Edition</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[541]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>14</td>
+<td>
+SIF
+</td>
+<td>
+.sif
+</td>
+<td>
+<a href="https://wiki.biouml.org/index.php/SIF_(file_format)" target="_blank" class="tooltip">[542]<span class="tooltiptext">SIF (file format) - BioUML platform</span></a>
+</td>
+<td>
+<a href="https://cytoscape.org/manual/Cytoscape2_5Manual.html#SIF%20Format" target="_blank" class="tooltip">[543]<span class="tooltiptext">Cytoscape User Manual</span></a>
+</td>
+<td>
+Various models
+</td>
+<td>
+Cytoscape Consoritum <a href="https://github.com/cytoscape" target="_blank" class="tooltip">[544]<span class="tooltiptext">Cytoscape Consortium</span></a>
+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>
+TriG
+</td>
+<td>
+.trig
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=TriG_(syntax)" target="_blank" class="tooltip">[545]<span class="tooltiptext">TriG (syntax)</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/trig" target="_blank" class="tooltip">[546]<span class="tooltiptext">RDF 1.1 TriG</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[547]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>16</td>
+<td>
+TriX
+</td>
+<td>
+.trix
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=TriX_(serialization_format)" target="_blank" class="tooltip">[548]<span class="tooltiptext">TriX (serialization format)</span></a>
+</td>
+<td>
+<a href="https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html" target="_blank" class="tooltip">[549]<span class="tooltiptext">TriX : RDF Triples in XML</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[550]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+<tr>
+<td>17</td>
+<td>
+Turtle
+</td>
+<td>
+.ttl
+</td>
+<td>
+<a href="https://en.wikipedia.org/w/index.php?title=Turtle_(syntax)" target="_blank" class="tooltip">[551]<span class="tooltiptext">Turtle (syntax)</span></a>
+</td>
+<td>
+<a href="https://www.w3.org/TR/turtle" target="_blank" class="tooltip">[552]<span class="tooltiptext">RDF 1.1 Turtle</span></a>
+</td>
+<td>
+RDF graph
+</td>
+<td>
+W3C <a href="https://www.w3.org" target="_blank" class="tooltip">[553]<span class="tooltiptext">W3C</span></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Databases</h2>
+<div class="cont">
+<table class="sortable">
+<thead>
+<tr>
+<th>#</th>
+<th>Database name</th>
+<th>Website</th>
+<th>Publications</th>
+<th>Number of databases</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+Bio.tools
+</td>
+<td>
+<a href="https://bio.tools" target="_blank" class="tooltip">[554]<span class="tooltiptext">bio.tools · Bioinformatics Tools and Services Discovery Portal</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkv1116" target="_blank" class="tooltip">[555]<span class="tooltiptext">Tools and data services registry: a community effort to document bioinformatics resources</span></a>
+</td>
+<td>
+2377
+</td>
+<td>
+ELIXIR <a href="https://elixir-europe.org" target="_blank" class="tooltip">[556]<span class="tooltiptext">ELIXIR</span></a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+DaTo
+</td>
+<td>
+<a href="https://bis.zju.edu.cn/dato" target="_blank" class="tooltip">[557]<span class="tooltiptext">DaTo</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1515/jib-2016-297" target="_blank" class="tooltip">[558]<span class="tooltiptext">DaTo: an atlas of biological databases and tools</span></a>
+</td>
+<td>
+35400 (count includes tools)
+</td>
+<td>
+Ming Chen's Lab, Zhejiang University <a href="https://bis.zju.edu.cn" target="_blank" class="tooltip">[559]<span class="tooltiptext">BIS: Bioinformatics Server @ Zhejiang University</span></a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+Database Commons
+</td>
+<td>
+<a href="https://ngdc.cncb.ac.cn/databasecommons" target="_blank" class="tooltip">[560]<span class="tooltiptext">Database Commons</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.gpb.2022.12.004" target="_blank" class="tooltip">[561]<span class="tooltiptext">Database Commons: A Catalog of Worldwide Biological Databases</span></a>
+</td>
+<td>
+6389
+</td>
+<td>
+China National Center for Bioinformation (CNCB), Chinese Academy of Sciences <a href="https://www.cncb.ac.cn/?lang=en" target="_blank" class="tooltip">[562]<span class="tooltiptext">China National Center for Bioinformation (CNCB)</span></a>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+FAIRsharing
+</td>
+<td>
+<a href="https://fairsharing.org" target="_blank" class="tooltip">[563]<span class="tooltiptext">FAIRsharing</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41587-019-0080-8" target="_blank" class="tooltip">[564]<span class="tooltiptext">FAIRsharing as a community approach to standards, repositories and policies</span></a>
+</td>
+<td>
+2075
+</td>
+<td>
+The FAIRsharing team, University of Oxford <a href="https://researchdata.ox.ac.uk/fairsharing" target="_blank" class="tooltip">[565]<span class="tooltiptext">FAIRsharing</span></a>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+MetaBase
+</td>
+<td>
+<a href="https://web.archive.org/web/20140118114727/http://metadatabase.org/wiki/Main_Page" target="_blank" class="tooltip">[566]<span class="tooltiptext">MetaBase</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkr1099" target="_blank" class="tooltip">[567]<span class="tooltiptext">MetaBase—the wiki-database of biological databases</span></a>
+</td>
+<td>
+1802 (last online in 2014)
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+NAR db status
+</td>
+<td>
+<a href="https://nardbstatus.kalis-amts.de" target="_blank" class="tooltip">[568]<span class="tooltiptext">NAR db status</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1371/journal.pone.0293134" target="_blank" class="tooltip">[569]<span class="tooltiptext">A web-based platform for the annotation and analysis of NAR-published databases</span></a>
+</td>
+<td>
+2246
+</td>
+<td>
+Bioinformatics/Medical Informatics department, Bielefeld University <a href="https://www.techfak.uni-bielefeld.de/ags/bi" target="_blank" class="tooltip">[570]<span class="tooltiptext">Bioinformatics / Medical Informatics Department</span></a>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+NAR online Molecular Biology Database Collection
+</td>
+<td>
+<a href="https://www.oxfordjournals.org/nar/database/c" target="_blank" class="tooltip">[571]<span class="tooltiptext">Database Summary Paper Categories</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkac1186" target="_blank" class="tooltip">[572]<span class="tooltiptext">The 2023 Nucleic Acids Research Database Issue and the online molecular biology database collection</span></a>
+</td>
+<td>
+1764
+</td>
+<td>
+Nucleic Acids Research (NAR) Journal, University of Oxford <a href="https://academic.oup.com/nar" target="_blank" class="tooltip">[573]<span class="tooltiptext">Nucleic Acids Research - Oxford Academic</span></a>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+Online Bioinformatics Resources Collection (OBRC)
+</td>
+<td>
+<a href="https://www.hsls.pitt.edu/obrc" target="_blank" class="tooltip">[574]<span class="tooltiptext">OBRC: Online Bioinformatics Resources Collection - HSLS</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkl781" target="_blank" class="tooltip">[575]<span class="tooltiptext">The Online Bioinformatics Resources Collection at the University of Pittsburgh Health Sciences Library System—a one-stop gateway to online bioinformatics databases and software tools</span></a>
+</td>
+<td>
+2408 (count includes tools)
+</td>
+<td>
+Health Sciences Library System, University of Pittsburgh <a href="https://www.hsls.pitt.edu" target="_blank" class="tooltip">[576]<span class="tooltiptext">HSLS</span></a>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>
+Online Resource Finder For Life Sciences (OReFiL)
+</td>
+<td>
+<a href="https://orefil.dbcls.jp" target="_blank" class="tooltip">[577]<span class="tooltiptext">OReFiL: an Online Resource Finder for Lifesciences</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/1471-2105-8-287" target="_blank" class="tooltip">[578]<span class="tooltiptext">OReFiL: an online resource finder for life sciences</span></a>
+</td>
+<td>
+N/A
+</td>
+<td>
+Database Center for Life Science, University of Tokyo <a href="https://www.satellite.u-tokyo.ac.jp/en/resident/about_dbcls" target="_blank" class="tooltip">[579]<span class="tooltiptext">Database Center for Life Science – The University Of Tokyo Future Center Initiative</span></a>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td>
+The Bioinformatics Link Directory
+</td>
+<td>
+<a href="https://web.archive.org/web/20170608065028/https://bioinformatics.ca/links_directory" target="_blank" class="tooltip">[580]<span class="tooltiptext">Bioinformatics Links Directory - Bioinformatics.ca Links Directory</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gki594" target="_blank" class="tooltip">[581]<span class="tooltiptext">The Bioinformatics Links Directory: a Compilation of Molecular Biology Web Servers</span></a> <a href="https://doi.org/10.1093/nar/gks632" target="_blank" class="tooltip">[582]<span class="tooltiptext">A decade of web server updates at the bioinformatics links directory: 2003–2012</span></a>
+</td>
+<td>
+621 (last online in 2017)
+</td>
+<td>
+The Canadian Bioinformatics Workshops (CBW) <a href="https://bioinformatics.ca/about/about-bioinformatics" target="_blank" class="tooltip">[583]<span class="tooltiptext">About Bioinformatics.ca</span></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Ontologies and controlled vocabularies</h2>
+<div class="cont">
+<table class="sortable">
+<thead>
+<tr>
+<th>#</th>
+<th>Ontology name</th>
+<th>Website</th>
+<th>Publications</th>
+<th>Number of Ontologies</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+BioPortal
+</td>
+<td>
+<a href="https://www.bioontology.org" target="_blank" class="tooltip">[1]<span class="tooltiptext">BioPortal - Biomedical Ontology Repository</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkr469" target="_blank" class="tooltip">[2]<span class="tooltiptext">BioPortal: enhanced functionality via new Web services from the National Center for Biomedical Ontology to access and use ontologies in software applications</span></a>
+</td>
+<td>
+1077
+</td>
+<td>
+Center for Biomedical Informatics Research (BMIR), Stanford University <a href="https://bmir.stanford.edu" target="_blank" class="tooltip">[3]<span class="tooltiptext">Center for Biomedical Informatics Research (BMIR)</span></a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+Ontobee
+</td>
+<td>
+<a href="https://ontobee.org" target="_blank" class="tooltip">[4]<span class="tooltiptext">Ontobee</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/nar/gkw918" target="_blank" class="tooltip">[5]<span class="tooltiptext">Ontobee: A linked ontology data server to support ontology term dereferencing, linkage, query and integration</span></a>
+</td>
+<td>
+262
+</td>
+<td>
+He Group, University of Michigan Medical School <a href="https://www.hegroup.org" target="_blank" class="tooltip">[6]<span class="tooltiptext">Welcome to He Group Webpage</span></a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+Ontology Lookup Service (OLS)
+</td>
+<td>
+<a href="https://www.ebi.ac.uk/ols4" target="_blank" class="tooltip">[7]<span class="tooltiptext">Ontology Lookup Service (OLS)</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1186/1471-2105-7-97" target="_blank" class="tooltip">[8]<span class="tooltiptext">The Ontology Lookup Service, a lightweight cross-platform tool for controlled vocabulary queries</span></a> <a href="https://doi.org/10.1093/nar/gkq331" target="_blank" class="tooltip">[9]<span class="tooltiptext">The Ontology Lookup Service: bigger and better</span></a>
+</td>
+<td>
+251
+</td>
+<td>
+Samples, Phenotypes and Ontologies Team (SPOT), EMBL-EBI <a href="https://www.ebi.ac.uk/about/teams/samples-phenotypes-ontologies" target="_blank" class="tooltip">[10]<span class="tooltiptext">Samples, phenotypes and ontologies – Delivering databases and interoperability tools for mammalian models of disease, GWAS, PGS and Polygenic Scores.</span></a>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+Open Biomedical Ontologies (OBO) Foundry
+</td>
+<td>
+<a href="https://obofoundry.org" target="_blank" class="tooltip">[11]<span class="tooltiptext">OBO Foundry</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1093/database/baab069" target="_blank" class="tooltip">[12]<span class="tooltiptext">OBO Foundry in 2021: operationalizing open data principles to evaluate ontologies</span></a>
+</td>
+<td>
+258
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Tools</h2>
+<div class="cont">
+<table class="sortable">
+<thead>
+<tr>
+<th>#</th>
+<th>Creator name</th>
+<th>Websites</th>
+<th>Publications</th>
+<th>Code</th>
+<th>Last Update</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>
+AgreementMakerLight
+</td>
+<td>
+<a href="https://www.lasige.pt/tools/agreementmakerlight" target="_blank" class="tooltip">[584]<span class="tooltiptext">AgreementMakerLight - LASIGE</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-031-06981-9_27" target="_blank" class="tooltip">[585]<span class="tooltiptext">Matching Multiple Ontologies to Build a Knowledge Graph for Personalized Medicine</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/AgreementMakerLight/AML-Project" target="_blank" class="tooltip">[586]<span class="tooltiptext">AML-Project</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+LASIGE Computer Science and Engineering Research Centre, University of Lisbon <a href="https://www.lasige.pt" target="_blank" class="tooltip">[587]<span class="tooltiptext">LASIGE</span></a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>
+BioCypher
+</td>
+<td>
+<a href="https://biocypher.org" target="_blank" class="tooltip">[588]<span class="tooltiptext">Democratising Knowledge Graphs</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1038/s41587-023-01848-y" target="_blank" class="tooltip">[589]<span class="tooltiptext">Democratizing knowledge representation with BioCypher</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/biocypher/biocypher" target="_blank" class="tooltip">[590]<span class="tooltiptext">Democratizing knowledge representation with BioCypher</span></a> , PyPI <a href="https://pypi.org/project/biocypher" target="_blank" class="tooltip">[591]<span class="tooltiptext">biocypher · PyPI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Saez-Rodriguez Group, Heidelberg University <a href="https://saezlab.org" target="_blank" class="tooltip">[592]<span class="tooltiptext">Saez-Rodriguez Group</span></a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td>
+BioDBLinker
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1145/3340531.3412776" target="_blank" class="tooltip">[593]<span class="tooltiptext">BioKG: A Knowledge Graph for Relational Learning On Biological Data</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/dsi-bdi/biodblinker" target="_blank" class="tooltip">[594]<span class="tooltiptext">biodblinker</span></a> , PyPI <a href="https://pypi.org/project/biodblinker" target="_blank" class="tooltip">[595]<span class="tooltiptext">biodblinker · PyPI</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Biomedical Discovery Informatics Unit, NUI Galway <a href="https://www.universityofgalway.ie/dsi" target="_blank" class="tooltip">[596]<span class="tooltiptext">Data Science Institute - University of Galway</span></a> <a href="https://github.com/dsi-bdi" target="_blank" class="tooltip">[597]<span class="tooltiptext">DSI - Biomedical Discovery Informatics</span></a>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>
+DemKG
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.3390/app131810497" target="_blank" class="tooltip">[598]<span class="tooltiptext">A Knowledge Graph Framework for Dementia Research Data</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/demkg-framework/kg-transform" target="_blank" class="tooltip">[599]<span class="tooltiptext">kg-transform</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td>
+IASiS Open Data Graph
+</td>
+<td>
+<a href="https://project-iasis.eu/node/178" target="_blank" class="tooltip">[600]<span class="tooltiptext">The iASiS project Knowledge Graph - IASIS</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1109/CBMS49503.2020.00049" target="_blank" class="tooltip">[601]<span class="tooltiptext">iASiS Open Data Graph: Automated Semantic Integration of Disease-Specific Knowledge</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/tasosnent/Biomedical-Knowledge-Integration" target="_blank" class="tooltip">[602]<span class="tooltiptext">iASiS Open Data Graph</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Institute of Informatics and Telecommunications, NCSR Demokritos <a href="https://www.iit.demokritos.gr" target="_blank" class="tooltip">[603]<span class="tooltiptext">National Centre for Scientific Research "Demokritos"</span></a>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>
+INDRA
+</td>
+<td>
+<a href="http://www.indra.bio" target="_blank" class="tooltip">[604]<span class="tooltiptext">INDRA</span></a> <a href="https://indra.readthedocs.io" target="_blank" class="tooltip">[605]<span class="tooltiptext">INDRA documentation — INDRA 1.22.0 documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.15252/msb.20177651" target="_blank" class="tooltip">[606]<span class="tooltiptext">From word models to executable models of signaling networks using automated assembly</span></a> <a href="https://doi.org/10.15252/msb.202211325" target="_blank" class="tooltip">[607]<span class="tooltiptext">Automated assembly of molecular mechanisms at scale from text mining and curated databases</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/sorgerlab/indra" target="_blank" class="tooltip">[608]<span class="tooltiptext">INDRA</span></a> , PyPI <a href="https://pypi.org/project/indra" target="_blank" class="tooltip">[609]<span class="tooltiptext">indra · PyPI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Sorger Lab, Harvard Medical School <a href="https://sorger.med.harvard.edu" target="_blank" class="tooltip">[610]<span class="tooltiptext">Sorger Lab</span></a>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>
+K-BiOnt
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1109/JBHI.2022.3173558" target="_blank" class="tooltip">[611]<span class="tooltiptext">Biomedical Relation Extraction With Knowledge Graph-Based Recommendations</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/lasigeBioTM/K-BiOnt" target="_blank" class="tooltip">[612]<span class="tooltiptext">K-BiOnt: Biomedical Relation Extraction with Knowledge Graph-based Recommendations</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Biomedical Text Mining Team (BioTM), LASIGE, University of Lisbon <a href="https://github.com/lasigeBioTM" target="_blank" class="tooltip">[613]<span class="tooltiptext">BioTM, LASIGE, Fac. Ciências, Universidade de Lisboa</span></a> <a href="https://www.lasige.pt" target="_blank" class="tooltip">[614]<span class="tooltiptext">LASIGE</span></a>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>
+KG-Hub
+</td>
+<td>
+<a href="https://kghub.org" target="_blank" class="tooltip">[615]<span class="tooltiptext">Knowledge Graph Hub</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.48550/arXiv.2302.10800" target="_blank" class="tooltip">[616]<span class="tooltiptext">KG-Hub -- Building and Exchanging Biological Knowledge Graphs</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/Knowledge-Graph-Hub" target="_blank" class="tooltip">[617]<span class="tooltiptext">Knowledge-Graph-Hub</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td>
+KGTK
+</td>
+<td>
+<a href="https://kgtk.readthedocs.io" target="_blank" class="tooltip">[618]<span class="tooltiptext">KGTK documentation</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1007/978-3-030-62466-8_18" target="_blank" class="tooltip">[619]<span class="tooltiptext">KGTK: A Toolkit for Large Knowledge Graph Manipulation and Analysis</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/usc-isi-i2/kgtk" target="_blank" class="tooltip">[620]<span class="tooltiptext">KGTK: Knowledge Graph Toolkit</span></a> , PyPI <a href="https://pypi.org/project/kgtk" target="_blank" class="tooltip">[621]<span class="tooltiptext">kgtk · PyPI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Information Sciences Institute, University of Southern California <a href="https://www.isi.edu" target="_blank" class="tooltip">[622]<span class="tooltiptext">Information Sciences Institute</span></a>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td>
+KGX
+</td>
+<td>
+<a href="https://kgx.readthedocs.io" target="_blank" class="tooltip">[623]<span class="tooltiptext">Welcome to the KGX documentation — kgx 1.5.1 documentation</span></a> <a href="https://github.com/biolink/kgx/blob/master/specification/kgx-format.md" target="_blank" class="tooltip">[624]<span class="tooltiptext">KGX Format</span></a>
+</td>
+<td>
+-
+</td>
+<td>
+GitHub <a href="https://github.com/biolink/kgx" target="_blank" class="tooltip">[625]<span class="tooltiptext">Knowledge Graph Exchange</span></a> , PyPI <a href="https://pypi.org/project/kgx" target="_blank" class="tooltip">[626]<span class="tooltiptext">kgx · PyPI</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>11</td>
+<td>
+KGen
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://doi.org/10.1186/s12911-020-01341-5" target="_blank" class="tooltip">[627]<span class="tooltiptext">KGen: a knowledge graph generator from biomedical scientific literature</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/rossanez/KGen" target="_blank" class="tooltip">[628]<span class="tooltiptext">KGen</span></a>
+</td>
+<td>
+2022
+</td>
+<td>
+Institute of Computing, University of Campinas <a href="https://ic.unicamp.br/en" target="_blank" class="tooltip">[629]<span class="tooltiptext">Institute of Computing</span></a>
+</td>
+</tr>
+<tr>
+<td>12</td>
+<td>
+ORION
+</td>
+<td>
+-
+</td>
+<td>
+-
+</td>
+<td>
+GitHub <a href="https://github.com/RobokopU24/ORION" target="_blank" class="tooltip">[630]<span class="tooltiptext">ORION</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Renaissance Computing Institute (RENCI), University of North Carolina <a href="https://renci.org" target="_blank" class="tooltip">[631]<span class="tooltiptext">RENCI - Renaissance Computing Institute at UNC</span></a>
+</td>
+</tr>
+<tr>
+<td>13</td>
+<td>
+PheKnowLator
+</td>
+<td>
+<a href="https://github.com/callahantiff/PheKnowLator/wiki" target="_blank" class="tooltip">[632]<span class="tooltiptext">PheKnowLator</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1101/2020.04.30.071407" target="_blank" class="tooltip">[633]<span class="tooltiptext">A Framework for Automated Construction of Heterogeneous Large-Scale Biomedical Knowledge Graphs</span></a> <a href="https://doi.org/10.48550/arXiv.2307.05727" target="_blank" class="tooltip">[634]<span class="tooltiptext">An Open-Source Knowledge Graph Ecosystem for the Life Sciences</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/callahantiff/PheKnowLator" target="_blank" class="tooltip">[635]<span class="tooltiptext">PheKnowLator</span></a> , PyPI <a href="https://pypi.org/project/pkt-kg" target="_blank" class="tooltip">[636]<span class="tooltiptext">pkt-kg · PyPI</span></a> , Zenodo <a href="https://zenodo.org/communities/pheknowlator-ecosystem" target="_blank" class="tooltip">[637]<span class="tooltiptext">Search PheKnowLator</span></a>
+</td>
+<td>
+2021
+</td>
+<td>
+Computational Bioscience Program, University of Colorado <a href="https://www.cuanschutz.edu/graduate-programs/computational-bioscience/home" target="_blank" class="tooltip">[638]<span class="tooltiptext">Computational Bioscience Home - School of Medicine</span></a> , Individuals from various research institutes
+</td>
+</tr>
+<tr>
+<td>14</td>
+<td>
+ROBOKOP Knowledge Graph Builder (KGB)
+</td>
+<td>
+<a href="https://robokop.renci.org" target="_blank" class="tooltip">[639]<span class="tooltiptext">ROBOKOP</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1021/acs.jcim.9b00683" target="_blank" class="tooltip">[640]<span class="tooltiptext">ROBOKOP KG and KGB: Integrated Knowledge Graphs from Federated Sources</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/NCATS-Gamma/robokop" target="_blank" class="tooltip">[641]<span class="tooltiptext">robokop</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Renaissance Computing Institute (RENCI), University of North Carolina <a href="https://renci.org" target="_blank" class="tooltip">[642]<span class="tooltiptext">RENCI - Renaissance Computing Institute at UNC</span></a>
+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>
+SEmantic Modeling machIne (SeMi)
+</td>
+<td>
+<a href="https://github.com/giuseppefutia/semi/blob/master/README.md" target="_blank" class="tooltip">[643]<span class="tooltiptext">SeMi - SEmantic Modeling machIne</span></a>
+</td>
+<td>
+<a href="https://doi.org/10.1016/j.softx.2020.100516" target="_blank" class="tooltip">[644]<span class="tooltiptext">SeMi: A SEmantic Modeling machIne to build Knowledge Graphs with graph neural networks</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ElsevierSoftwareX/SOFTX_2019_258" target="_blank" class="tooltip">[645]<span class="tooltiptext">SeMi - SEmantic Modeling machIne</span></a>
+</td>
+<td>
+2020
+</td>
+<td>
+Company: Elsevier
+</td>
+</tr>
+<tr>
+<td>16</td>
+<td>
+Stitcher
+</td>
+<td>
+-
+</td>
+<td>
+<a href="https://github.com/ncats/stitcher/tree/master/paper" target="_blank" class="tooltip">[646]<span class="tooltiptext">stitcher/paper at master · ncats/stitcher</span></a>
+</td>
+<td>
+GitHub <a href="https://github.com/ncats/stitcher" target="_blank" class="tooltip">[647]<span class="tooltiptext">stitcher</span></a>
+</td>
+<td>
+2023
+</td>
+<td>
+Division of Pre-Clinical Innovation, NCATS, NIH <a href="https://ncats.nih.gov/about/divisions-and-offices" target="_blank" class="tooltip">[648]<span class="tooltiptext">Divisions and Offices - National Center for Advancing Translational Sciences</span></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<a property="dct:title" rel="cc:attributionURL" href="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs">Awesome biomedical knowledge graphs</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/robert-haas">Robert Haas</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a>
+</p>
+</body>
+</html>
