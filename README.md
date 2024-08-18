@@ -44,28 +44,28 @@ The following Jupyter notebooks inspect five projects in detail.
 
 [Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/hald.html)
 
-![Schema](docs/notebooks/hald_schema.svg)
+<img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/hald_schema.svg" alt="Schema" style="width: 60%;" />
 
 ### Oregano
 
 [Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/oregano.html)
 
-![Schema](docs/notebooks/oregano_schema.svg)
+<img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/oregano_schema.svg" alt="Schema" style="width: 70%;" />
 
 ### Precision Medicine Knowledge Graph (PrimeKG)
 
 [Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/primekg.html)
 
-![Schema](docs/notebooks/primekg_schema.svg)
-
-### Monarch
-
-[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/monarch.html)
-
-![Schema](docs/notebooks/monarch_schema.svg)
+<img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/primekg_schema.svg" alt="Schema" style="width: 70%;" />
 
 ### Clinical Knowledge Graph (CKG)
 
 [Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/ckg.html)
 
-![Schema](docs/notebooks/ckg_schema.svg)
+<img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/ckg_schema.svg" alt="Schema" style="width: 90%;" />
+
+### Monarch
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/monarch.html)
+
+<img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/monarch_schema.svg" alt="Schema" style="width: 100%;" />
