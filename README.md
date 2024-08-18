@@ -42,30 +42,30 @@ The following Jupyter notebooks provide detailed inspections of five projects, w
 
 1. [Human Aging and Longevity Dataset (HALD)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/hald.html)
 
-<div style="text-align: center;">
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px;">
   <img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/hald_schema.svg" alt="Schema" style="width: 70%;" />
 </div>
 
 2. [Oregano](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/oregano.html)
 
-<div style="text-align: center;">
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px;">
   <img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/oregano_schema.svg" alt="Schema" style="width: 70%;" />
 </div>
 
 3. [Precision Medicine Knowledge Graph (PrimeKG)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/primekg.html)
 
-<div style="text-align: center;">
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px;">
   <img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/primekg_schema.svg" alt="Schema" style="width: 70%;" />
 </div>
 
 4. [Clinical Knowledge Graph (CKG)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/ckg.html)
 
-<div style="text-align: center;">
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px;">
   <img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/ckg_schema.svg" alt="Schema" style="width: 90%;" />
 </div>
 
 5. [Monarch](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/monarch.html)
 
-<div style="text-align: center;">
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px;">
   <img src="https://github.com/robert-haas/awesome-biomedical-knowledge-graphs/blob/main/docs/notebooks/monarch_schema.svg" alt="Schema" style="width: 100%;" />
 </div>
