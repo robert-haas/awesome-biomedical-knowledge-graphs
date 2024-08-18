@@ -38,9 +38,34 @@ A [curated list](curation.md) presents and characterizes a carefully selected su
 
 ## Notebooks
 
-The following Jupyter notebooks inspect five projects in detail:
-- [Human Aging and Longevity Dataset (HALD)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/hald.html)
-- [Precision Medicine Knowledge Graph (PrimeKG)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/primekg.html)
-- [Oregano](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/oregano.html)
-- [Monarch](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/monarch.html)
-- [Clinical Knowledge Graph (CKG)](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/ckg.html)
+The following Jupyter notebooks inspect five projects in detail.
+
+### Human Aging and Longevity Dataset (HALD)
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/hald.html)
+
+![Schema](docs/notebooks/hald_schema.svg)
+
+### Oregano
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/oregano.html)
+
+![Schema](docs/notebooks/oregano_schema.svg)
+
+### Precision Medicine Knowledge Graph (PrimeKG)
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/primekg.html)
+
+![Schema](docs/notebooks/primekg_schema.svg)
+
+### Monarch
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/monarch.html)
+
+![Schema](docs/notebooks/monarch_schema.svg)
+
+### Clinical Knowledge Graph (CKG)
+
+[Notebook](https://robert-haas.github.io/awesome-biomedical-knowledge-graphs/notebooks/ckg.html)
+
+![Schema](docs/notebooks/ckg_schema.svg)
