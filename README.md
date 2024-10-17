@@ -75,3 +75,5 @@ The following Jupyter notebooks provide detailed inspections of five projects, w
 ## Python package
 
 The Python 3 package [kgw](https://github.com/robert-haas/kgw) and its [documentation](https://robert-haas.github.io/kgw-docs) enable simple retrieving and conversion of several biomedical knowledge graphs. It is a clean reimplementation of functionality that was explored here previously in Jupyter notebooks. For example, instead of using a CSV file as intermediate format, a file-based SQLite database was chosen for faster and more flexible querying of the knowledge graph contents. This simplifies all downstream conversions and analyses. In future, a greater variety of knowledge graphs may be covered by simply adding an extraction function to get it from its web data repository and a transformation function to convert it into the shared SQLite representation. From there on, all existing conversion functions can be reused immediately. Contributions to the package are welcome and encouraged!
+
+![workflow](src/workflow.png)
